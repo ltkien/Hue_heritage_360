@@ -118,7 +118,7 @@
             <div class="card " style="width: 18rem; padding: 10px">
 
                 <h2>AR</h2>
-                <!-- Nút mở Camera -->
+                <!-- Nút mởs Camera -->
                 <div class=" d-flex justify-content-center align-items-center ">
                     <button class=" btn btn-success" onclick="openCamera()">
                         📷 Mở camera
@@ -130,6 +130,10 @@
                 <!-- Camera -->
                 <video id="camera" autoplay playsinline class="w-100">
                 </video>
+                <canvas id="photo"></canvas>
+                <button class="btn btn-success" onclick="takePhoto()">
+                    📸 Chụp ảnh
+                </button>
             </div>
 
         </div>
