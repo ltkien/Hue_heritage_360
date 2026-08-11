@@ -150,3 +150,29 @@ function showPlace(placeId) {
     modal.show();
 
 }
+
+let cameraStream = null;
+
+async function openCamera() {
+
+    try {
+
+        cameraStream =
+            await navigator.mediaDevices.getUserMedia({
+                video: true,
+                audio: false
+            });
+
+        const video =
+            document.getElementById("camera");
+
+        video.srcObject = cameraStream;
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Không thể truy cập camera");
+
+    }
+}
