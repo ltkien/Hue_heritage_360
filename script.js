@@ -153,7 +153,39 @@ function showPlace(placeId) {
 
 let cameraStream = null;
 
+// Lưu GPS của user
+let userLatitude = null;
+let userLongitude = null;
+
+
+// =========================
+// MỞ CAMERA
+// =========================
+
 async function openCamera() {
+
+    const modalElement =
+        document.getElementById("cameraModal");
+
+    const modal =
+        new bootstrap.Modal(modalElement);
+
+    modal.show();
+
+
+    // Mở camera
+    startCamera();
+
+    // Xin GPS ngay khi mở camera
+    getUserLocation();
+}
+
+
+// =========================
+// START CAMERA
+// =========================
+
+async function startCamera() {
 
     try {
 
@@ -163,19 +195,29 @@ async function openCamera() {
                 audio: false
             });
 
+
         const video =
             document.getElementById("camera");
 
         video.srcObject = cameraStream;
 
+        video.style.display = "block";
+
+
     } catch (error) {
 
         console.error(error);
 
-        alert("Không thể truy cập camera");
+        alert("Không thể truy cập camera.");
 
     }
 }
+
+
+// =========================
+// CHỤP ẢNH
+// =========================
+
 function takePhoto() {
 
     const video =
@@ -188,11 +230,15 @@ function takePhoto() {
         canvas.getContext("2d");
 
 
-    canvas.width = video.videoWidth;
+    // Lấy kích thước camera
+    canvas.width =
+        video.videoWidth;
 
-    canvas.height = video.videoHeight;
+    canvas.height =
+        video.videoHeight;
 
 
+    // Chụp ảnh từ camera vào Canvas
     context.drawImage(
         video,
         0,
@@ -200,4 +246,290 @@ function takePhoto() {
         canvas.width,
         canvas.height
     );
+
+
+    // Ẩn camera
+    video.style.display = "none";
+
+
+    // Hiện ảnh
+    canvas.style.display = "block";
+
+
+    // Ẩn nút chụp
+    document.getElementById("takePhotoButton")
+        .style.display = "none";
+
+
+    // Hiện nút chụp lại
+    document.getElementById("retakeButton")
+        .style.display = "inline-block";
+
+
+    // Tắt camera
+    stopCamera();
+
+
+    // =========================
+    // KIỂM TRA GPS
+    // =========================
+
+    if (
+        userLatitude !== null &&
+        userLongitude !== null
+    ) {
+
+        console.log(
+            "GPS đã sẵn sàng:"
+        );
+
+        console.log(
+            "Latitude:",
+            userLatitude
+        );
+
+        console.log(
+            "Longitude:",
+            userLongitude
+        );
+
+
+        // Dùng GPS để tìm địa điểm
+        findPlace(
+            userLatitude,
+            userLongitude
+        );
+
+    } else {
+
+        console.log(
+            "GPS chưa lấy được."
+        );
+
+
+        const status =
+            document.getElementById("locationStatus");
+
+
+        status.innerHTML = `
+            <p class="text-warning">
+                ⏳ Đang chờ vị trí...
+            </p>
+        `;
+
+
+        // Thử lấy GPS lại
+        getUserLocation();
+    }
+}
+
+
+// =========================
+// TẮT CAMERA
+// =========================
+
+function stopCamera() {
+
+    if (cameraStream) {
+
+        cameraStream
+            .getTracks()
+            .forEach(function (track) {
+
+                track.stop();
+
+            });
+
+        cameraStream = null;
+    }
+}
+
+
+// =========================
+// LẤY GPS
+// =========================
+
+function getUserLocation() {
+
+    const status =
+        document.getElementById("locationStatus");
+
+
+    // Hiển thị trạng thái
+    status.style.display = "block";
+
+    status.innerHTML = `
+        <p class="text-primary">
+            📍 Đang xác định vị trí...
+        </p>
+    `;
+
+
+    // Kiểm tra trình duyệt
+    if (!navigator.geolocation) {
+
+        status.innerHTML = `
+            <p class="text-danger">
+                ❌ Thiết bị không hỗ trợ GPS.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function (position) {
+
+            // Lưu GPS vào biến
+            userLatitude =
+                position.coords.latitude;
+
+            userLongitude =
+                position.coords.longitude;
+
+
+            console.log(
+                "Latitude:",
+                userLatitude
+            );
+
+            console.log(
+                "Longitude:",
+                userLongitude
+            );
+
+
+            // Hiển thị trạng thái thành công
+            status.innerHTML = `
+                <p class="text-success">
+                    ✅ Đã xác định vị trí
+                </p>
+            `;
+
+
+            // Không gọi findPlace() ở đây
+            // vì user chưa chụp ảnh
+        },
+
+
+        function (error) {
+
+            console.error(error);
+
+
+            status.innerHTML = `
+                <p class="text-danger">
+                    ❌ Không thể lấy vị trí.
+                </p>
+
+                <small>
+                    Hãy cho phép trình duyệt sử dụng vị trí.
+                </small>
+            `;
+
+        },
+
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+
+    );
+}
+
+
+// =========================
+// TÌM ĐỊA ĐIỂM
+// =========================
+
+function findPlace(latitude, longitude) {
+
+    console.log(
+        "🔍 Đang tìm địa điểm..."
+    );
+
+
+    console.log(
+        "Latitude:",
+        latitude
+    );
+
+
+    console.log(
+        "Longitude:",
+        longitude
+    );
+
+}
+
+
+// =========================
+// CHỤP LẠI
+// =========================
+
+function retakePhoto() {
+
+    const video =
+        document.getElementById("camera");
+
+    const canvas =
+        document.getElementById("photo");
+
+
+    // Hiện camera
+    video.style.display = "block";
+
+
+    // Ẩn ảnh
+    canvas.style.display = "none";
+
+
+    // Hiện nút chụp
+    document.getElementById("takePhotoButton")
+        .style.display = "inline-block";
+
+
+    // Ẩn nút chụp lại
+    document.getElementById("retakeButton")
+        .style.display = "none";
+
+
+    // Giữ trạng thái GPS
+    const status =
+        document.getElementById("locationStatus");
+
+
+    if (
+        userLatitude !== null &&
+        userLongitude !== null
+    ) {
+
+        status.style.display = "block";
+
+        status.innerHTML = `
+            <p class="text-success">
+                ✅ Vị trí đã sẵn sàng
+            </p>
+        `;
+
+    } else {
+
+        status.style.display = "block";
+
+        status.innerHTML = `
+            <p class="text-primary">
+                📍 Đang xác định vị trí...
+            </p>
+        `;
+
+        getUserLocation();
+    }
+
+
+    // Mở lại camera
+    startCamera();
 }
