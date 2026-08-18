@@ -173,13 +173,17 @@ async function openCamera() {
     modal.show();
 
 
+    // Tắt nút chụp khi chưa có GPS
+    document.getElementById("takePhotoButton")
+        .disabled = true;
+
+
     // Mở camera
     startCamera();
 
-    // Xin GPS ngay khi mở camera
+    // Xin GPS ngay lập tức
     getUserLocation();
 }
-
 
 // =========================
 // START CAMERA
@@ -279,47 +283,13 @@ function takePhoto() {
         userLongitude !== null
     ) {
 
-        console.log(
-            "GPS đã sẵn sàng:"
-        );
+        console.log("GPS đã sẵn sàng");
 
-        console.log(
-            "Latitude:",
-            userLatitude
-        );
-
-        console.log(
-            "Longitude:",
-            userLongitude
-        );
-
-
-        // Dùng GPS để tìm địa điểm
         findPlace(
             userLatitude,
             userLongitude
         );
 
-    } else {
-
-        console.log(
-            "GPS chưa lấy được."
-        );
-
-
-        const status =
-            document.getElementById("locationStatus");
-
-
-        status.innerHTML = `
-            <p class="text-warning">
-                ⏳ Đang chờ vị trí...
-            </p>
-        `;
-
-
-        // Thử lấy GPS lại
-        getUserLocation();
     }
 }
 
@@ -355,7 +325,6 @@ function getUserLocation() {
         document.getElementById("locationStatus");
 
 
-    // Hiển thị trạng thái
     status.style.display = "block";
 
     status.innerHTML = `
@@ -368,11 +337,9 @@ function getUserLocation() {
     // Kiểm tra trình duyệt
     if (!navigator.geolocation) {
 
-        status.innerHTML = `
-            <p class="text-danger">
-                ❌ Thiết bị không hỗ trợ GPS.
-            </p>
-        `;
+        showLocationError(
+            "Thiết bị không hỗ trợ định vị."
+        );
 
         return;
     }
@@ -382,7 +349,7 @@ function getUserLocation() {
 
         function (position) {
 
-            // Lưu GPS vào biến
+            // Lưu GPS
             userLatitude =
                 position.coords.latitude;
 
@@ -401,16 +368,18 @@ function getUserLocation() {
             );
 
 
-            // Hiển thị trạng thái thành công
+            // GPS OK
             status.innerHTML = `
                 <p class="text-success">
-                    ✅ Đã xác định vị trí
+                    ✅ Vị trí đã sẵn sàng
                 </p>
             `;
 
 
-            // Không gọi findPlace() ở đây
-            // vì user chưa chụp ảnh
+            // Cho phép chụp
+            document.getElementById("takePhotoButton")
+                .disabled = false;
+
         },
 
 
@@ -419,15 +388,29 @@ function getUserLocation() {
             console.error(error);
 
 
-            status.innerHTML = `
-                <p class="text-danger">
-                    ❌ Không thể lấy vị trí.
-                </p>
+            if (error.code === 1) {
 
-                <small>
-                    Hãy cho phép trình duyệt sử dụng vị trí.
-                </small>
-            `;
+                showLocationError(
+                    "Bạn cần cho phép ứng dụng sử dụng vị trí."
+                );
+
+            }
+
+            else if (error.code === 2) {
+
+                showLocationError(
+                    "Không thể xác định vị trí. Hãy bật định vị trên thiết bị."
+                );
+
+            }
+
+            else if (error.code === 3) {
+
+                showLocationError(
+                    "Lấy vị trí quá lâu. Hãy kiểm tra GPS và thử lại."
+                );
+
+            }
 
         },
 
@@ -441,31 +424,251 @@ function getUserLocation() {
     );
 }
 
-
 // =========================
-// TÌM ĐỊA ĐIỂM
+// BÁO LỖI GPS
 // =========================
 
-function findPlace(latitude, longitude) {
+function showLocationError(message) {
 
-    console.log(
-        "🔍 Đang tìm địa điểm..."
-    );
-
-
-    console.log(
-        "Latitude:",
-        latitude
-    );
+    const status =
+        document.getElementById("locationStatus");
 
 
-    console.log(
-        "Longitude:",
-        longitude
-    );
+    status.style.display = "block";
 
+
+    status.innerHTML = `
+        <div class="text-danger">
+
+            <p>
+                ⚠️ ${message}
+            </p>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                onclick="getUserLocation()">
+
+                🔄 Thử lại
+
+            </button>
+
+        </div>
+    `;
+
+
+    // Không cho chụp khi chưa có GPS
+    document.getElementById("takePhotoButton")
+        .disabled = true;
 }
 
+// =========================
+// TÌM ĐỊA ĐIỂM BẰNG OPENSTREETMAP
+// =========================
+
+async function findPlace(latitude, longitude) {
+
+    const status =
+        document.getElementById("locationStatus");
+
+    status.innerHTML = `
+        <p class="text-primary">
+            🔍 Đang xác định địa điểm...
+        </p>
+    `;
+
+    try {
+
+        const url =
+            `https://nominatim.openstreetmap.org/reverse` +
+            `?lat=${encodeURIComponent(latitude)}` +
+            `&lon=${encodeURIComponent(longitude)}` +
+            `&format=jsonv2` +
+            `&addressdetails=1` +
+            `&namedetails=1` +
+            `&zoom=18`;
+
+        console.log("🌐 OpenStreetMap URL:", url);
+
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(
+                `HTTP ${response.status}`
+            );
+        }
+
+        const data = await response.json();
+
+        console.log(
+            "🗺️ OpenStreetMap Response:",
+            data
+        );
+
+        // =========================
+        // KIỂM TRA KẾT QUẢ
+        // =========================
+
+        if (!data || !data.display_name) {
+
+            status.innerHTML = `
+                <p class="text-warning">
+                    ⚠️ Không tìm thấy địa điểm gần bạn.
+                </p>
+            `;
+
+            return;
+        }
+
+        // =========================
+        // LẤY TÊN ĐỊA ĐIỂM
+        // =========================
+
+        const address = data.address || {};
+
+        const placeName =
+            data.name ||
+            address.historic ||
+            address.tourism ||
+            address.amenity ||
+            address.building ||
+            address.attraction ||
+            address.monument ||
+            address.place ||
+            "Địa điểm chưa xác định";
+
+        // =========================
+        // TẠO OBJECT PLACE
+        // =========================
+
+        const place = {
+
+            name: placeName,
+
+            displayName: placeName,
+
+            displayNameText: placeName,
+
+            formattedAddress:
+                data.display_name,
+
+            latitude:
+                Number(data.lat),
+
+            longitude:
+                Number(data.lon),
+
+            type:
+                data.type || "",
+
+            category:
+                data.category || "",
+
+            address:
+                address,
+
+            osmId:
+                data.osm_id,
+
+            osmType:
+                data.osm_type,
+
+            osmUrl:
+                data.osm_id
+                    ? `https://www.openstreetmap.org/${data.osm_type}/${data.osm_id}`
+                    : null
+        };
+
+        // =========================
+        // DEBUG
+        // =========================
+
+        console.log(
+            "🏯 Địa điểm:",
+            place.name
+        );
+
+        console.log(
+            "📍 Địa chỉ:",
+            place.formattedAddress
+        );
+
+        console.log(
+            "🌐 Latitude:",
+            place.latitude
+        );
+
+        console.log(
+            "🌐 Longitude:",
+            place.longitude
+        );
+
+        console.log(
+            "🆔 OSM ID:",
+            place.osmId
+        );
+
+        // =========================
+        // HIỂN THỊ
+        // =========================
+
+        status.innerHTML = `
+
+            <div class="text-success">
+
+                <p>
+                    ✅ Đã xác định địa điểm
+                </p>
+
+                <h5>
+                    ${place.name}
+                </h5>
+
+                <p>
+                    📍 ${place.formattedAddress}
+                </p>
+
+            </div>
+
+        `;
+
+        // =========================
+        // BƯỚC TIẾP THEO
+        // =========================
+
+        processWithAI(place);
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "❌ OpenStreetMap Error:",
+            error
+        );
+
+        status.innerHTML = `
+
+            <div class="text-danger">
+
+                <p>
+                    ❌ Không thể xác định địa điểm.
+                </p>
+
+                <small>
+                    ${error.message}
+                </small>
+
+            </div>
+
+        `;
+    }
+}
 
 // =========================
 // CHỤP LẠI
@@ -532,4 +735,65 @@ function retakePhoto() {
 
     // Mở lại camera
     startCamera();
+}
+
+// =========================
+// XỬ LÝ THÔNG TIN ĐỊA ĐIỂM
+// =========================
+
+function processWithAI(place) {
+
+    console.log(
+        "🤖 Chuẩn bị xử lý thông tin..."
+    );
+
+    console.log(
+        "Địa điểm:",
+        place.name
+    );
+
+    console.log(
+        "Địa chỉ:",
+        place.formattedAddress
+    );
+
+    console.log(
+        "Latitude:",
+        place.latitude
+    );
+
+    console.log(
+        "Longitude:",
+        place.longitude
+    );
+
+    const status =
+        document.getElementById("locationStatus");
+
+    status.innerHTML = `
+
+        <div class="text-success">
+
+            <p>
+                ✅ Đã xác định địa điểm
+            </p>
+
+            <h4>
+                ${place.name}
+            </h4>
+
+            <p>
+                📍 ${place.formattedAddress}
+            </p>
+
+            <hr>
+
+            <p>
+                🤖 AI sẽ tạo nội dung giới thiệu
+                ở bước tiếp theo.
+            </p>
+
+        </div>
+
+    `;
 }
