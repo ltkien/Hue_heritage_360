@@ -557,11 +557,8 @@ async function findPlace(latitude, longitude) {
     // ==================================
 
     const servers = [
-
-        "https://overpass-api.de/api/interpreter",
-
-        "https://overpass.private.coffee/api/interpreter"
-
+        "https://overpass.private.coffee/api/interpreter",
+        "https://overpass-api.de/api/interpreter"
     ];
 
     let lastError = null;
@@ -578,17 +575,6 @@ async function findPlace(latitude, longitude) {
                 "🌐 Đang thử:",
                 server
             );
-
-            const controller =
-                new AbortController();
-
-            // Timeout 12 giây
-            const timeout =
-                setTimeout(
-                    () => controller.abort(),
-                    12000
-                );
-
             const response =
                 await fetch(
                     server,
@@ -602,14 +588,9 @@ async function findPlace(latitude, longitude) {
 
                         body:
                             "data=" +
-                            encodeURIComponent(query),
-
-                        signal:
-                            controller.signal
+                            encodeURIComponent(query)
                     }
                 );
-
-            clearTimeout(timeout);
 
             console.log(
                 "HTTP:",
