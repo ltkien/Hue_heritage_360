@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Đại Nội Huế",
+        "latitude": 16.4698,
+        "longitude": 107.5795,
+        "type": "Di tích lịch sử",
+        "address": "Phú Hậu, Huế",
+        "description": "Đại Nội Huế là trung tâm của Quần thể di tích Cố đô Huế, từng là nơi sinh hoạt và làm việc của các vua triều Nguyễn."
+    },
+    {
+        "id": 2,
+        "name": "Chùa Thiên Mụ",
+        "latitude": 16.4538,
+        "longitude": 107.5450,
+        "type": "Di tích lịch sử",
+        "address": "Hương Long, Huế",
+        "description": "Chùa Thiên Mụ là một trong những biểu tượng nổi tiếng của cố đô Huế, nằm bên dòng sông Hương."
+    },
+    {
+        "id": 3,
+        "name": "Lăng Tự Đức",
+        "latitude": 16.4210,
+        "longitude": 107.5560,
+        "type": "Di tích lịch sử",
+        "address": "Thủy Xuân, Huế",
+        "description": "Lăng Tự Đức là một trong những công trình kiến trúc tiêu biểu của triều Nguyễn."
+    }
+]
