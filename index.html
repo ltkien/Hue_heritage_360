@@ -313,7 +313,7 @@
                     </h5>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"
-                        onclick="stopCamera()">
+                        onclick="resetCameraSession()">
                     </button>
 
                 </div>
@@ -327,8 +327,20 @@
 
 
                     <!-- Ảnh sau khi chụp -->
-                    <canvas id="photo" class="w-100 rounded" style="display: none;">
-                    </canvas>
+                    <div id="photoContainer" class="position-relative" style="display: none;">
+
+                        <canvas id="photo" class="w-100 rounded">
+                        </canvas>
+
+                        <!-- Hiệu ứng scan -->
+                        <div id="scanLine"></div>
+
+                        <!-- Text đang scan -->
+                        <div id="scanText">
+                            🔍 Đang quét hình ảnh...
+                        </div>
+
+                    </div>
 
 
                     <!-- Trạng thái -->

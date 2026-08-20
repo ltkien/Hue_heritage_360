@@ -1,5 +1,6 @@
 
 let cameraStream = null;
+let scanTimer = null;
 
 // Lưu GPS của user
 let userLatitude = null;
@@ -200,7 +201,9 @@ async function startCamera() {
 
         cameraStream =
             await navigator.mediaDevices.getUserMedia({
-                video: true,
+                video: {
+                    facingMode: "user"
+                },
                 audio: false
             });
 
@@ -235,19 +238,16 @@ function takePhoto() {
     const canvas =
         document.getElementById("photo");
 
+    const photoContainer =
+        document.getElementById("photoContainer");
+
     const context =
         canvas.getContext("2d");
 
+    // Chụp ảnh
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
 
-    // Lấy kích thước camera
-    canvas.width =
-        video.videoWidth;
-
-    canvas.height =
-        video.videoHeight;
-
-
-    // Chụp ảnh từ camera vào Canvas
     context.drawImage(
         video,
         0,
@@ -256,46 +256,50 @@ function takePhoto() {
         canvas.height
     );
 
-
     // Ẩn camera
     video.style.display = "none";
 
-
     // Hiện ảnh
-    canvas.style.display = "block";
-
+    photoContainer.style.display = "block";
 
     // Ẩn nút chụp
-    document.getElementById("takePhotoButton")
-        .style.display = "none";
-
+    document.getElementById(
+        "takePhotoButton"
+    ).style.display = "none";
 
     // Hiện nút chụp lại
-    document.getElementById("retakeButton")
-        .style.display = "inline-block";
-
+    document.getElementById(
+        "retakeButton"
+    ).style.display = "inline-block";
 
     // Tắt camera
     stopCamera();
 
-
-    // =========================
-    // KIỂM TRA GPS
-    // =========================
-
+    // Nếu GPS đã sẵn sàng thì tìm di tích
     if (
         userLatitude !== null &&
         userLongitude !== null
     ) {
 
-        console.log("GPS đã sẵn sàng");
-
         findNearestHeritage(
             userLatitude,
             userLongitude
         );
-
     }
+}
+
+
+// Dung scan
+function stopScanEffect() {
+
+    const photoContainer =
+        document.getElementById(
+            "photoContainer"
+        );
+
+    photoContainer.classList.remove(
+        "scanning"
+    );
 }
 
 
@@ -305,17 +309,24 @@ function takePhoto() {
 
 function stopCamera() {
 
+    // Tắt camera
     if (cameraStream) {
 
         cameraStream
             .getTracks()
-            .forEach(function (track) {
-
+            .forEach(track => {
                 track.stop();
-
             });
 
         cameraStream = null;
+    }
+
+    // Chỉ xóa stream camera
+    const video =
+        document.getElementById("camera");
+
+    if (video) {
+        video.srcObject = null;
     }
 }
 
@@ -476,33 +487,46 @@ function retakePhoto() {
     const video =
         document.getElementById("camera");
 
-    const canvas =
-        document.getElementById("photo");
+    const photoContainer =
+        document.getElementById("photoContainer");
 
+    const status =
+        document.getElementById("locationStatus");
+
+    // =========================
+    // XÓA ẢNH LẦN TRƯỚC
+    // =========================
+
+    clearCameraData();
+
+    // Hủy timer scan cũ
+    if (scanTimer) {
+
+        clearTimeout(scanTimer);
+
+        scanTimer = null;
+    }
+
+    // Dừng hiệu ứng scan
+    stopScanEffect();
+
+    // Ẩn ảnh cũ
+    photoContainer.style.display = "none";
 
     // Hiện camera
     video.style.display = "block";
 
-
-    // Ẩn ảnh
-    canvas.style.display = "none";
-
-
     // Hiện nút chụp
-    document.getElementById("takePhotoButton")
-        .style.display = "inline-block";
-
+    document.getElementById(
+        "takePhotoButton"
+    ).style.display = "inline-block";
 
     // Ẩn nút chụp lại
-    document.getElementById("retakeButton")
-        .style.display = "none";
-
+    document.getElementById(
+        "retakeButton"
+    ).style.display = "none";
 
     // Giữ trạng thái GPS
-    const status =
-        document.getElementById("locationStatus");
-
-
     if (
         userLatitude !== null &&
         userLongitude !== null
@@ -511,29 +535,19 @@ function retakePhoto() {
         status.style.display = "block";
 
         status.innerHTML = `
-        < p class="text-success" >
+            <p class="text-success">
                 ✅ Vị trí đã sẵn sàng
-            </p >
+            </p>
         `;
 
     } else {
 
-        status.style.display = "block";
-
-        status.innerHTML = `
-        < p class="text-primary" >
-                📍 Đang xác định vị trí...
-            </p >
-        `;
-
         getUserLocation();
     }
-
 
     // Mở lại camera
     startCamera();
 }
-
 
 // =========================
 // TÍNH KHOẢNG CÁCH GPS
@@ -811,7 +825,7 @@ function findNearestHeritage(
     // GIỚI HẠN KHOẢNG CÁCH
     // =========================
 
-    const MAX_DISTANCE = 200;
+    const MAX_DISTANCE = 2000000;
 
     if (
         nearestPlace.distance >
@@ -887,9 +901,34 @@ function findNearestHeritage(
     // HIỂN THỊ THÔNG TIN
     // =========================
 
-    getPlaceInfo(
-        nearestPlace
-    );
+    status.style.display = "block";
+
+    status.innerHTML = `
+    <div class="text-success">
+
+        <p>
+            ✅ Bạn đang ở gần di tích
+        </p>
+
+        <h5>
+            🏛️ ${escapeHTML(nearestPlace.name)}
+        </h5>
+
+        <p>
+            📏 Cách bạn khoảng:
+            ${Math.round(nearestPlace.distance)} m
+        </p>
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            onclick="getPlaceInfoById(${nearestPlace.id})"
+        >
+            📖 Tìm hiểu di tích
+        </button>
+
+    </div>
+`;
 
     return nearestPlace;
 }
@@ -969,6 +1008,382 @@ function getPlaceInfo(place) {
         </div>
 
     `;
+}
+
+// =========================
+// Xoá ảnh sau khi tắt cam
+// =========================
+function clearCameraData() {
+
+    const canvas =
+        document.getElementById("photo");
+
+    const video =
+        document.getElementById("camera");
+
+    const photoContainer =
+        document.getElementById("photoContainer");
+
+    // Xóa nội dung canvas
+    if (canvas) {
+
+        const context =
+            canvas.getContext("2d");
+
+        context.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        canvas.width = 0;
+        canvas.height = 0;
+    }
+
+    // Tắt stream cũ
+    if (video) {
+        video.srcObject = null;
+    }
+
+    // Ẩn ảnh cũ
+    if (photoContainer) {
+        photoContainer.style.display = "none";
+    }
+}
+
+// =========================
+// Lấy thông tin bằng id
+// =========================
+function getPlaceInfoById(id) {
+
+    const place = heritageData.find(
+        place => String(place.id) === String(id)
+    );
+
+    if (!place) {
+        console.error("❌ Không tìm thấy di tích:", id);
+        return;
+    }
+
+    const photoContainer =
+        document.getElementById("photoContainer");
+
+    const status =
+        document.getElementById("locationStatus");
+
+    // Nếu đang có scan cũ thì hủy
+    if (scanTimer) {
+        clearTimeout(scanTimer);
+        scanTimer = null;
+    }
+
+    // Bắt đầu scan
+    photoContainer.classList.add("scanning");
+
+    status.style.display = "none";
+
+    // =========================
+    // THỜI GIAN SCAN
+    // =========================
+
+    scanTimer = setTimeout(() => {
+
+        scanTimer = null;
+
+        // Dừng scan
+        stopScanEffect();
+
+        // Hiện kết quả
+        status.style.display = "block";
+
+        status.innerHTML = `
+            <div class="text-center">
+
+                <p class="text-success">
+                    ✅ Đã nhận diện di tích
+                </p>
+
+                <h5>
+                    🏛️ ${escapeHTML(place.name)}
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    onclick="showHeritageInfo('${place.id}')"
+                >
+                    📖 Hiện thông tin di tích
+                </button>
+
+            </div>
+        `;
+
+    }, 5000);
+}
+
+
+// =========================
+// Đưa thông tin bằng id sau scan
+// =========================
+function showHeritageInfo(id) {
+
+    const place = heritageData.find(
+        place => String(place.id) === String(id)
+    );
+
+    if (!place) {
+        console.error(
+            "❌ Không tìm thấy di tích:",
+            id
+        );
+        return;
+    }
+
+    console.log(
+        "📖 Hiển thị thông tin:",
+        place
+    );
+
+    const status =
+        document.getElementById("locationStatus");
+
+    if (!status) {
+        console.error(
+            "❌ Không tìm thấy locationStatus"
+        );
+        return;
+    }
+
+    status.style.display = "block";
+
+    status.innerHTML = `
+        <div class="heritage-info">
+
+            <h4>
+                🏛️ ${escapeHTML(place.name)}
+            </h4>
+
+            <p>
+                📍 ${escapeHTML(
+        place.address || "Chưa có địa chỉ"
+    )}
+            </p>
+
+            <hr>
+
+            <h5>
+                📖 Giới thiệu
+            </h5>
+
+            <p>
+                ${escapeHTML(
+        place.description || "Chưa có mô tả."
+    )}
+            </p>
+
+            ${place.type
+            ? `
+                    <p>
+                        🏷️ Loại:
+                        ${escapeHTML(place.type)}
+                    </p>
+                    `
+            : ""
+        }
+
+            ${place.images && place.images.length > 0
+            ? `
+                    <div class="row g-2 mt-3">
+
+                        ${place.images.map(image => `
+                            <div class="col-md-4">
+                                <img
+                                    src="${escapeHTML(image)}"
+                                    class="img-fluid rounded"
+                                    alt="${escapeHTML(place.name)}"
+                                >
+                            </div>
+                        `).join("")}
+
+                    </div>
+                    `
+            : ""
+        }
+
+        </div>
+    `;
+}
+
+// =========================
+// RESET
+// =========================
+// =========================
+// RESET TOÀN BỘ CAMERA SESSION
+// =========================
+
+function resetCameraSession() {
+
+    console.log("🔄 RESET CAMERA SESSION");
+
+    // =========================
+    // 1. HỦY TIMER SCAN
+    // =========================
+
+    if (scanTimer !== null) {
+
+        clearTimeout(scanTimer);
+
+        scanTimer = null;
+
+        console.log("🛑 Đã hủy scan timer");
+    }
+
+
+    // =========================
+    // 2. DỪNG HIỆU ỨNG SCAN
+    // =========================
+
+    const photoContainer =
+        document.getElementById("photoContainer");
+
+    if (photoContainer) {
+
+        photoContainer.classList.remove(
+            "scanning"
+        );
+
+        photoContainer.style.display = "none";
+    }
+
+
+    // =========================
+    // 3. TẮT CAMERA
+    // =========================
+
+    stopCamera();
+
+
+    // =========================
+    // 4. XÓA ẢNH
+    // =========================
+
+    const canvas =
+        document.getElementById("photo");
+
+    if (canvas) {
+
+        const context =
+            canvas.getContext("2d");
+
+        context.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        canvas.width = 0;
+        canvas.height = 0;
+    }
+
+
+    // =========================
+    // 5. RESET VIDEO
+    // =========================
+
+    const video =
+        document.getElementById("camera");
+
+    if (video) {
+
+        video.pause();
+
+        video.srcObject = null;
+
+        video.style.display = "block";
+    }
+
+
+    // =========================
+    // 6. RESET NÚT CHỤP
+    // =========================
+
+    const takeButton =
+        document.getElementById(
+            "takePhotoButton"
+        );
+
+    const retakeButton =
+        document.getElementById(
+            "retakeButton"
+        );
+
+    if (takeButton) {
+
+        takeButton.style.display =
+            "inline-block";
+
+        takeButton.disabled = true;
+    }
+
+    if (retakeButton) {
+
+        retakeButton.style.display =
+            "none";
+    }
+
+
+    // =========================
+    // 7. XÓA GPS
+    // =========================
+
+    userLatitude = null;
+    userLongitude = null;
+
+
+    // =========================
+    // 8. RESET TRẠNG THÁI
+    // =========================
+
+    const status =
+        document.getElementById(
+            "locationStatus"
+        );
+
+    if (status) {
+
+        status.innerHTML = "";
+
+        status.style.display = "none";
+    }
+
+
+    console.log(
+        "✅ CAMERA SESSION ĐÃ RESET"
+    );
+}
+// =========================
+// RESET KHI ĐÓNG CAMERA MODAL
+// =========================
+
+const cameraModal =
+    document.getElementById("cameraModal");
+
+if (cameraModal) {
+
+    cameraModal.addEventListener(
+        "hidden.bs.modal",
+        function () {
+
+            console.log(
+                "❌ Camera đã đóng → RESET"
+            );
+
+            resetCameraSession();
+
+        }
+    );
 }
 
 
