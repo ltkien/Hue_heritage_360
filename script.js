@@ -295,6 +295,11 @@ function takePhoto() {
         "takePhotoButton"
     ).style.display = "none";
 
+    // Ẩn nút đổi camera
+    document.getElementById(
+        "switchCameraButton"
+    ).style.display = "none";
+
     // Hiện nút chụp lại
     document.getElementById(
         "retakeButton"
@@ -547,6 +552,11 @@ function retakePhoto() {
     // Hiện nút chụp
     document.getElementById(
         "takePhotoButton"
+    ).style.display = "inline-block";
+
+    // Hiện lại nút đổi camera
+    document.getElementById(
+        "switchCameraButton"
     ).style.display = "inline-block";
 
     // Ẩn nút chụp lại
@@ -1347,6 +1357,11 @@ function resetCameraSession() {
             "retakeButton"
         );
 
+    const switchCameraButton =
+        document.getElementById(
+            "switchCameraButton"
+        );
+
     if (takeButton) {
 
         takeButton.style.display =
@@ -1361,7 +1376,11 @@ function resetCameraSession() {
             "none";
     }
 
+    if (switchCameraButton) {
 
+        switchCameraButton.style.display =
+            "inline-block";
+    }
     // =========================
     // 7. XÓA GPS
     // =========================
