@@ -1,7 +1,7 @@
 
 let cameraStream = null;
 let scanTimer = null;
-
+let currentCamera = "user";
 // Lưu GPS của user
 let userLatitude = null;
 let userLongitude = null;
@@ -199,14 +199,18 @@ async function startCamera() {
 
     try {
 
+        // Nếu camera cũ đang chạy thì tắt
+        stopCamera();
+
         cameraStream =
             await navigator.mediaDevices.getUserMedia({
                 video: {
-                    facingMode: "user"
+                    facingMode: {
+                        ideal: currentCamera
+                    }
                 },
                 audio: false
             });
-
 
         const video =
             document.getElementById("camera");
@@ -215,7 +219,6 @@ async function startCamera() {
 
         video.style.display = "block";
 
-
     } catch (error) {
 
         console.error(error);
@@ -223,6 +226,31 @@ async function startCamera() {
         alert("Không thể truy cập camera.");
 
     }
+}
+
+
+// =========================
+// ĐỔI CAMERA
+// =========================
+
+function switchCamera() {
+
+    if (currentCamera === "user") {
+
+        currentCamera = "environment";
+
+    } else {
+
+        currentCamera = "user";
+
+    }
+
+    console.log(
+        "📷 Đổi sang camera:",
+        currentCamera
+    );
+
+    startCamera();
 }
 
 
@@ -1385,6 +1413,9 @@ if (cameraModal) {
         }
     );
 }
+
+
+
 
 
 // =========================
