@@ -5,8 +5,18 @@
         "latitude": 16.4698,
         "longitude": 107.5795,
         "type": "Di tích lịch sử",
-        "address": "Phú Hậu, Huế",
-        "description": "Đại Nội Huế là trung tâm của Quần thể di tích Cố đô Huế, từng là nơi sinh hoạt và làm việc của các vua triều Nguyễn."
+        "address": "Phường Thuận Hòa, Huế",
+        "description": "Đại Nội Huế là trung tâm của Quần thể di tích Cố đô Huế, từng là nơi sinh hoạt và làm việc của các vua triều Nguyễn.",
+        "images": [
+            "images/dai_noi_hue/1.jpg",
+            "images/dai_noi_hue/2.jpg",
+            "images/dai_noi_hue/3.jpg"
+        ],
+        "info": [
+            "Triều đại: Nguyễn",
+            "Thời gian: 1802 - 1945",
+            "Loại hình: Di tích lịch sử"
+        ]
     },
     {
         "id": 2,
@@ -15,7 +25,17 @@
         "longitude": 107.5450,
         "type": "Di tích lịch sử",
         "address": "Hương Long, Huế",
-        "description": "Chùa Thiên Mụ là một trong những biểu tượng nổi tiếng của cố đô Huế, nằm bên dòng sông Hương."
+        "description": "Chùa Thiên Mụ là một trong những biểu tượng nổi tiếng của cố đô Huế, nằm bên dòng sông Hương.",
+        "images": [
+            "images/chua_thien_mu/1.jpeg",
+            "images/chua_thien_mu/2.jpeg",
+            "images/chua_thien_mu/3.jpeg"
+        ],
+        "info": [
+            "Địa điểm: Đồi Hà Khê",
+            "Loại hình: Chùa",
+            "Đặc điểm: Tháp Phước Duyên"
+        ]
     },
     {
         "id": 3,
@@ -24,6 +44,16 @@
         "longitude": 107.5560,
         "type": "Di tích lịch sử",
         "address": "Thủy Xuân, Huế",
-        "description": "Lăng Tự Đức là một trong những công trình kiến trúc tiêu biểu của triều Nguyễn."
+        "description": "Lăng Tự Đức là một trong những công trình kiến trúc tiêu biểu của triều Nguyễn.",
+        "images": [
+            "images/lang_tu_duc/1.jpeg",
+            "images/lang_tu_duc/2.jpeg",
+            "images/lang_tu_duc/3.jpeg"
+        ],
+        "info": [
+            "Triều đại: Nguyễn",
+            "Thời gian xây dựng: 1864 - 1867",
+            "Loại hình: Lăng tẩm"
+        ]
     }
 ]
