@@ -23,6 +23,7 @@
                 <a href="#">Trang chủ</a>
                 <a href="#ar">AR</a>
                 <a href="#services">Đặt</a>
+                <a href="#gift">Quà</a>
                 <a href="#video">Video</a>
             </nav>
         </div>
@@ -164,43 +165,169 @@
     </section>
     <!-- Services -->
     <section id="services" class="section services">
-        <div class="container">
+        <div class="container ">
 
             <h2>Dịch vụ</h2>
 
+            <nav class="navbar navbar-light bg-light m-2">
+
+                <div class="container-fluid justify-content-start">
+
+                    <!-- LƯU TRÚ -->
+                    <button class="btn btn-success me-2 service-btn" type="button" onclick="showService('hotel', this)">
+                        🏨 Lưu trú
+                    </button>
+
+
+                    <!-- TOUR -->
+                    <button class="btn btn-outline-success me-2 service-btn" type="button"
+                        onclick="showService('tour', this)">
+                        🗺️ Tour
+                    </button>
+
+
+                    <!-- WORKSHOP -->
+                    <button class="btn btn-outline-success me-2 service-btn" type="button"
+                        onclick="showService('workshop', this)">
+                        🎨 Workshop
+                    </button>
+
+                </div>
+
+            </nav>
+
             <div class="cards">
+                <div class="service-card hotel">
+                    <div class="card">
+                        <h3>🏨 Khách sạn Huế</h3>
 
-                <div class="card">
-                    <h3>Thiết kế Website</h3>
-                    <p>
-                        Tạo giao diện website đơn giản,
-                        đẹp và responsive.
-                    </p>
+                        <p>
+                            Dịch vụ lưu trú tiện nghi
+                            gần các địa điểm du lịch.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>HTML</h3>
-                    <p>
-                        Xây dựng cấu trúc và nội dung
-                        cho website.
-                    </p>
-                </div>
+                <div class="service-card tour" style="display: none;">
+                    <div class="card">
 
-                <div class="card">
-                    <h3>CSS</h3>
-                    <p>
-                        Thiết kế giao diện, màu sắc,
-                        bố cục và hiệu ứng.
-                    </p>
-                </div>
+                        <h3>🗺️ Tour Đại Nội Huế</h3>
 
+                        <p>
+                            Khám phá Đại Nội
+                            cùng hướng dẫn viên.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="service-card workshop" style="display: none;">
+                    <div class="card">
+
+                        <h3>🎨 Workshop làm nón lá</h3>
+
+                        <p>
+                            Tự tay trải nghiệm
+                            làm nón lá truyền thống.
+                        </p>
+
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
+
+    <!-- Gift -->
+    <section id="gift" class="section">
+        <div class="container">
+
+            <div class="gift-header">
+                <h2>Vật phẩm truyền thống Huế</h2>
+
+                <button class="cart-button" onclick="openCart()">
+                    🛒 Giỏ hàng
+                    <span id="cartCount">0</span>
+                </button>
+            </div>
+
+            <div class="cards">
+
+                <!-- Hoa giấy Thanh Tiên -->
+                <div class="card">
+                    <img src="images/products/hgtt.jpeg" alt="Hoa giấy Thanh Tiên">
+
+                    <h3>Hoa giấy Thanh Tiên</h3>
+
+                    <p>
+                        Sản phẩm thủ công truyền thống với những bông hoa
+                        được làm từ giấy, mang đậm nét đẹp văn hóa Huế.
+                    </p>
+
+                    <div class="card-buttons">
+                        <button class="btn-buy" onclick="openProductModal('hoa-giay-thanh-tien')">
+                            Mua ngay
+                        </button>
+
+                        <button class="btn-detail" onclick="openDetailModal('hoa-giay-thanh-tien')">
+                            Xem chi tiết
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Tranh Làng Sình -->
+                <div class="card">
+                    <img src="images/products/tls.jpg" alt="Tranh Làng Sình">
+
+                    <h3>Tranh Làng Sình</h3>
+
+                    <p>
+                        Dòng tranh dân gian mộc bản đặc sắc của Huế,
+                        gắn với tín ngưỡng và đời sống tinh thần
+                        của người dân địa phương.
+                    </p>
+
+                    <div class="card-buttons">
+                        <button class="btn-buy" onclick="openProductModal('tranh-lang-sinh')">
+                            Mua ngay
+                        </button>
+
+                        <button class="btn-detail" onclick="openDetailModal('tranh-lang-sinh')">
+                            Xem chi tiết
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Nón lá Mỹ Lam -->
+                <div class="card">
+                    <img src="images/products/nlml.jpeg" alt="Nón lá Mỹ Lam">
+
+                    <h3>Nón lá Mỹ Lam</h3>
+
+                    <p>
+                        Chiếc nón lá thủ công tinh tế,
+                        thể hiện vẻ đẹp duyên dáng và truyền thống của Huế.
+                    </p>
+
+                    <div class="card-buttons">
+                        <button class="btn-buy" onclick="openProductModal('non-la-my-lam')">
+                            Mua ngay
+                        </button>
+
+                        <button class="btn-detail" onclick="openDetailModal('non-la-my-lam')">
+                            Xem chi tiết
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Video -->
-    <section id="video" class="section video">
+    <section id="video" class="section ">
         <div class="container">
 
             <h2>Dịch vụ</h2>
@@ -420,13 +547,381 @@
 
         </div>
     </div>
+    <!-- Cart Modal -->
+    <!-- CART -->
+    <div id="cartModal" class="cart-modal">
+
+        <div class="cart-box">
+
+            <div class="cart-title">
+                <h3>🛒 Giỏ hàng</h3>
+
+                <button onclick="closeCart()">✕</button>
+            </div>
+
+            <div id="cartItems">
+                <!-- Sản phẩm sẽ được JavaScript thêm vào đây -->
+            </div>
+
+            <div class="cart-total">
+                Tổng số lượng:
+                <strong id="cartTotal">0</strong>
+            </div>
+
+            <button onclick="openCheckout()">
+                Tiến hành đặt hàng
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div id="productModal" class="product-modal">
+
+        <div class="product-modal-box">
+
+            <!-- Tiêu đề -->
+            <div class="product-modal-header">
+
+                <h3 id="productModalTitle">
+                    Mua sản phẩm
+                </h3>
+
+                <button class="product-close" onclick="closeProductModal()">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <!-- Nội dung -->
+            <div class="product-modal-body">
+
+                <h4>Phân loại</h4>
+
+                <div id="productTypes">
+
+                    <!-- Loại 1 -->
+                    <label class="product-type">
+
+                        <input type="radio" name="productType" value="Hoa giấy truyền thống" checked>
+
+                        <div class="product-type-content">
+
+                            <strong>
+                                Hoa giấy truyền thống
+                            </strong>
+
+                            <p>
+                                Sản phẩm đặc trưng nhất của Thanh Tiên
+                                là những cành hoa giấy dùng trong trang trí
+                                và tín ngưỡng dân gian.
+                            </p>
+
+                        </div>
+
+                    </label>
+
+
+                    <!-- Loại 2 -->
+                    <label class="product-type">
+
+                        <input type="radio" name="productType" value="Hoa sen giấy">
+
+                        <div class="product-type-content">
+
+                            <strong>
+                                Hoa sen giấy
+                            </strong>
+
+                            <p>
+                                Hoa sen giấy là sản phẩm đặc sắc
+                                và có giá trị nhận diện cao của Thanh Tiên.
+                            </p>
+
+                        </div>
+
+                    </label>
+
+
+                    <!-- Loại 3 -->
+                    <label class="product-type">
+
+                        <input type="radio" name="productType" value="Hoa trang trí hiện đại">
+
+                        <div class="product-type-content">
+
+                            <strong>
+                                Hoa trang trí hiện đại
+                            </strong>
+
+                            <p>
+                                Bên cạnh sản phẩm truyền thống, người làm nghề
+                                ngày nay còn phát triển thêm nhiều mẫu hoa
+                                và cách phối màu mới nhằm đáp ứng nhu cầu
+                                trang trí và quà tặng.
+                            </p>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Số lượng -->
+                <div class="quantity-section">
+
+                    <h4>Số lượng</h4>
+
+                    <div class="quantity-control">
+
+                        <button type="button" onclick="decreaseProductQuantity()">
+                            −
+                        </button>
+
+                        <span id="productQuantity">
+                            1
+                        </span>
+
+                        <button type="button" onclick="increaseProductQuantity()">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer -->
+            <div class="product-modal-footer">
+
+                <button class="product-add-cart" onclick="addSelectedProductToCart()">
+                    🛒 Thêm vào giỏ
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- DETAIL MODAL -->
+    <div id="detailModal" class="detail-modal">
+
+        <div class="detail-box">
+
+            <div class="detail-header">
+                <h3 id="detailTitle"></h3>
+
+                <button class="detail-close" onclick="closeDetailModal()">
+                    ✕
+                </button>
+            </div>
+
+            <div id="detailContent" class="detail-content">
+                <!-- Nội dung được JavaScript tạo -->
+            </div>
+
+        </div>
+
+    </div>
+    <!-- CHECKOUT MODAL -->
+
+    <div id="checkoutModal" class="checkout-modal">
+
+        <div class="checkout-box">
+
+            <!-- HEADER -->
+            <div class="checkout-header">
+
+                <h3>Thanh toán</h3>
+
+                <button class="checkout-close" onclick="closeCheckout()">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <!-- BODY -->
+            <div class="checkout-body">
+
+
+                <!-- =========================
+                 THÔNG TIN NGƯỜI NHẬN
+            ========================= -->
+
+                <div class="checkout-section">
+
+                    <h4>Thông tin người nhận</h4>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Họ và tên
+                        </label>
+
+                        <input type="text" id="customerName" placeholder="Nhập họ và tên">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Số điện thoại
+                        </label>
+
+                        <input type="tel" id="customerPhone" placeholder="Nhập số điện thoại">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Địa chỉ nhận hàng
+                        </label>
+
+                        <textarea id="customerAddress" rows="3" placeholder="Nhập địa chỉ nhận hàng"></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                 PHƯƠNG THỨC THANH TOÁN
+            ========================= -->
+
+                <div class="checkout-section">
+
+                    <h4>Phương thức thanh toán</h4>
+
+
+                    <div class="payment-methods">
+
+
+                        <!-- NGÂN HÀNG -->
+
+                        <label class="payment-option">
+
+                            <input type="radio" name="paymentMethod" value="bank" checked
+                                onchange="changePaymentMethod()">
+
+                            <div>
+
+                                <strong>
+                                    🏦 Ngân hàng
+                                </strong>
+
+                                <p>
+                                    Chuyển khoản ngân hàng
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- MOMO -->
+
+                        <label class="payment-option">
+
+                            <input type="radio" name="paymentMethod" value="momo" onchange="changePaymentMethod()">
+
+                            <div>
+
+                                <strong>
+                                    💗 MoMo
+                                </strong>
+
+                                <p>
+                                    Thanh toán qua ví MoMo
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+
+                    <!-- THÔNG TIN THANH TOÁN -->
+
+                    <div id="paymentInfo">
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                 TÓM TẮT ĐƠN HÀNG
+            ========================= -->
+
+                <div class="checkout-section">
+
+                    <h4>
+                        Đơn hàng
+                    </h4>
+
+                    <div id="checkoutItems">
+
+                    </div>
+
+
+                    <div class="checkout-total">
+
+                        <span>
+                            Tổng tiền
+                        </span>
+
+                        <strong id="checkoutTotal">
+                            0 VNĐ
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="checkout-footer">
+
+                <button class="checkout-cancel" onclick="closeCheckout()">
+                    Quay lại
+                </button>
+
+
+                <button class="checkout-submit" onclick="confirmOrder()">
+                    Xác nhận đặt hàng
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <p>© 2026 MyWebsite. All rights reserved.</p>
     </footer>
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Thông báo -->
+    <div id="notification" class="notification">
+        <span id="notificationText"></span>
+    </div>
     <!-- JavaScript của website -->
     <script src="script.js"></script>
 </body>

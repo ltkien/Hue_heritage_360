@@ -1,0 +1,287 @@
+{
+    "hoa-giay-thanh-tien": {
+        "name": "Hoa giấy Thanh Tiên",
+        "image": "images/htt.jpg",
+        "types": [
+            {
+                "name": "Hoa giấy truyền thống",
+                "price": 20000,
+                "description": "Sản phẩm đặc trưng nhất của Thanh Tiên là những cành hoa giấy dùng trong trang trí và tín ngưỡng dân gian."
+            },
+            {
+                "name": "Hoa sen giấy",
+                "price": 25000,
+                "description": "Hoa sen giấy là sản phẩm đặc sắc và có giá trị nhận diện cao của Thanh Tiên."
+            },
+            {
+                "name": "Hoa trang trí hiện đại",
+                "price": 30000,
+                "description": "Bên cạnh sản phẩm truyền thống, người làm nghề ngày nay còn phát triển thêm nhiều mẫu hoa và cách phối màu mới nhằm đáp ứng nhu cầu trang trí và quà tặng."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/hgtt.jpeg",
+                "images/products/hgtt.jpeg",
+                "images/products/hgtt.jpeg",
+                "images/products/hgtt.jpeg"
+            ],
+            "address": "Làng Thanh Tiên, phường Dương Nỗ, thành phố Huế, bên bờ nam hạ lưu sông Hương, gần ngã ba Sình, cách trung tâm Huế khoảng 8–10 km.",
+            "overview": "Thanh Tiên là làng nghề thủ công truyền thống nổi tiếng với nghề làm hoa giấy. Hoa được tạo thủ công từ tre, giấy màu và bàn tay khéo léo của nghệ nhân qua nhiều công đoạn.",
+            "history": [
+                "Nghề làm hoa giấy Thanh Tiên có lịch sử lâu đời, được cho là hình thành từ thế kỷ XVI và đã tồn tại hơn 300 năm.",
+                "Ban đầu, hoa chủ yếu phục vụ nhu cầu thờ cúng và tín ngưỡng dân gian.",
+                "Trải qua thời gian, nghề từng đứng trước nguy cơ mai một nhưng được các nghệ nhân gìn giữ và phát triển.",
+                "Đặc biệt, hoa sen giấy được khôi phục và trở thành sản phẩm tiêu biểu của làng nghề.",
+                "Năm 2013, nghề làm hoa giấy Thanh Tiên được công nhận là làng nghề truyền thống."
+            ],
+            "process": [
+                {
+                    "name": "Chuẩn bị nguyên liệu",
+                    "description": "Chọn và xử lý tre, giấy màu, dây cước và vật liệu phụ trợ."
+                },
+                {
+                    "name": "Tạo màu",
+                    "description": "Nhuộm giấy và tre với màu sắc phù hợp."
+                },
+                {
+                    "name": "Cắt cánh",
+                    "description": "Cắt giấy theo khuôn thành nhiều hình dạng cánh hoa."
+                },
+                {
+                    "name": "Tạo hình",
+                    "description": "Tạo nếp, độ cong và dáng tự nhiên cho cánh hoa."
+                },
+                {
+                    "name": "Ghép hoa",
+                    "description": "Làm nhụy, ghép các lớp cánh và hoàn thiện bông hoa."
+                },
+                {
+                    "name": "Gắn cành",
+                    "description": "Gắn hoa vào cành tre và sắp xếp thành từng cành hoặc bó."
+                },
+                {
+                    "name": "Hoàn thiện",
+                    "description": "Kiểm tra màu sắc, hình dáng và độ chắc chắn của sản phẩm."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Hơn 300 năm lịch sử",
+                    "description": "Gìn giữ nghề thủ công qua nhiều thế hệ."
+                },
+                {
+                    "title": "Giá trị văn hóa – tín ngưỡng",
+                    "description": "Hoa giấy gắn với phong tục thờ cúng và Tết của người Huế."
+                },
+                {
+                    "title": "Hoa sen giấy",
+                    "description": "Là sản phẩm nổi bật, mang đậm nét văn hóa và mỹ cảm Huế."
+                },
+                {
+                    "title": "Thủ công hoàn toàn",
+                    "description": "Mỗi sản phẩm đều mang dấu ấn riêng của người nghệ nhân."
+                },
+                {
+                    "title": "Không gian làng quê",
+                    "description": "Làng nghề nằm trong không gian yên bình bên sông Hương."
+                },
+                {
+                    "title": "Trải nghiệm văn hóa",
+                    "description": "Du khách có thể tìm hiểu nghề, trò chuyện với nghệ nhân và tham gia làm hoa giấy."
+                }
+            ]
+        }
+    },
+    "tranh-lang-sinh": {
+        "name": "Tranh Làng Sình",
+        "image": "images/tranh-lang-sinh.jpg",
+        "types": [
+            {
+                "name": "Tranh nhân vật",
+                "price": 100000,
+                "description": "Gắn với tín ngưỡng dân gian, thể hiện các hình tượng như Tượng Bà, Tượng Đế, ông Điệu, ông Đốc và tranh con ảnh, phản ánh thế giới tâm linh của người xưa."
+            },
+            {
+                "name": "Tranh đồ vật",
+                "price": 105000,
+                "description": "Gồm áo quần, tiền, cung tên và vật dụng, mang ý nghĩa tượng trưng cho các vật phẩm trong đời sống và nghi lễ."
+            },
+            {
+                "name": "Tranh súc vật",
+                "price": 110000,
+                "description": "Hình ảnh voi, hổ và 12 con giáp, mang ý nghĩa biểu tượng về sức mạnh, sự uy nghi, thời gian và vận mệnh."
+            },
+            {
+                "name": "Tranh Bát Âm",
+                "price": 115000,
+                "description": "Khắc họa những người biểu diễn nhạc cụ truyền thống, gắn với âm nhạc, nghi lễ và đời sống cộng đồng."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/tls-1.jpg",
+                "images/products/tls-2.jpg",
+                "images/products/tls-3.jpg",
+                "images/products/tls-4.jpg"
+            ],
+            "address": "Làng Sình (Lại Ân), nay thuộc phường Dương Nỗ, thành phố Huế, nằm ở vùng hạ lưu sông Hương, cách trung tâm Huế khoảng 8–10 km.",
+            "overview": "Tranh Làng Sình là dòng tranh dân gian mộc bản đặc sắc của Huế, gắn chặt với tín ngưỡng và đời sống tinh thần của người dân địa phương. Tranh truyền thống được sử dụng trong các nghi lễ như cầu an, giải hạn, cúng bổn mệnh và cúng thế mạng. Vì vậy, giá trị của tranh không chỉ nằm ở kỹ thuật in, màu sắc mà còn ở những giá trị văn hóa, tâm linh được cộng đồng gửi gắm.",
+            "history": [
+                "Nghề làm tranh Làng Sình có lịch sử khoảng 400–500 năm, hình thành và phát triển từ khoảng thế kỷ XVI–XVII cùng quá trình khai phá vùng Thuận Hóa.",
+                "Theo truyền thuyết nghề, ông Kỳ Hữu Hòa được cho là người mang nghề làm tranh mộc bản vào vùng Thuận Hóa. Nghề tranh phát triển chủ yếu để đáp ứng nhu cầu tín ngưỡng của cư dân địa phương.",
+                "Trải qua thời gian, nghề từng đứng trước nguy cơ mai một do sự thay đổi của đời sống và sản phẩm công nghiệp. Các nghệ nhân tâm huyết, tiêu biểu như Kỳ Hữu Phước, đã góp phần gìn giữ mộc bản, phục hồi mẫu tranh và truyền nghề.",
+                "Ngày nay, tranh Làng Sình được phát triển gắn với du lịch và trải nghiệm văn hóa."
+            ],
+            "process": [
+                {
+                    "name": "Chuẩn bị giấy",
+                    "description": "Chọn và xử lý giấy, sau đó quét điệp để tạo độ sáng đặc trưng."
+                },
+                {
+                    "name": "Khắc mộc bản",
+                    "description": "Khắc ngược hình ảnh lên ván gỗ để làm khuôn in."
+                },
+                {
+                    "name": "In tranh",
+                    "description": "Phủ mực lên mộc bản và in hình ảnh lên giấy."
+                },
+                {
+                    "name": "Phơi tranh",
+                    "description": "Phơi để giấy và mực ổn định trước khi tô màu."
+                },
+                {
+                    "name": "Pha màu",
+                    "description": "Chuẩn bị màu phù hợp với từng mẫu tranh."
+                },
+                {
+                    "name": "Tô màu",
+                    "description": "Nghệ nhân dùng tay tô từng mảng màu, tạo nét riêng cho mỗi bức tranh."
+                },
+                {
+                    "name": "Hoàn thiện",
+                    "description": "Kiểm tra và hoàn thiện tranh để sử dụng trong tín ngưỡng, trưng bày, làm quà tặng hoặc phục vụ du lịch."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Gắn với tín ngưỡng dân gian",
+                    "description": "Tranh từng được sử dụng trong các nghi lễ cầu an, giải hạn và thờ cúng."
+                },
+                {
+                    "title": "Mộc bản quý giá",
+                    "description": "Mộc bản là nơi lưu giữ kỹ thuật, hình ảnh và ký ức của nghề tranh."
+                },
+                {
+                    "title": "Giá trị văn hóa",
+                    "description": "Tranh phản ánh thế giới tinh thần, tín ngưỡng và đời sống của người dân xứ Huế."
+                },
+                {
+                    "title": "Nét thủ công độc đáo",
+                    "description": "Dù in cùng một mộc bản, mỗi bức tranh vẫn có sắc độ và cách phối màu riêng nhờ bàn tay nghệ nhân."
+                },
+                {
+                    "title": "Một phần văn hóa dân gian Huế",
+                    "description": "Tranh giúp khám phá một diện mạo khác của Huế bên cạnh văn hóa cung đình."
+                },
+                {
+                    "title": "Thích nghi với hiện đại",
+                    "description": "Nghệ nhân phát triển thêm các đề tài như sinh hoạt, trò chơi dân gian và 12 con giáp, đưa tranh đến gần hơn với du lịch và đời sống hiện nay."
+                }
+            ]
+        }
+    },
+    "non-la-my-lam": {
+        "name": "Nón lá Mỹ Lam",
+        "image": "images/non-la-my-lam.jpg",
+        "types": [
+            {
+                "name": "Nón lá truyền thống",
+                "price": 80000,
+                "description": "Sản phẩm lâu đời, làm từ lá nón và tre, có đặc điểm mỏng, nhẹ, thanh tao, bền và dùng để che nắng, che mưa."
+            },
+            {
+                "name": "Nón bài thơ",
+                "price": 85000,
+                "description": "Đặc trưng của nón Huế, có hình ảnh hoặc câu thơ ẩn giữa các lớp lá, hiện lên khi soi dưới ánh sáng, mang giá trị nghệ thuật."
+            },
+            {
+                "name": "Nón trang trí và sáng tạo",
+                "price": 90000,
+                "description": "Gồm nón lá sen, lá bàng, trúc chỉ, cỏ bàng và các mẫu trang trí, kết hợp truyền thống với sản phẩm lưu niệm và nghệ thuật."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/nlml-1.jpeg",
+                "images/products/nlml-2.jpeg",
+                "images/products/nlml-3.jpeg",
+                "images/products/nlml-4.jpeg"
+            ],
+            "address": "Làng nghề nón lá Mỹ Lam nằm ven sông Như Ý, thuộc TDP Mỹ Lam, phường Mỹ Thượng, thành phố Huế, cách trung tâm thành phố khoảng 8 km về phía Đông.",
+            "overview": "Mỹ Lam là làng nghề truyền thống nổi tiếng với nghề làm nón lá, đặc biệt là nón bài thơ mang vẻ đẹp thanh mảnh, nhẹ nhàng và tinh tế. Nón được làm thủ công với những đường chằm đều đặn, thể hiện sự khéo léo của người thợ. Điểm đặc biệt của nón bài thơ là hình ảnh, hoa văn hoặc câu thơ được đặt giữa các lớp lá và chỉ hiện lên khi đưa nón trước ánh sáng. Nón Mỹ Lam không chỉ dùng để che nắng, che mưa mà còn là sản phẩm văn hóa gắn với hình ảnh người phụ nữ, tà áo dài và vẻ đẹp của xứ Huế.",
+            "history": [
+                "Nghề làm nón Mỹ Lam hình thành từ khoảng giữa thế kỷ XIX, được truyền lại qua nhiều thế hệ và có lịch sử gần 160 năm.",
+                "Nghề từng là nguồn sinh kế quan trọng của người dân địa phương, đặc biệt phù hợp với lao động nông thôn vào thời gian nông nhàn.",
+                "Trải qua thời gian, nghề gặp nhiều khó khăn do thị trường thay đổi và lực lượng lao động trẻ ít gắn bó. Tuy nhiên, người dân vẫn tiếp tục gìn giữ và phát triển nghề gắn với du lịch, quà tặng và văn hóa Huế.",
+                "Năm 2013, làng nghề nón lá Mỹ Lam được công nhận là làng nghề truyền thống. Sản phẩm nón lá Mỹ Lam cũng được đưa vào chương trình OCOP, góp phần xây dựng thương hiệu và mở rộng thị trường."
+            ],
+            "process": [
+                {
+                    "name": "Chọn và xử lý lá",
+                    "description": "Chọn lá có độ tuổi, màu sắc và kích thước phù hợp, sau đó phơi, sấy và làm phẳng."
+                },
+                {
+                    "name": "Chuẩn bị khung",
+                    "description": "Làm nan tre và các vành nón, tạo thành khung hình chóp cân đối."
+                },
+                {
+                    "name": "Xếp lá",
+                    "description": "Xếp các lớp lá đều và ôm sát theo khung nón."
+                },
+                {
+                    "name": "Tạo hình và trang trí",
+                    "description": "Với nón bài thơ, hình ảnh, hoa văn hoặc câu thơ được đặt giữa các lớp lá."
+                },
+                {
+                    "name": "Chằm nón",
+                    "description": "Dùng kim và chỉ chằm từng đường qua lá và vành nón, yêu cầu mũi chằm đều, chắc và đẹp."
+                },
+                {
+                    "name": "Làm chóp và quai",
+                    "description": "Hoàn thiện phần chóp và gắn quai phù hợp với kiểu dáng nón."
+                },
+                {
+                    "name": "Hoàn thiện",
+                    "description": "Kiểm tra độ cân đối, xử lý bề mặt và bảo quản để tăng độ bền cho nón."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Nón bài thơ độc đáo",
+                    "description": "Hình ảnh và câu thơ ẩn giữa các lớp lá, chỉ hiện ra khi soi dưới ánh sáng."
+                },
+                {
+                    "title": "Gần 160 năm gìn giữ nghề",
+                    "description": "Nghề chằm nón được truyền qua nhiều thế hệ tại Mỹ Lam."
+                },
+                {
+                    "title": "Không gian ven sông Như Ý",
+                    "description": "Làng nghề mang đậm vẻ đẹp làng quê và không gian văn hóa Huế."
+                },
+                {
+                    "title": "Thủ công hoàn toàn",
+                    "description": "Mỗi chiếc nón là kết quả của sự kiên nhẫn, chính xác và kinh nghiệm của người thợ."
+                },
+                {
+                    "title": "Gắn với hình ảnh phụ nữ Huế",
+                    "description": "Nón lá kết hợp cùng áo dài tạo nên hình ảnh đặc trưng của văn hóa xứ Huế."
+                },
+                {
+                    "title": "Giá trị thương hiệu",
+                    "description": "Nón lá Mỹ Lam được phát triển theo hướng gắn với du lịch, quà tặng và chương trình OCOP."
+                }
+            ]
+        }
+    }
+}
