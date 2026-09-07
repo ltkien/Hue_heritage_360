@@ -2022,3 +2022,115 @@ body {
     }
 
 }
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-title {
+    margin: 30px 0 20px;
+    font-size: 24px;
+}
+
+
+/* GRID */
+
+#hotelCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.service-card .card {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.service-card .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* IMAGE */
+
+.service-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* CONTENT */
+
+.service-card-content {
+    padding: 20px;
+}
+
+.service-card-content h3 {
+    margin: 8px 0 12px;
+    font-size: 22px;
+}
+
+.service-card-content p {
+    margin-bottom: 12px;
+    color: #555;
+}
+
+
+/* TYPE */
+
+.service-type {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: #198754;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* ADDRESS */
+
+.service-address {
+    font-size: 14px;
+    color: #666 !important;
+}
+
+
+/* BUTTON */
+
+.service-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.service-actions button {
+    flex: 1;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    #hotelCards {
+        grid-template-columns: 1fr;
+    }
+
+    .service-image {
+        height: 200px;
+    }
+
+}

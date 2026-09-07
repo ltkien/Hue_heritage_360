@@ -163,11 +163,19 @@
         </div>
 
     </section>
+
+
     <!-- Services -->
     <section id="services" class="section services">
-        <div class="container ">
+
+        <div class="container">
 
             <h2>Dịch vụ</h2>
+
+
+            <!-- =========================
+             SERVICE NAVBAR
+        ========================== -->
 
             <nav class="navbar navbar-light bg-light m-2">
 
@@ -196,47 +204,235 @@
 
             </nav>
 
-            <div class="cards">
-                <div class="service-card hotel">
-                    <div class="card">
-                        <h3>🏨 Khách sạn Huế</h3>
 
-                        <p>
-                            Dịch vụ lưu trú tiện nghi
-                            gần các địa điểm du lịch.
-                        </p>
-                    </div>
+
+            <!-- ==================================================
+             LƯU TRÚ
+        =================================================== -->
+
+            <div id="hotelServices" class="service-content">
+
+                <h3 class="service-title">
+                    🏨 Khách sạn & Homestay
+                </h3>
+
+
+                <!--
+                JS sẽ đưa các card khách sạn
+                vào đây
+            -->
+
+                <div id="hotelCards" class="cards">
                 </div>
 
-                <div class="service-card tour" style="display: none;">
-                    <div class="card">
 
-                        <h3>🗺️ Tour Đại Nội Huế</h3>
+                <!-- =========================
+                 MẪU CARD KHÁCH SẠN
+            ========================== -->
 
-                        <p>
-                            Khám phá Đại Nội
-                            cùng hướng dẫn viên.
-                        </p>
+                <template id="hotelCardTemplate">
+
+                    <div class="service-card">
+
+                        <div class="card">
+
+
+                            <!-- ẢNH -->
+
+                            <img src="" alt="" class="service-image" data-field="image">
+
+
+                            <div class="service-card-content">
+
+
+                                <!-- LOẠI -->
+
+                                <span class="service-type" data-field="type">
+                                </span>
+
+
+                                <!-- TÊN -->
+
+                                <h3 data-field="name">
+                                </h3>
+
+
+                                <!-- ĐỊA CHỈ -->
+
+                                <p class="service-address" data-field="address">
+                                </p>
+
+
+                                <!-- NÚT -->
+
+                                <div class="service-actions">
+
+
+                                    <button class="btn-buy" type="button" data-action="rooms">
+                                        🛏️ Xem phòng
+                                    </button>
+
+
+                                    <button class="btn-detail" type="button" data-action="detail">
+                                        Xem chi tiết
+                                    </button>
+
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
 
                     </div>
+
+                </template>
+
+            </div>
+
+
+
+            <!-- ==================================================
+             TOUR
+        =================================================== -->
+
+            <div id="tourServices" class="service-content" style="display: none;">
+
+                <h3 class="service-title">
+                    🗺️ Tour Huế
+                </h3>
+
+
+                <!--
+                JS sẽ đưa các card tour
+                vào đây
+            -->
+
+                <div id="tourCards" class="cards">
                 </div>
-                <div class="service-card workshop" style="display: none;">
-                    <div class="card">
 
-                        <h3>🎨 Workshop làm nón lá</h3>
 
-                        <p>
-                            Tự tay trải nghiệm
-                            làm nón lá truyền thống.
-                        </p>
+                <!-- =========================
+                 MẪU CARD TOUR
+            ========================== -->
+
+                <template id="tourCardTemplate">
+
+                    <div class="service-card">
+
+                        <div class="card">
+
+
+                            <!-- ẢNH -->
+
+                            <img src="" alt="" class="service-image" data-field="image">
+
+
+                            <div class="service-card-content">
+
+
+                                <!-- LOẠI -->
+
+                                <span class="service-type" data-field="type">
+                                </span>
+
+
+                                <!-- TÊN -->
+
+                                <h3 data-field="name">
+                                </h3>
+
+
+                                <!-- ĐỊA ĐIỂM -->
+
+                                <p class="service-address" data-field="location">
+                                </p>
+
+
+                                <!-- THỜI LƯỢNG -->
+
+                                <p data-field="duration">
+                                </p>
+
+
+                                <!-- NÚT -->
+
+                                <div class="service-actions">
+
+
+                                    <button class="btn-buy" type="button" data-action="book">
+                                        🗓️ Đặt tour
+                                    </button>
+
+
+                                    <button class="btn-detail" type="button" data-action="detail">
+                                        Xem chi tiết
+                                    </button>
+
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
 
                     </div>
+
+                </template>
+
+            </div>
+
+
+
+            <!-- ==================================================
+             WORKSHOP
+        =================================================== -->
+
+            <div id="workshopServices" class="service-content" style="display: none;">
+
+                <h3 class="service-title">
+                    🎨 Workshop
+                </h3>
+
+
+                <div id="workshopCards" class="cards">
+
+                    <div class="service-card">
+
+                        <div class="card">
+
+                            <div class="service-card-content">
+
+                                <h3>
+                                    🎨 Workshop làm nón lá
+                                </h3>
+
+
+                                <p>
+                                    Tự tay trải nghiệm làm nón lá
+                                    truyền thống của Huế.
+                                </p>
+
+
+                                <button class="btn-detail" type="button">
+                                    Xem chi tiết
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
 
         </div>
-    </section>
 
+    </section>
 
     <!-- Gift -->
     <section id="gift" class="section">
@@ -729,7 +925,6 @@
 
     </div>
     <!-- CHECKOUT MODAL -->
-
     <div id="checkoutModal" class="checkout-modal">
 
         <div class="checkout-box">
@@ -912,6 +1107,171 @@
         </div>
 
     </div>
+    <!-- MODAL ĐẶT PHÒNG-->
+    <div class="modal fade" id="roomBookingModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        🛏️ Đặt phòng
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- TÊN KHÁCH SẠN -->
+                    <h5 id="bookingHotelName"></h5>
+
+                    <p id="bookingHotelAddress" class="text-muted">
+                    </p>
+
+
+                    <!-- BƯỚC 1: CHỌN NGÀY -->
+                    <div id="bookingStep1">
+
+                        <h6 class="mb-3">
+                            📅 Chọn ngày lưu trú
+                        </h6>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Ngày nhận phòng
+                            </label>
+
+                            <input type="date" id="checkInDate" class="form-control">
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Ngày trả phòng
+                            </label>
+
+                            <input type="date" id="checkOutDate" class="form-control">
+
+                        </div>
+
+
+                        <div id="bookingDateError" class="text-danger mb-3" style="display: none;">
+                        </div>
+
+
+                        <button type="button" class="btn btn-success w-100" onclick="confirmBookingDate()">
+
+                            Tiếp tục
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- BƯỚC 2: XÁC NHẬN -->
+                    <div id="bookingStep2" style="display: none;">
+
+                        <h6 class="mb-3">
+                            ✅ Xác nhận thông tin
+                        </h6>
+
+                        <div class="booking-summary">
+
+                            <p>
+                                <strong>Khách sạn:</strong>
+                                <span id="confirmHotelName"></span>
+                            </p>
+
+                            <p>
+                                <strong>Địa chỉ:</strong>
+                                <span id="confirmHotelAddress"></span>
+                            </p>
+
+                            <p>
+                                <strong>Nhận phòng:</strong>
+                                <span id="confirmCheckIn"></span>
+                            </p>
+
+                            <p>
+                                <strong>Trả phòng:</strong>
+                                <span id="confirmCheckOut"></span>
+                            </p>
+
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="mb-3">
+
+                            <label for="bookingEmail" class="form-label">
+                                📧 Email nhận xác nhận
+                            </label>
+
+                            <input type="email" id="bookingEmail" class="form-control" placeholder="example@gmail.com"
+                                autocomplete="email">
+
+                            <small class="text-muted">
+                                Email xác nhận đặt phòng sẽ được gửi đến email này.
+                            </small>
+
+                        </div>
+
+                        <div id="bookingEmailError" class="text-danger mb-3" style="display: none;"></div>
+
+                        <div class="d-flex gap-2">
+
+                            <button type="button" class="btn btn-secondary flex-fill" onclick="backToBookingDate()">
+                                Quay lại
+                            </button>
+
+                            <button type="button" id="confirmBookingButton" class="btn btn-success flex-fill"
+                                onclick="completeBooking()">
+                                Xác nhận đặt phòng
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BƯỚC 3: HOÀN TẤT -->
+                    <div id="bookingStep3" style="display: none;" class="text-center">
+
+                        <div class="mb-3" style="font-size: 50px;">
+                            🎉
+                        </div>
+
+                        <h5>
+                            Đặt phòng thành công!
+                        </h5>
+
+                        <p>
+                            Mã đặt phòng:
+                            <strong id="bookingSuccessId"></strong>
+                        </p>
+
+                        <p class="text-muted">
+                            Email xác nhận đã được gửi đến email của bạn.
+                        </p>
+
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+
+                            Đóng
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <p>© 2026 MyWebsite. All rights reserved.</p>
@@ -923,6 +1283,14 @@
         <span id="notificationText"></span>
     </div>
     <!-- JavaScript của website -->
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init({
+            publicKey: "vq4dJHtAj17uz3YzD"
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 

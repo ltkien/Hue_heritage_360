@@ -23,6 +23,18 @@ let productDataLoaded = false;
 let currentDetailImages = [];
 let currentDetailImageIndex = 0;
 
+// =========================
+// DỮ LIỆU SERVICES
+// =========================
+let servicesData = {};
+let currentBookingHotel = null;
+
+let bookingData = {
+    checkIn: "",
+    checkOut: ""
+};
+
+
 function showPlace(id) {
 
     // Tìm di tích trong heritage.json
@@ -2822,5 +2834,925 @@ function confirmOrder() {
     document.getElementById("customerPhone").value = "";
 
     document.getElementById("customerAddress").value = "";
+
+}
+
+
+
+
+/* =========================
+   LOAD SERVICES
+========================= */
+
+async function loadServices() {
+
+    try {
+
+        const response =
+            await fetch("./data/services.json");
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Không thể tải services.json"
+            );
+
+        }
+
+
+        servicesData =
+            await response.json();
+
+
+        console.log(
+            "✅ Đã tải services:",
+            servicesData
+        );
+
+
+        loadHotels();
+
+        loadTours();
+
+
+    } catch (error) {
+
+        console.error(
+            "❌ Lỗi tải services:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================
+   LOAD KHÁCH SẠN + HOMESTAY
+========================= */
+
+function loadHotels() {
+
+    const container =
+        document.getElementById("hotelCards");
+
+    const template =
+        document.getElementById("hotelCardTemplate");
+
+
+    if (!container || !template) {
+
+        console.error(
+            "❌ Không tìm thấy hotelCards hoặc hotelCardTemplate"
+        );
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    const hotels = [
+
+        ...(servicesData["khach-san"] || []),
+
+        ...(servicesData["homestay"] || [])
+
+    ];
+
+
+    hotels.forEach(service => {
+
+        const card =
+            template.content.cloneNode(true);
+
+
+        const serviceCard =
+            card.querySelector(".service-card");
+
+
+        serviceCard.dataset.serviceId =
+            service.id;
+
+
+        /* =========================
+           ẢNH
+        ========================= */
+
+        const image =
+            card.querySelector(
+                '[data-field="image"]'
+            );
+
+
+        image.src =
+            service.image;
+
+        image.alt =
+            service.name;
+
+
+        /* =========================
+           LOẠI
+        ========================= */
+
+        card.querySelector(
+            '[data-field="type"]'
+        ).textContent =
+            service.type;
+
+
+        /* =========================
+           TÊN
+        ========================= */
+
+        card.querySelector(
+            '[data-field="name"]'
+        ).textContent =
+            service.name;
+
+
+        /* =========================
+           ĐỊA CHỈ
+        ========================= */
+
+        card.querySelector(
+            '[data-field="address"]'
+        ).textContent =
+            `📍 ${service.address}`;
+
+
+        /* =========================
+           XEM PHÒNG
+        ========================= */
+
+        card.querySelector(
+            '[data-action="rooms"]'
+        ).addEventListener(
+            "click",
+            () => viewRooms(service.id)
+        );
+
+
+        /* =========================
+           CHI TIẾT
+        ========================= */
+
+        card.querySelector(
+            '[data-action="detail"]'
+        ).addEventListener(
+            "click",
+            () => {
+
+                if (service.link) {
+
+                    window.open(
+                        service.link,
+                        "_blank"
+                    );
+
+                } else {
+
+                    console.warn(
+                        "⚠️ Dịch vụ chưa có link:",
+                        service.name
+                    );
+
+                }
+
+            }
+        );
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* =========================
+   LOAD TOUR
+========================= */
+
+function loadTours() {
+
+    const container =
+        document.getElementById("tourCards");
+
+    const template =
+        document.getElementById("tourCardTemplate");
+
+
+    if (!container || !template) {
+
+        console.error(
+            "❌ Không tìm thấy tourCards hoặc tourCardTemplate"
+        );
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    const tours =
+        servicesData["tour"] || [];
+
+
+    tours.forEach(tour => {
+
+        const card =
+            template.content.cloneNode(true);
+
+
+        const serviceCard =
+            card.querySelector(".service-card");
+
+
+        serviceCard.dataset.serviceId =
+            tour.id;
+
+
+        /* =========================
+           ẢNH
+        ========================= */
+
+        const image =
+            card.querySelector(
+                '[data-field="image"]'
+            );
+
+
+        image.src =
+            tour.image;
+
+        image.alt =
+            tour.name;
+
+
+        /* =========================
+           LOẠI
+        ========================= */
+
+        card.querySelector(
+            '[data-field="type"]'
+        ).textContent =
+            tour.type;
+
+
+        /* =========================
+           TÊN
+        ========================= */
+
+        card.querySelector(
+            '[data-field="name"]'
+        ).textContent =
+            tour.name;
+
+
+        /* =========================
+           ĐỊA ĐIỂM
+        ========================= */
+
+        card.querySelector(
+            '[data-field="location"]'
+        ).textContent =
+            `📍 ${tour.location}`;
+
+
+        /* =========================
+           THỜI LƯỢNG
+        ========================= */
+
+        card.querySelector(
+            '[data-field="duration"]'
+        ).textContent =
+            `⏱️ ${tour.duration}`;
+
+
+        /* =========================
+           ĐẶT TOUR
+        ========================= */
+
+        card.querySelector(
+            '[data-action="book"]'
+        ).addEventListener(
+            "click",
+            () => bookTour(tour.id)
+        );
+
+
+        /* =========================
+           CHI TIẾT
+        ========================= */
+
+        card.querySelector(
+            '[data-action="detail"]'
+        ).addEventListener(
+            "click",
+            () => viewServiceDetail(tour.id)
+        );
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* =========================
+   CHUYỂN TAB
+========================= */
+
+function showService(type, button) {
+
+    const hotelServices =
+        document.getElementById(
+            "hotelServices"
+        );
+
+    const tourServices =
+        document.getElementById(
+            "tourServices"
+        );
+
+    const workshopServices =
+        document.getElementById(
+            "workshopServices"
+        );
+
+
+    /* Ẩn tất cả */
+
+    hotelServices.style.display =
+        "none";
+
+    tourServices.style.display =
+        "none";
+
+    workshopServices.style.display =
+        "none";
+
+
+    /* Hiển thị tab */
+
+    if (type === "hotel") {
+
+        hotelServices.style.display =
+            "block";
+
+    }
+
+
+    if (type === "tour") {
+
+        tourServices.style.display =
+            "block";
+
+    }
+
+
+    if (type === "workshop") {
+
+        workshopServices.style.display =
+            "block";
+
+    }
+
+
+    /* Đổi button */
+
+    document
+        .querySelectorAll(".service-btn")
+        .forEach(btn => {
+
+            btn.classList.remove(
+                "btn-success"
+            );
+
+            btn.classList.add(
+                "btn-outline-success"
+            );
+
+        });
+
+
+    button.classList.remove(
+        "btn-outline-success"
+    );
+
+    button.classList.add(
+        "btn-success"
+    );
+
+}
+
+loadServices();
+
+
+/* =========================
+   ĐẶT PHÒNG
+========================= */
+
+
+
+function viewRooms(serviceId) {
+
+    const hotels = [
+        ...(servicesData["khach-san"] || []),
+        ...(servicesData["homestay"] || [])
+    ];
+
+    const hotel = hotels.find(
+        service => service.id === serviceId
+    );
+
+
+    if (!hotel) {
+
+        console.error(
+            "❌ Không tìm thấy khách sạn:",
+            serviceId
+        );
+
+        return;
+    }
+
+
+    currentBookingHotel = hotel;
+
+
+    /* =========================
+       HIỂN THỊ THÔNG TIN
+    ========================= */
+
+    document.getElementById(
+        "bookingHotelName"
+    ).textContent = hotel.name;
+
+
+    document.getElementById(
+        "bookingHotelAddress"
+    ).textContent =
+        `📍 ${hotel.address}`;
+
+
+    /* =========================
+       NGÀY HIỆN TẠI
+    ========================= */
+
+    const today =
+        new Date().toISOString().split("T")[0];
+
+
+    const checkIn =
+        document.getElementById("checkInDate");
+
+    const checkOut =
+        document.getElementById("checkOutDate");
+
+
+    /*
+       Không cho chọn ngày trước hôm nay
+    */
+
+    checkIn.min = today;
+
+    checkOut.min = today;
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    checkIn.value = "";
+
+    checkOut.value = "";
+
+
+    document.getElementById(
+        "bookingDateError"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "bookingStep1"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "bookingStep2"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "bookingStep3"
+    ).style.display = "none";
+
+
+    /* =========================
+       MỞ MODAL
+    ========================= */
+
+    const modalElement =
+        document.getElementById(
+            "roomBookingModal"
+        );
+
+
+    const modal =
+        new bootstrap.Modal(modalElement);
+
+
+    modal.show();
+}
+
+function confirmBookingDate() {
+
+    const checkIn =
+        document.getElementById(
+            "checkInDate"
+        ).value;
+
+
+    const checkOut =
+        document.getElementById(
+            "checkOutDate"
+        ).value;
+
+
+    const error =
+        document.getElementById(
+            "bookingDateError"
+        );
+
+
+    /* =========================
+       KIỂM TRA NGÀY
+    ========================= */
+
+    if (!checkIn || !checkOut) {
+
+        error.textContent =
+            "⚠️ Vui lòng chọn đầy đủ ngày nhận và trả phòng.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    /* =========================
+       HÔM NAY
+    ========================= */
+
+    const today =
+        new Date().toISOString().split("T")[0];
+
+
+    if (checkIn < today) {
+
+        error.textContent =
+            "⚠️ Ngày nhận phòng phải từ hôm nay trở đi.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    /* =========================
+       TRẢ PHÒNG PHẢI SAU NHẬN PHÒNG
+    ========================= */
+
+    if (checkOut <= checkIn) {
+
+        error.textContent =
+            "⚠️ Ngày trả phòng phải sau ngày nhận phòng.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    /* =========================
+       LƯU DỮ LIỆU
+    ========================= */
+
+    bookingData.checkIn = checkIn;
+
+    bookingData.checkOut = checkOut;
+
+
+    /* =========================
+       HIỂN THỊ XÁC NHẬN
+    ========================= */
+
+    document.getElementById(
+        "confirmHotelName"
+    ).textContent =
+        currentBookingHotel.name;
+
+    document.getElementById(
+        "confirmHotelAddress"
+    ).textContent =
+        currentBookingHotel.address;
+
+    document.getElementById(
+        "confirmCheckIn"
+    ).textContent =
+        formatDate(checkIn);
+
+
+    document.getElementById(
+        "confirmCheckOut"
+    ).textContent =
+        formatDate(checkOut);
+
+
+    /* =========================
+       CHUYỂN SANG BƯỚC 2
+    ========================= */
+
+    document.getElementById(
+        "bookingStep1"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "bookingStep2"
+    ).style.display = "block";
+
+
+    error.style.display = "none";
+}
+function formatDate(dateString) {
+
+    const [year, month, day] =
+        dateString.split("-");
+
+    return `${day}/${month}/${year}`;
+}
+function backToBookingDate() {
+
+    document.getElementById(
+        "bookingStep2"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "bookingStep1"
+    ).style.display = "block";
+}
+async function completeBooking() {
+
+    /* =========================
+       KIỂM TRA KHÁCH SẠN
+    ========================= */
+
+    if (!currentBookingHotel) {
+
+        console.error(
+            "❌ Không có thông tin khách sạn"
+        );
+
+        return;
+    }
+
+
+    /* =========================
+       LẤY EMAIL
+    ========================= */
+
+    const emailInput =
+        document.getElementById(
+            "bookingEmail"
+        );
+
+
+    const email =
+        emailInput.value.trim();
+
+
+    const emailError =
+        document.getElementById(
+            "bookingEmailError"
+        );
+
+
+    /* =========================
+       KIỂM TRA EMAIL
+    ========================= */
+
+    if (!email) {
+
+        emailError.textContent =
+            "⚠️ Vui lòng nhập email.";
+
+        emailError.style.display =
+            "block";
+
+        emailInput.focus();
+
+        return;
+    }
+
+
+    const emailRegex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!emailRegex.test(email)) {
+
+        emailError.textContent =
+            "⚠️ Email không hợp lệ.";
+
+        emailError.style.display =
+            "block";
+
+        emailInput.focus();
+
+        return;
+    }
+
+
+    emailError.style.display =
+        "none";
+
+
+    /* =========================
+       TẠO MÃ ĐẶT PHÒNG
+    ========================= */
+
+    const bookingId =
+        "HUE-" +
+        Date.now().toString().slice(-8);
+
+
+    /* =========================
+       DỮ LIỆU ĐẶT PHÒNG
+    ========================= */
+
+    const booking = {
+
+        bookingId: bookingId,
+
+        hotelId:
+            currentBookingHotel.id,
+
+        hotelName:
+            currentBookingHotel.name,
+
+        address:
+            currentBookingHotel.address,
+
+        checkIn:
+            bookingData.checkIn,
+
+        checkOut:
+            bookingData.checkOut,
+
+        email:
+            email,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    console.log(
+        "📋 Thông tin đặt phòng:",
+        booking
+    );
+
+
+    /* =========================
+       KHÓA NÚT
+    ========================= */
+
+    const button =
+        document.getElementById(
+            "confirmBookingButton"
+        );
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "⏳ Đang gửi email...";
+
+
+    try {
+
+        /* =========================
+           GỬI EMAIL
+        ========================= */
+
+        const response =
+            await emailjs.send(
+
+                "service_ve9xl6a",
+
+                "template_dtndthc",
+
+                {
+
+                    to_email:
+                        booking.email,
+
+                    booking_id:
+                        booking.bookingId,
+
+                    hotel_name:
+                        booking.hotelName,
+
+                    hotel_address:
+                        booking.address,
+
+                    check_in:
+                        formatDate(
+                            booking.checkIn
+                        ),
+
+                    check_out:
+                        formatDate(
+                            booking.checkOut
+                        )
+
+                }
+
+            );
+
+
+        console.log(
+            "✅ Email đã gửi thành công:",
+            response
+        );
+
+
+        /* =========================
+           LƯU ĐẶT PHÒNG
+        ========================= */
+
+        localStorage.setItem(
+            "hotelBooking",
+            JSON.stringify(booking)
+        );
+
+
+        /* =========================
+           HIỂN THỊ THÀNH CÔNG
+        ========================= */
+
+        document.getElementById(
+            "bookingStep2"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "bookingStep3"
+        ).style.display = "block";
+
+
+        /* =========================
+           HIỂN THỊ MÃ ĐẶT PHÒNG
+        ========================= */
+
+        document.getElementById(
+            "bookingSuccessId"
+        ).textContent =
+            booking.bookingId;
+
+
+    } catch (error) {
+
+        console.error(
+            "❌ Lỗi gửi email:",
+            error
+        );
+
+
+        emailError.textContent =
+            "❌ Không thể gửi email. Vui lòng thử lại.";
+
+        emailError.style.display =
+            "block";
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "Xác nhận đặt phòng";
+
+    }
 
 }

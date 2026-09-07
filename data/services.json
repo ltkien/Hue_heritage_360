@@ -1,0 +1,129 @@
+{
+    "khach-san": [
+        {
+            "id": "azerai-la-residence-hue",
+            "name": "Azerai La Residence, Huế",
+            "type": "Khách sạn",
+            "address": "05 Lê Lợi, phường Thuận Hóa, thành phố Huế, Việt Nam",
+            "image": "images/services/ks1.jpeg",
+            "link": "https://azerai.com/azerai-la-residence-hue/",
+            "description": "Azerai La Residence, Huế là khu nghỉ dưỡng cao cấp với 122 phòng ngủ và phòng suite. Khách sạn kết hợp tòa dinh thự cổ kiến trúc Art Deco từ thập niên 1930 với các tòa nhà cánh hiện đại. Không gian sân vườn nhiệt đới và vị trí bên sông Hương mang đến trải nghiệm lưu trú sang trọng, lịch sử và thư thái."
+        },
+        {
+            "id": "silk-path-grand-hue",
+            "name": "Silk Path Grand Hotel & Spa Huế",
+            "type": "Khách sạn",
+            "address": "02 Lê Lợi, phường Thuận Hóa, thành phố Huế, Việt Nam",
+            "image": "images/services/ks2.jpeg",
+            "link": "https://silkpathhotel.com/hue/",
+            "description": "Silk Path Grand Hue Hotel & Spa là khách sạn 5 sao mang phong cách kiến trúc tân cổ điển, kết hợp tinh thần cung đình Huế, nét duyên dáng Đông Dương và tiện nghi hiện đại. Khách sạn có khoảng 10.500 m², gồm 198 phòng và suite thuộc 7 hạng phòng, phù hợp với khách công vụ, gia đình và du khách khám phá Huế."
+        }
+    ],
+    "homestay": [
+        {
+            "id": "deja-vu-homestay-hue",
+            "name": "Deja Vu Homestay Huế",
+            "type": "Homestay",
+            "address": "Số 3, ngõ 191 Điện Biên Phủ, thành phố Huế, Việt Nam",
+            "image": "images/services/hs1.jpg",
+            "link": "http://facebook.com/p/R%C3%8C-R%C3%80O-Homestay-HU%E1%BA%BE-61578793707048/",
+            "description": "Deja Vu Homestay Huế gây ấn tượng với thiết kế mộc mạc, đơn giản, mang nét cổ kính, xinh xắn và ấm cúng. Homestay nằm gần các điểm quan trọng như Nhà ga Huế và Đại Nội, phù hợp với du khách tìm kiếm không gian nhẹ nhàng, thư thái và gần gũi."
+        },
+        {
+            "id": "ri-rao-homestay-hue",
+            "name": "Rì Rào Homestay Huế",
+            "type": "Homestay",
+            "address": "121 Tôn Quang Phiệt, phường An Đông, thành phố Huế, Việt Nam",
+            "image": "images/services/hs2.jpg",
+            "link": "https://www.facebook.com/dejavuhouse.hue/",
+            "description": "Rì Rào Homestay Huế là không gian lưu trú ấm cúng với phong cách mộc mạc, gần gũi nhưng vẫn tinh tế và hiện đại. Homestay nằm trong khu vực yên tĩnh, thuận tiện di chuyển đến Cung An Định, Cầu Tràng Tiền và khu vực bờ sông Hương."
+        }
+    ],
+    "tour": [
+        {
+            "id": "dau-an-hoang-cung-hue",
+            "name": "Dấu ấn Hoàng cung Huế",
+            "type": "Tour",
+            "location": "Đại Nội Huế – Hoàng Thành và Tử Cấm Thành",
+            "duration": "3 – 3,5 giờ",
+            "time": "09:00 – 12:30",
+            "category": "Tham quan di sản văn hóa, lịch sử và kiến trúc",
+            "suitable_for": "Du khách, gia đình, học sinh – sinh viên, khách quốc tế",
+            "image": "images/tour1.jpg",
+            "itinerary": [
+                {
+                    "time": "09:00 – 09:20",
+                    "activity": "Tập trung tại Ngọ Môn, giới thiệu tổng quan Đại Nội."
+                },
+                {
+                    "time": "09:20 – 10:00",
+                    "activity": "Tham quan Ngọ Môn – Điện Thái Hòa."
+                },
+                {
+                    "time": "10:00 – 10:45",
+                    "activity": "Khám phá Tử Cấm Thành."
+                },
+                {
+                    "time": "10:45 – 11:30",
+                    "activity": "Tham quan Thế Miếu – Hiển Lâm Các – Cửu Đỉnh."
+                },
+                {
+                    "time": "11:30 – 12:15",
+                    "activity": "Tự do tham quan, chụp ảnh."
+                },
+                {
+                    "time": "12:15 – 12:30",
+                    "activity": "Tổng kết và kết thúc tour."
+                }
+            ],
+            "price": {
+                "adult": 200000,
+                "child_7_12": 40000,
+                "currency": "VND"
+            }
+        },
+        {
+            "id": "hanh-trinh-ba-lang-vua-nguyen",
+            "name": "Hành trình Ba Lăng Vua Nguyễn",
+            "type": "Tour",
+            "location": "Lăng Minh Mạng – Lăng Tự Đức – Lăng Khải Định",
+            "address": "Khu vực phía Nam và Tây Nam thành phố Huế",
+            "duration": "4 – 4,5 giờ tham quan (chưa tính di chuyển)",
+            "category": "Du lịch di sản, kiến trúc, lịch sử và nhiếp ảnh",
+            "suitable_for": "Du khách yêu thích lịch sử, kiến trúc, văn hóa và nhiếp ảnh",
+            "image": "images/tour2.jpg",
+            "highlights": [
+                "Lăng Minh Mạng: Uy nghiêm, cân đối và hài hòa.",
+                "Lăng Tự Đức: Thơ mộng, gần gũi thiên nhiên.",
+                "Lăng Khải Định: Cầu kỳ, nổi bật với nghệ thuật Đông – Tây."
+            ],
+            "itinerary": [
+                {
+                    "time": "08:00 – 09:15",
+                    "location": "Lăng Minh Mạng",
+                    "activity": "Tham quan Đại Hồng Môn, điện Sùng Ân, Minh Lâu và khu lăng mộ."
+                },
+                {
+                    "time": "09:30 – 10:45",
+                    "location": "Lăng Tự Đức",
+                    "activity": "Khám phá Hồ Lưu Khiêm, Xung Khiêm Tạ, Khiêm Cung và khu lăng mộ."
+                },
+                {
+                    "time": "11:00 – 12:15",
+                    "location": "Lăng Khải Định",
+                    "activity": "Tham quan sân chầu, tượng quan văn – võ và Điện Thiên Định."
+                },
+                {
+                    "time": "12:15 – 12:30",
+                    "location": "Kết thúc",
+                    "activity": "Tổng kết hành trình và những nét đặc trưng của ba lăng vua Nguyễn."
+                }
+            ],
+            "price": {
+                "reference": 450000,
+                "per_tomb": 150000,
+                "currency": "VND"
+            }
+        }
+    ]
+}
