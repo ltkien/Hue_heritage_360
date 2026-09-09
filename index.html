@@ -1271,7 +1271,167 @@
             </div>
         </div>
     </div>
+    <!--  MODAL ĐẶT TOUR -->
+    <div class="modal fade" id="tourBookingModal" tabindex="-1" aria-hidden="true">
 
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <!-- HEADER -->
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        🗺️ Đặt tour
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+
+                </div>
+
+
+                <!-- BODY -->
+
+                <div class="modal-body">
+
+
+                    <!-- THÔNG TIN TOUR -->
+
+                    <h5 id="tourBookingName"></h5>
+
+                    <p id="tourBookingLocation" class="text-muted mb-1"></p>
+
+                    <p id="tourBookingDuration" class="text-muted"></p>
+
+
+                    <!-- =========================
+                 BƯỚC 1
+            ========================== -->
+
+                    <div id="tourBookingStep1">
+
+                        <h6 class="mb-3">
+                            📅 Chọn ngày tham gia tour
+                        </h6>
+
+
+                        <div class="mb-3">
+
+                            <label for="tourDate" class="form-label">
+                                Ngày đặt tour
+                            </label>
+
+                            <input type="date" id="tourDate" class="form-control">
+
+                            <small class="text-muted">
+                                Tour phải được đặt trước ít nhất 1 ngày.
+                            </small>
+
+                        </div>
+
+
+                        <div id="tourDateError" class="text-danger mb-3" style="display: none;"></div>
+
+
+                        <button type="button" class="btn btn-success w-100" onclick="confirmTourDate()">
+                            Tiếp tục
+                        </button>
+
+                    </div>
+
+
+                    <!-- =========================
+                 BƯỚC 2
+            ========================== -->
+
+                    <div id="tourBookingStep2" style="display: none;">
+
+                        <h6 class="mb-3">
+                            ✅ Xác nhận thông tin
+                        </h6>
+
+
+                        <div class="booking-summary">
+
+                            <p>
+                                <strong>Tour:</strong>
+                                <span id="confirmTourName"></span>
+                            </p>
+
+
+                            <p>
+                                <strong>Địa điểm:</strong>
+                                <span id="confirmTourLocation"></span>
+                            </p>
+
+
+                            <p>
+                                <strong>Ngày tham gia:</strong>
+                                <span id="confirmTourDate"></span>
+                            </p>
+
+                        </div>
+
+
+                        <div class="d-flex gap-2">
+
+                            <button type="button" class="btn btn-secondary flex-fill" onclick="backToTourDate()">
+                                Quay lại
+                            </button>
+
+
+                            <button type="button" class="btn btn-success flex-fill" onclick="completeTourBooking()">
+                                Xác nhận đặt tour
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                 BƯỚC 3
+            ========================== -->
+
+                    <div id="tourBookingStep3" style="display: none;" class="text-center">
+
+                        <div class="mb-3" style="font-size: 50px;">
+                            🎉
+                        </div>
+
+
+                        <h5>
+                            Đặt tour thành công!
+                        </h5>
+
+
+                        <p>
+                            Mã đặt tour:
+                            <strong id="tourBookingSuccessId"></strong>
+                        </p>
+
+
+                        <p>
+                            Ngày tham gia:
+                            <strong id="tourBookingSuccessDate"></strong>
+                        </p>
+
+
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                            Đóng
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <p>© 2026 MyWebsite. All rights reserved.</p>

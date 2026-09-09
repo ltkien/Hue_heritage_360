@@ -49,7 +49,7 @@
             "time": "09:00 – 12:30",
             "category": "Tham quan di sản văn hóa, lịch sử và kiến trúc",
             "suitable_for": "Du khách, gia đình, học sinh – sinh viên, khách quốc tế",
-            "image": "images/tour1.jpg",
+            "image": "images/services/tour1.jpg",
             "itinerary": [
                 {
                     "time": "09:00 – 09:20",
@@ -91,7 +91,7 @@
             "duration": "4 – 4,5 giờ tham quan (chưa tính di chuyển)",
             "category": "Du lịch di sản, kiến trúc, lịch sử và nhiếp ảnh",
             "suitable_for": "Du khách yêu thích lịch sử, kiến trúc, văn hóa và nhiếp ảnh",
-            "image": "images/tour2.jpg",
+            "image": "images/services/tour2.jpg",
             "highlights": [
                 "Lăng Minh Mạng: Uy nghiêm, cân đối và hài hòa.",
                 "Lăng Tự Đức: Thơ mộng, gần gũi thiên nhiên.",

@@ -27,13 +27,24 @@ let currentDetailImageIndex = 0;
 // DỮ LIỆU SERVICES
 // =========================
 let servicesData = {};
+// =========================
+// ĐẶT PHÒNG
+// =========================
 let currentBookingHotel = null;
 
 let bookingData = {
     checkIn: "",
     checkOut: ""
 };
+// =========================
+// ĐẶT TOUR
+// =========================
 
+let currentBookingTour = null;
+
+let tourBookingData = {
+    tourDate: ""
+};
 
 function showPlace(id) {
 
@@ -3166,6 +3177,430 @@ function loadTours() {
 
 }
 
+
+/* =========================
+   ĐẶT TOUR
+========================= */
+
+function bookTour(tourId) {
+
+    const tours =
+        servicesData["tour"] || [];
+
+    const tour =
+        tours.find(
+            item => item.id === tourId
+        );
+
+    if (!tour) {
+
+        console.error(
+            "❌ Không tìm thấy tour:",
+            tourId
+        );
+
+        return;
+    }
+
+    // Lưu tour đang được đặt
+    currentBookingTour = tour;
+
+    console.log(
+        "🗺️ Tour đang đặt:",
+        tour
+    );
+
+
+    /* =========================
+       HIỂN THỊ THÔNG TIN TOUR
+    ========================= */
+
+    document.getElementById(
+        "tourBookingName"
+    ).textContent = tour.name;
+
+
+    document.getElementById(
+        "tourBookingLocation"
+    ).textContent =
+        `📍 ${tour.location}`;
+
+
+    document.getElementById(
+        "tourBookingDuration"
+    ).textContent =
+        `⏱️ ${tour.duration}`;
+
+
+    /* =========================
+       NGÀY ĐẶT TOUR
+    ========================= */
+
+    const tourDate =
+        document.getElementById(
+            "tourDate"
+        );
+
+
+    /*
+       Tour phải đặt trước ít nhất 1 ngày
+       => ngày nhỏ nhất = ngày mai
+    */
+
+    const tomorrow =
+        new Date();
+
+    tomorrow.setDate(
+        tomorrow.getDate() + 1
+    );
+
+
+    const minDate =
+        tomorrow.getFullYear() +
+        "-" +
+        String(
+            tomorrow.getMonth() + 1
+        ).padStart(2, "0") +
+        "-" +
+        String(
+            tomorrow.getDate()
+        ).padStart(2, "0");
+
+
+    tourDate.min = minDate;
+
+    // Reset ngày cũ
+    tourDate.value = "";
+
+
+    // Xóa lỗi
+    document.getElementById(
+        "tourDateError"
+    ).style.display = "none";
+
+
+    /* =========================
+       RESET CÁC BƯỚC
+    ========================= */
+
+    document.getElementById(
+        "tourBookingStep1"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "tourBookingStep2"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "tourBookingStep3"
+    ).style.display = "none";
+
+
+    /* =========================
+       MỞ MODAL
+    ========================= */
+
+    const modalElement =
+        document.getElementById(
+            "tourBookingModal"
+        );
+
+
+    if (!modalElement) {
+
+        console.error(
+            "❌ Không tìm thấy tourBookingModal"
+        );
+
+        return;
+    }
+
+
+    const modal =
+        new bootstrap.Modal(
+            modalElement
+        );
+
+
+    modal.show();
+}
+
+/* =========================
+   XÁC NHẬN NGÀY ĐẶT TOUR
+========================= */
+
+function confirmTourDate() {
+
+    const tourDate =
+        document.getElementById(
+            "tourDate"
+        ).value;
+
+
+    const error =
+        document.getElementById(
+            "tourDateError"
+        );
+
+
+    /* =========================
+       KIỂM TRA TOUR
+    ========================= */
+
+    if (!currentBookingTour) {
+
+        error.textContent =
+            "❌ Không tìm thấy thông tin tour.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    /* =========================
+       KIỂM TRA NGÀY
+    ========================= */
+
+    if (!tourDate) {
+
+        error.textContent =
+            "⚠️ Vui lòng chọn ngày đặt tour.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    /* =========================
+       NGÀY TỐI THIỂU
+    ========================= */
+
+    const tomorrow =
+        new Date();
+
+    tomorrow.setDate(
+        tomorrow.getDate() + 1
+    );
+
+
+    const minDate =
+        tomorrow.getFullYear() +
+        "-" +
+        String(
+            tomorrow.getMonth() + 1
+        ).padStart(2, "0") +
+        "-" +
+        String(
+            tomorrow.getDate()
+        ).padStart(2, "0");
+
+
+    console.log(
+        "📅 Ngày tối thiểu:",
+        minDate
+    );
+
+    console.log(
+        "📅 Ngày tour:",
+        tourDate
+    );
+
+
+    if (tourDate < minDate) {
+
+        error.textContent =
+            "⚠️ Tour phải được đặt trước ít nhất 1 ngày.";
+
+        error.style.display = "block";
+
+        return;
+    }
+
+
+    /* =========================
+       LƯU NGÀY
+    ========================= */
+
+    tourBookingData.tourDate =
+        tourDate;
+
+
+    /* =========================
+       HIỂN THỊ XÁC NHẬN
+    ========================= */
+
+    document.getElementById(
+        "confirmTourName"
+    ).textContent =
+        currentBookingTour.name;
+
+
+    document.getElementById(
+        "confirmTourLocation"
+    ).textContent =
+        currentBookingTour.location;
+
+
+    document.getElementById(
+        "confirmTourDate"
+    ).textContent =
+        formatDate(tourDate);
+
+
+    /* =========================
+       CHUYỂN SANG BƯỚC 2
+    ========================= */
+
+    document.getElementById(
+        "tourBookingStep1"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "tourBookingStep2"
+    ).style.display = "block";
+
+
+    error.style.display = "none";
+
+
+    console.log(
+        "✅ Đã chuyển sang xác nhận đặt tour"
+    );
+}
+
+/* =========================
+   QUAY LẠI CHỌN NGÀY TOUR
+========================= */
+
+function backToTourDate() {
+
+    document.getElementById(
+        "tourBookingStep2"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "tourBookingStep1"
+    ).style.display = "block";
+}
+/* =========================
+   HOÀN TẤT ĐẶT TOUR
+========================= */
+
+function completeTourBooking() {
+
+    if (!currentBookingTour) {
+
+        console.error(
+            "❌ Không có thông tin tour."
+        );
+
+        return;
+    }
+
+
+    if (!tourBookingData.tourDate) {
+
+        console.error(
+            "❌ Chưa có ngày đặt tour."
+        );
+
+        return;
+    }
+
+
+    /* =========================
+       TẠO MÃ ĐẶT TOUR
+    ========================= */
+
+    const bookingId =
+        "TOUR-" +
+        Date.now()
+            .toString()
+            .slice(-8);
+
+
+    /* =========================
+       TẠO DỮ LIỆU ĐẶT TOUR
+    ========================= */
+
+    const booking = {
+
+        bookingId: bookingId,
+
+        tourId:
+            currentBookingTour.id,
+
+        tourName:
+            currentBookingTour.name,
+
+        location:
+            currentBookingTour.location,
+
+        duration:
+            currentBookingTour.duration,
+
+        tourDate:
+            tourBookingData.tourDate,
+
+        createdAt:
+            new Date().toISOString()
+    };
+
+
+    console.log(
+        "🗺️ Đặt tour:",
+        booking
+    );
+
+
+    /* =========================
+       LƯU LOCAL STORAGE
+    ========================= */
+
+    localStorage.setItem(
+        "tourBooking",
+        JSON.stringify(booking)
+    );
+
+
+    /* =========================
+       HIỂN THỊ THÀNH CÔNG
+    ========================= */
+
+    document.getElementById(
+        "tourBookingStep2"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "tourBookingStep3"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "tourBookingSuccessId"
+    ).textContent =
+        booking.bookingId;
+
+
+    document.getElementById(
+        "tourBookingSuccessDate"
+    ).textContent =
+        formatDate(
+            booking.tourDate
+        );
+
+
+    console.log(
+        "✅ Đặt tour thành công!"
+    );
+}
 
 /* =========================
    CHUYỂN TAB
