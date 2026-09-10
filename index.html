@@ -144,19 +144,86 @@
     </section>
 
     <!-- AR -->
-    <section id="ar" class="section ar">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="card " style="width: 18rem; padding: 10px">
 
-                <h2>AR</h2>
-                <!-- Nút mởs Camera -->
-                <div class=" d-flex justify-content-center align-items-center ">
-                    <button type="button" class="btn btn-primary" onclick="openCamera()">
-                        📷 Mở camera
-                    </button>
+    <section id="ar" class="section ar">
+
+        <!-- Background overlay -->
+        <div class="ar-bg-overlay"></div>
+
+        <div class="ar-wrapper">
+
+            <div class="ar-card">
+
+                <!-- AR ICON -->
+                <div class="ar-icon">
+                    <span>AR</span>
+                </div>
+
+                <!-- TITLE -->
+                <h2>Khám phá Huế</h2>
+
+                <div class="ar-subtitle">
+                    theo cách của bạn
+                </div>
+
+                <p class="ar-description">
+                    Trải nghiệm di sản Huế theo một cách hoàn toàn mới
+                    với công nghệ AR 360°.
+                </p>
+
+
+                <!-- FEATURES -->
+                <div class="ar-features">
+
+                    <div class="ar-feature">
+
+                        <div class="ar-feature-icon">
+                            📷
+                        </div>
+
+                        <strong>AR 360°</strong>
+
+                        <span>
+                            Khám phá di sản
+                        </span>
+
+                    </div>
+
+                    <div class="ar-divider"></div>
+
+                    <div class="ar-feature">
+
+                        <div class="ar-feature-icon">
+                            ✨
+                        </div>
+
+                        <strong>AI Guide</strong>
+
+                        <span>
+                            Trợ lý thông minh
+                        </span>
+
+                    </div>
 
                 </div>
 
+
+                <!-- CAMERA BUTTON -->
+                <button type="button" class="ar-camera-button" onclick="openCamera()">
+
+                    <span class="camera-symbol">
+                        📷
+                    </span>
+
+                    <span>
+                        Mở camera
+                    </span>
+
+                    <span class="camera-arrow">
+                        →
+                    </span>
+
+                </button>
 
             </div>
 
