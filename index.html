@@ -17,7 +17,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1 class="logo">Huế Heritage 360</h1>
+            <h1 class="logo">Huế Heritage </h1>
 
             <nav class="nav">
                 <a href="#">Trang chủ</a>
@@ -144,10 +144,8 @@
     </section>
 
     <!-- AR -->
-
     <section id="ar" class="section ar">
 
-        <!-- Background overlay -->
         <div class="ar-bg-overlay"></div>
 
         <div class="ar-wrapper">
@@ -170,7 +168,6 @@
                     Trải nghiệm di sản Huế theo một cách hoàn toàn mới
                     với công nghệ AR 360°.
                 </p>
-
 
                 <!-- FEATURES -->
                 <div class="ar-features">
@@ -207,7 +204,6 @@
 
                 </div>
 
-
                 <!-- CAMERA BUTTON -->
                 <button type="button" class="ar-camera-button" onclick="openCamera()">
 
@@ -230,6 +226,7 @@
         </div>
 
     </section>
+
 
 
     <!-- Services -->
@@ -651,11 +648,12 @@
     <!-- Modal -->
     <!-- Modal chi tiết địa điểm -->
     <div class="modal fade" id="placeModal" tabindex="-1" aria-hidden="true">
+
         <div class="modal-dialog modal-lg modal-dialog-centered">
 
             <div class="modal-content">
 
-                <!-- Header -->
+                <!-- HEADER -->
                 <div class="modal-header">
 
                     <h5 class="modal-title" id="placeModalTitle">
@@ -667,30 +665,33 @@
                 </div>
 
 
-                <!-- Body -->
+                <!-- BODY -->
                 <div class="modal-body">
 
-                    <!-- Gallery -->
-                    <div id="placeCarousel" class="carousel slide">
+                    <!-- GALLERY -->
+                    <div id="placeCarousel" class="carousel slide" data-bs-ride="false">
 
-                        <div class="carousel-inner" id="carouselImages">
-                        </div>
+                        <div class="carousel-inner" id="carouselImages"></div>
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#placeCarousel"
                             data-bs-slide="prev">
+
                             <span class="carousel-control-prev-icon"></span>
+
                         </button>
 
                         <button class="carousel-control-next" type="button" data-bs-target="#placeCarousel"
                             data-bs-slide="next">
+
                             <span class="carousel-control-next-icon"></span>
+
                         </button>
 
                     </div>
 
 
-                    <!-- Thông tin -->
-                    <div class="mt-4">
+                    <!-- THÔNG TIN -->
+                    <div class="place-information mt-4">
 
                         <h4 id="placeName"></h4>
 
@@ -698,7 +699,9 @@
 
                         <p id="placeDescription"></p>
 
-                        <h5>Thông tin</h5>
+                        <h5>
+                            Thông tin
+                        </h5>
 
                         <ul id="placeInfo"></ul>
 
@@ -707,7 +710,7 @@
                 </div>
 
 
-                <!-- Footer -->
+                <!-- FOOTER -->
                 <div class="modal-footer">
 
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -719,13 +722,18 @@
             </div>
 
         </div>
+
     </div>
     <!-- Camera Modal -->
+
     <div class="modal fade" id="cameraModal" tabindex="-1" aria-hidden="true">
+
         <div class="modal-dialog modal-lg modal-dialog-centered">
 
             <div class="modal-content">
 
+
+                <!-- HEADER -->
                 <div class="modal-header">
 
                     <h5 class="modal-title">
@@ -739,67 +747,173 @@
                 </div>
 
 
+                <!-- BODY -->
                 <div class="modal-body text-center">
 
-                    <!-- Camera -->
-                    <video id="camera" autoplay playsinline class="w-100 rounded">
-                    </video>
+
+                    <!-- =========================
+                     CAMERA VIEW
+                ========================== -->
+                    <div id="cameraContainer" class="camera-container">
+
+                        <video id="camera" autoplay playsinline class="w-100 rounded"></video>
+
+                    </div>
 
 
-                    <!-- Ảnh sau khi chụp -->
-                    <div id="photoContainer" class="position-relative" style="display: none;">
+                    <!-- =========================
+                     PHOTO RESULT
+                ========================== -->
+                    <div id="photoContainer" class="photo-container position-relative" hidden>
 
-                        <canvas id="photo" class="w-100 rounded">
-                        </canvas>
+                        <canvas id="photo" class="w-100 rounded"></canvas>
 
-                        <!-- Hiệu ứng scan -->
-                        <div id="scanLine"></div>
 
-                        <!-- Text đang scan -->
-                        <div id="scanText">
+                        <!-- SCAN LINE -->
+                        <div id="scanLine" class="scan-line"></div>
+
+
+                        <!-- SCAN TEXT -->
+                        <div id="scanText" class="scan-text">
                             🔍 Đang quét hình ảnh...
                         </div>
 
                     </div>
 
 
-                    <!-- Trạng thái -->
-                    <div id="locationStatus" class="mt-3" style="display: none;">
+                    <!-- =========================
+                     GPS STATUS
+                ========================== -->
+                    <div id="locationStatus" class="mt-3">
 
-                        <div class="spinner-border text-primary"></div>
+                        <!-- Đang xác định vị trí -->
+                        <div id="locationLoading">
+                            <div class="spinner-border text-primary"></div>
+                            <p class="mt-2 mb-0">
+                                Đang xác định địa điểm...
+                            </p>
+                        </div>
 
-                        <p class="mt-2 mb-0">
-                            Đang xác định địa điểm...
-                        </p>
+
+                        <!-- GPS thành công -->
+                        <div id="locationSuccess" hidden>
+                            <p class="text-success mb-0">
+                                ✅ Vị trí đã sẵn sàng
+                            </p>
+                        </div>
+
+
+                        <!-- GPS lỗi -->
+                        <div id="locationError" hidden>
+                            <p id="locationErrorMessage" class="text-danger mb-0"></p>
+                        </div>
+
+
+                        <!-- Tìm thấy di tích -->
+                        <div id="heritageFound" hidden>
+
+                            <p class="text-success mb-2">
+                                📍 Đã tìm thấy di tích gần bạn
+                            </p>
+
+                            <span id="nearestHeritageName" hidden></span>
+
+                            <p class="text-muted">
+                                Khoảng cách:
+                                <span id="nearestHeritageDistance"></span>
+                            </p>
+
+                            <button id="heritageInfoButton" type="button" class="btn btn-primary">
+                                📖 Tìm hiểu di tích
+                            </button>
+
+                        </div>
+
+
+                        <!-- Không tìm thấy -->
+                        <div id="heritageNotFound" hidden>
+
+                            <p class="text-warning">
+                                ⚠️ Không tìm thấy di tích phù hợp.
+                            </p>
+
+                            <p>
+                                <span id="nearestUnsupportedName"></span>
+                                -
+                                <span id="nearestUnsupportedDistance"></span>
+                            </p>
+
+                        </div>
+
+
+                        <!-- ============================= -->
+                        <!-- KẾT QUẢ SAU KHI QUÉT -->
+                        <!-- ============================= -->
+
+                        <div id="heritageDetected" hidden>
+
+                            <p class="text-success mb-2">
+                                ✅ Đã nhận diện di tích
+                            </p>
+
+                            <h5 id="detectedHeritageName"></h5>
+
+                            <button id="showHeritageInfoButton" type="button" class="btn btn-primary">
+                                📖 Hiện thông tin di tích
+                            </button>
+
+                        </div>
+
+
+                        <!-- ============================= -->
+                        <!-- THÔNG TIN CHI TIẾT -->
+                        <!-- ============================= -->
+
+                        <div id="heritageInfo" hidden>
+
+                            <h4 id="heritageInfoName"></h4>
+
+                            <p>
+                                📍
+                                <span id="heritageInfoLocation"></span>
+                            </p>
+
+                            <p id="heritageInfoDescription"></p>
+
+                            <h5>Thông tin</h5>
+
+                            <ul id="heritageInfoList"></ul>
+
+                            <div id="heritageInfoImages" class="row g-2 mt-3">
+                            </div>
+
+                        </div>
 
                     </div>
 
 
-                    <!-- Buttons -->
-                    <div class="mt-3">
+                    <!-- =========================
+                     CAMERA BUTTONS
+                ========================== -->
+                    <div id="cameraControls" class="camera-controls mt-3">
 
-                        <!-- Chụp ảnh -->
-                        <button id="takePhotoButton" type="button" class="btn btn-success" onclick="takePhoto()">
-
+                        <!-- TAKE PHOTO -->
+                        <button id="takePhotoButton" type="button" class="btn btn-success" onclick="takePhoto()"
+                            disabled>
                             📸 Chụp ảnh
-
                         </button>
 
 
-                        <!-- Đổi camera -->
+                        <!-- SWITCH CAMERA -->
                         <button id="switchCameraButton" type="button" class="btn btn-primary" onclick="switchCamera()">
-
                             🔄 Đổi camera
-
                         </button>
 
 
-                        <!-- Chụp lại -->
+                        <!-- RETAKE -->
                         <button id="retakeButton" type="button" class="btn btn-secondary" onclick="retakePhoto()"
-                            style="display: none;">
-
+                            hidden>
                             🔄 Chụp lại
-
                         </button>
 
                     </div>
@@ -809,6 +923,7 @@
             </div>
 
         </div>
+
     </div>
     <!-- Cart Modal -->
     <!-- CART -->
