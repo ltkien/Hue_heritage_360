@@ -45,8 +45,12 @@ let currentBookingTour = null;
 let tourBookingData = {
     tourDate: ""
 };
-
-
+// =========================
+// Trạng thái rpcamera
+// =========================
+let reportCameraStream = null;
+let reportCapturedImageData = null;
+let reportCurrentCamera = "environment";
 
 /* =========================================================
    DOM ELEMENTS
@@ -4082,3 +4086,342 @@ async function completeBooking() {
     }
 
 }
+
+
+/* =========================
+      Mở modal báo cáo 
+========================= */
+function openReportModal() {
+    const modalElement = document.getElementById("reportModal");
+
+    const modal = new bootstrap.Modal(modalElement);
+
+    modal.show();
+}
+
+function handleReportImage(input) {
+    const file = input.files[0];
+
+    if (!file) {
+        return;
+    }
+
+    // Kiểm tra có phải file ảnh không
+    if (!file.type.startsWith("image/")) {
+        alert("Vui lòng chọn một file ảnh.");
+        input.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+        const previewImage =
+            document.getElementById("reportPreviewImage");
+
+        const previewContainer =
+            document.getElementById("reportImagePreview");
+
+        previewImage.src = event.target.result;
+
+        previewContainer.hidden = false;
+    };
+
+    reader.readAsDataURL(file);
+}
+
+function removeReportImage() {
+    const input =
+        document.getElementById("reportImageInput");
+
+    const previewImage =
+        document.getElementById("reportPreviewImage");
+
+    const previewContainer =
+        document.getElementById("reportImagePreview");
+
+    input.value = "";
+
+    previewImage.src = "";
+
+    previewContainer.hidden = true;
+}
+
+async function openReportCamera() {
+    try {
+        const video = document.getElementById("reportCameraVideo");
+
+        const cameraModalElement =
+            document.getElementById("reportCameraModal");
+
+        const cameraModal =
+            new bootstrap.Modal(cameraModalElement);
+
+        reportCameraStream =
+            await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: {
+                        ideal: reportCurrentCamera
+                    }
+                },
+                audio: false
+            });
+
+        video.srcObject = reportCameraStream;
+
+        video.hidden = false;
+
+        document.getElementById("reportCapturedImage").hidden = true;
+
+        document.getElementById("reportTakePhotoButton").hidden = false;
+
+        document.getElementById("reportUsePhotoButton").hidden = true;
+
+        document.getElementById("reportRetakeButton").hidden = true;
+
+        cameraModal.show();
+
+    } catch (error) {
+
+        console.error("Không thể mở camera:", error);
+
+        alert(
+            "Không thể mở camera. Vui lòng kiểm tra quyền sử dụng camera."
+        );
+    }
+}
+async function switchReportCamera() {
+
+    // Đổi camera
+    if (reportCurrentCamera === "environment") {
+        reportCurrentCamera = "user";
+    } else {
+        reportCurrentCamera = "environment";
+    }
+
+    // Dừng camera hiện tại
+    if (reportCameraStream) {
+
+        reportCameraStream
+            .getTracks()
+            .forEach(function (track) {
+                track.stop();
+            });
+
+        reportCameraStream = null;
+    }
+
+    try {
+
+        const video =
+            document.getElementById("reportCameraVideo");
+
+        // Mở camera mới
+        reportCameraStream =
+            await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: {
+                        ideal: reportCurrentCamera
+                    }
+                },
+                audio: false
+            });
+
+        video.srcObject = reportCameraStream;
+
+        video.hidden = false;
+
+    } catch (error) {
+
+        console.error(
+            "Không thể đổi camera:",
+            error
+        );
+
+        alert(
+            "Không thể chuyển sang camera này."
+        );
+    }
+}
+function takeReportPhoto() {
+    const video =
+        document.getElementById("reportCameraVideo");
+
+    const canvas =
+        document.getElementById("reportCameraCanvas");
+
+    const capturedImage =
+        document.getElementById("reportCapturedImage");
+
+    // Lấy kích thước camera
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    // Vẽ hình ảnh từ camera lên canvas
+    const context = canvas.getContext("2d");
+
+    context.drawImage(
+        video,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    // Chuyển canvas thành ảnh
+    reportCapturedImageData =
+        canvas.toDataURL("image/jpeg", 0.8);
+
+    // Hiển thị ảnh
+    capturedImage.src = reportCapturedImageData;
+    capturedImage.hidden = false;
+
+    // Ẩn camera
+    video.hidden = true;
+
+    // Đổi các nút
+    document.getElementById("reportTakePhotoButton").hidden = true;
+
+    document.getElementById("reportUsePhotoButton").hidden = false;
+
+    document.getElementById("reportRetakeButton").hidden = false;
+}
+function retakeReportPhoto() {
+    const video =
+        document.getElementById("reportCameraVideo");
+
+    const capturedImage =
+        document.getElementById("reportCapturedImage");
+
+    // Xóa ảnh cũ
+    reportCapturedImageData = null;
+
+    capturedImage.src = "";
+    capturedImage.hidden = true;
+
+    // Hiện lại camera
+    video.hidden = false;
+
+    // Đổi nút
+    document.getElementById("reportTakePhotoButton").hidden = false;
+
+    document.getElementById("reportUsePhotoButton").hidden = true;
+
+    document.getElementById("reportRetakeButton").hidden = true;
+}
+
+function useReportPhoto() {
+    if (!reportCapturedImageData) {
+        alert("Bạn chưa chụp ảnh.");
+        return;
+    }
+
+    const previewImage =
+        document.getElementById("reportPreviewImage");
+
+    const previewContainer =
+        document.getElementById("reportImagePreview");
+
+    // Đưa ảnh camera vào phần xem trước của báo cáo
+    previewImage.src = reportCapturedImageData;
+
+    previewContainer.hidden = false;
+
+    // Đóng camera
+    closeReportCamera();
+}
+
+function closeReportCamera() {
+    // Tắt camera
+    if (reportCameraStream) {
+        reportCameraStream.getTracks().forEach(function (track) {
+            track.stop();
+        });
+
+        reportCameraStream = null;
+    }
+
+    // Xóa video
+    const video =
+        document.getElementById("reportCameraVideo");
+
+    video.srcObject = null;
+
+    // Đóng Bootstrap Modal
+    const cameraModalElement =
+        document.getElementById("reportCameraModal");
+
+    const cameraModal =
+        bootstrap.Modal.getInstance(cameraModalElement);
+
+    if (cameraModal) {
+        cameraModal.hide();
+    }
+}
+
+function submitReport() {
+
+    const content = document
+        .getElementById("reportContent")
+        .value
+        .trim();
+
+    const image = document
+        .getElementById("reportPreviewImage")
+        .src;
+
+
+    // Kiểm tra nội dung
+    if (!content) {
+        alert("Vui lòng nhập nội dung báo cáo.");
+        return;
+    }
+
+
+    // Kiểm tra ảnh
+    if (!image || image === window.location.href) {
+        alert("Vui lòng thêm ảnh minh chứng.");
+        return;
+    }
+
+
+    // Ẩn form
+    document.getElementById("reportFormContent").hidden = true;
+
+    document.getElementById("reportFormFooter").hidden = true;
+
+
+    // Hiện thông báo thành công
+    document.getElementById("reportSuccess").hidden = false;
+
+    document.getElementById("reportSuccessFooter").hidden = false;
+}
+
+function resetReportForm() {
+
+    document.getElementById("reportContent").value = "";
+
+    document.getElementById("reportImageInput").value = "";
+
+    document.getElementById("reportPreviewImage").src = "";
+
+    document.getElementById("reportImagePreview").hidden = true;
+
+    reportCapturedImageData = null;
+}
+// Reset modal khi đóng
+document
+    .getElementById("reportModal")
+    .addEventListener("hidden.bs.modal", function () {
+
+        // Hiện lại form
+        document.getElementById("reportFormContent").hidden = false;
+        document.getElementById("reportFormFooter").hidden = false;
+
+        // Ẩn thông báo thành công
+        document.getElementById("reportSuccess").hidden = true;
+        document.getElementById("reportSuccessFooter").hidden = true;
+
+        // Xóa dữ liệu cũ
+        resetReportForm();
+    });

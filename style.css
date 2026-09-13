@@ -2866,3 +2866,447 @@ a {
     }
 
 }
+
+/* =========================
+   REPORT SECTION
+========================= */
+
+.report-section {
+    position: relative;
+
+    min-height: 700px;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-image: url("images/bg_rp.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================
+   BACKGROUND OVERLAY
+========================= */
+
+.report-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(2px);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.report-section .container {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   REPORT CARD
+========================= */
+
+.report-card {
+    width: 100%;
+
+    padding: 45px 60px 35px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.12);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   REPORT ICON
+========================= */
+
+.report-icon {
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 42px;
+
+    background: #fff0f1;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.report-title {
+    margin: 0;
+
+    color: #17213a;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.report-divider {
+    width: 80px;
+
+    height: 5px;
+
+    margin: 18px auto 25px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(90deg,
+            #178c82,
+            #d6a52f);
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.report-description {
+    max-width: 620px;
+
+    margin: 0 auto 30px;
+
+    color: #6d7484;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   REPORT BUTTON
+========================= */
+
+.report-button {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 450px;
+
+    height: 68px;
+
+    margin: 0 auto;
+
+    padding: 15px 60px 15px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: linear-gradient(135deg,
+            #e93649,
+            #d91f36);
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(217, 31, 54, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+/* =========================
+   BUTTON TEXT
+========================= */
+
+.report-button-text {
+    display: block;
+
+    white-space: nowrap;
+
+    text-align: center;
+}
+
+
+/* =========================
+   BUTTON ARROW
+========================= */
+
+.report-button-arrow {
+    position: absolute;
+
+    right: 22px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.report-button:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(135deg,
+            #d91f36,
+            #c71930);
+
+    box-shadow:
+        0 12px 28px rgba(217, 31, 54, 0.35);
+}
+
+
+/* =========================
+   BENEFITS
+========================= */
+
+.report-benefits {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 45px;
+
+    border-top: 1px solid #eeeeee;
+
+    padding-top: 35px;
+}
+
+
+/* =========================
+   BENEFIT
+========================= */
+
+.report-benefit {
+    padding: 0 20px;
+
+    border-right: 1px solid #eeeeee;
+}
+
+.report-benefit:last-child {
+    border-right: none;
+}
+
+
+/* =========================
+   BENEFIT ICON
+========================= */
+
+.benefit-icon {
+    width: 52px;
+
+    height: 52px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0f1;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   BENEFIT TITLE
+========================= */
+
+.report-benefit h4 {
+    margin-bottom: 8px;
+
+    color: #17213a;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   BENEFIT DESCRIPTION
+========================= */
+
+.report-benefit p {
+    margin: 0;
+
+    color: #858b98;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .report-section {
+        min-height: auto;
+
+        padding: 60px 15px;
+    }
+
+
+    .report-card {
+        padding: 35px 20px 30px;
+
+        border-radius: 18px;
+    }
+
+
+    .report-title {
+        font-size: 30px;
+    }
+
+
+    .report-description {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .report-button {
+        width: 100%;
+
+        height: 60px;
+
+        margin: 0 auto;
+
+        padding: 12px 50px 12px 15px;
+
+        font-size: 17px;
+    }
+
+
+    .report-button-arrow {
+        right: 18px;
+
+        font-size: 28px;
+    }
+
+
+    .report-benefits {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .report-benefit {
+        padding: 0 10px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #eeeeee;
+
+        padding-bottom: 25px;
+    }
+
+
+    .report-benefit:last-child {
+        border-bottom: none;
+
+        padding-bottom: 0;
+    }
+
+}
+
+.report-success {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.report-success-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.report-success h4 {
+    color: #198754;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.report-success p {
+    color: #6c757d;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}

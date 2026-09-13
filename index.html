@@ -24,6 +24,7 @@
                 <a href="#ar">AR</a>
                 <a href="#services">Đặt</a>
                 <a href="#gift">Quà</a>
+                <a href="#report">Report</a>
                 <a href="#video">Video</a>
             </nav>
         </div>
@@ -586,65 +587,109 @@
         </div>
     </section>
 
-    <!-- Video -->
-    <section id="video" class="section ">
+    <!-- report -->
+    <section id="report" class="report-section">
+
+        <div class="report-overlay"></div>
+
         <div class="container">
 
-            <h2>Dịch vụ</h2>
+            <div class="report-card">
 
-            <div class="cards">
-
-                <div class="card">
-                    <h3>Thiết kế Website</h3>
-                    <p>
-                        Tạo giao diện website đơn giản,
-                        đẹp và responsive.
-                    </p>
+                <!-- Icon cảnh báo -->
+                <div class="report-icon">
+                    🚨
                 </div>
 
-                <div class="card">
-                    <h3>HTML</h3>
-                    <p>
-                        Xây dựng cấu trúc và nội dung
-                        cho website.
-                    </p>
-                </div>
+                <!-- Tiêu đề -->
+                <h2 class="report-title">
+                    Báo cáo phá hoại
+                </h2>
 
-                <div class="card">
-                    <h3>CSS</h3>
-                    <p>
-                        Thiết kế giao diện, màu sắc,
-                        bố cục và hiệu ứng.
-                    </p>
+                <!-- Gạch trang trí -->
+                <div class="report-divider"></div>
+
+                <!-- Mô tả -->
+                <p class="report-description">
+                    Cùng chung tay bảo vệ di sản Huế.
+                    Vui lòng báo cáo các hành vi phá hoại,
+                    làm hư hại di tích để chúng tôi có thể
+                    kịp thời xử lý và bảo tồn giá trị văn hóa.
+                </p>
+
+                <!-- Nút báo cáo -->
+                <button type="button" class="report-button" onclick="openReportModal()">
+                    <span class="report-button-text">
+                        🚨 Báo cáo phá hoại
+                    </span>
+
+                    <span class="report-button-arrow">
+                        ›
+                    </span>
+                </button>
+
+                <!-- Các lợi ích -->
+                <div class="report-benefits">
+
+                    <div class="report-benefit">
+
+                        <div class="benefit-icon">
+                            🛡️
+                        </div>
+
+                        <h4>Bảo vệ di sản</h4>
+
+                        <p>
+                            Giữ gìn giá trị văn hóa
+                            cho thế hệ mai sau
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-benefit">
+
+                        <div class="benefit-icon">
+                            📷
+                        </div>
+
+                        <h4>Dễ dàng báo cáo</h4>
+
+                        <p>
+                            Chỉ vài bước đơn giản
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-benefit">
+
+                        <div class="benefit-icon">
+                            🕒
+                        </div>
+
+                        <h4>Xử lý kịp thời</h4>
+
+                        <p>
+                            Đồng hành cùng cộng đồng
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section">
-        <div class="container">
-
-            <h2>Liên hệ</h2>
-
-            <form class="contact-form">
-
-                <input type="text" placeholder="Tên của bạn">
-
-                <input type="email" placeholder="Email">
-
-                <textarea placeholder="Nội dung"></textarea>
-
-                <button type="submit">
-                    Gửi
-                </button>
-
-            </form>
-
-        </div>
     </section>
+
+
+
     <!-- Modal -->
     <!-- Modal chi tiết địa điểm -->
     <div class="modal fade" id="placeModal" tabindex="-1" aria-hidden="true">
@@ -1613,6 +1658,207 @@
 
         </div>
 
+    </div>
+
+    <!-- MODAL BÁO CÁO PHÁ HOẠI -->
+    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- TIÊU ĐỀ -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportModalLabel">
+                        🚨 Báo cáo phá hoại
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+
+
+                <!-- NỘI DUNG -->
+                <div class="modal-body">
+
+                    <!-- =========================
+                 FORM BÁO CÁO
+            ========================== -->
+                    <div id="reportFormContent">
+
+                        <!-- Chọn ảnh -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+                                📷 Ảnh minh chứng
+                            </label>
+
+                            <div class="d-flex gap-2">
+
+                                <!-- Chụp ảnh -->
+                                <button type="button" class="btn btn-outline-primary" onclick="openReportCamera()">
+                                    📷 Chụp ảnh
+                                </button>
+
+                                <!-- Chọn từ thư viện -->
+                                <button type="button" class="btn btn-outline-secondary"
+                                    onclick="document.getElementById('reportImageInput').click()">
+                                    🖼️ Chọn từ thư viện
+                                </button>
+
+                            </div>
+
+                            <input type="file" id="reportImageInput" accept="image/*" hidden
+                                onchange="handleReportImage(this)">
+
+                        </div>
+
+
+                        <!-- Xem trước ảnh -->
+                        <div id="reportImagePreview" class="text-center mb-3" hidden>
+
+                            <img id="reportPreviewImage" src="" alt="Ảnh minh chứng" class="img-fluid rounded"
+                                style="max-height: 250px;">
+
+                            <div class="mt-2">
+
+                                <button type="button" class="btn btn-sm btn-outline-danger"
+                                    onclick="removeReportImage()">
+                                    🗑️ Xóa ảnh
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Nội dung báo cáo -->
+                        <div class="mb-3">
+
+                            <label for="reportContent" class="form-label fw-bold">
+                                📝 Nội dung báo cáo
+                            </label>
+
+                            <textarea id="reportContent" class="form-control" rows="5"
+                                placeholder="Hãy mô tả vấn đề bạn phát hiện..."></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                 THÔNG BÁO THÀNH CÔNG
+            ========================== -->
+                    <div id="reportSuccess" class="report-success" hidden>
+
+                        <div class="report-success-icon">
+                            ✅
+                        </div>
+
+                        <h4>
+                            Báo cáo đã được gửi thành công!
+                        </h4>
+
+                        <p>
+                            Cảm ơn bạn đã đóng góp vào việc bảo vệ
+                            và gìn giữ di sản Huế. ❤️
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+             FOOTER FORM
+        ========================== -->
+                <div class="modal-footer" id="reportFormFooter">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Hủy
+                    </button>
+
+                    <button type="button" class="btn btn-danger" onclick="submitReport()">
+                        🚨 Gửi báo cáo
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+             FOOTER THÀNH CÔNG
+        ========================== -->
+                <div class="modal-footer" id="reportSuccessFooter" hidden>
+
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                        Đóng
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- MODAL CAMERA BÁO CÁO xs-->
+    <div class="modal fade" id="reportCameraModal" tabindex="-1" aria-labelledby="reportCameraModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportCameraModalLabel">
+                        📷 Chụp ảnh minh chứng
+                    </h5>
+
+                    <button type="button" class="btn-close" onclick="closeReportCamera()"></button>
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <!-- Camera -->
+                    <video id="reportCameraVideo" autoplay playsinline style="
+                    width: 100%;
+                    max-height: 400px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                "></video>
+
+                    <!-- Canvas dùng để chụp ảnh -->
+                    <canvas id="reportCameraCanvas" hidden></canvas>
+
+                    <!-- Ảnh sau khi chụp -->
+                    <img id="reportCapturedImage" src="" alt="Ảnh đã chụp" class="img-fluid rounded" hidden
+                        style="max-height: 400px;">
+
+                </div>
+
+                <div class="modal-footer justify-content-center">
+
+                    <button type="button" class="btn btn-secondary" onclick="closeReportCamera()">
+                        Hủy
+                    </button>
+
+                    <button type="button" class="btn btn-primary" id="reportTakePhotoButton"
+                        onclick="takeReportPhoto()">
+                        📷 Chụp ảnh
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" onclick="switchReportCamera()">
+                        🔄 Đổi camera
+                    </button>
+
+                    <button type="button" class="btn btn-success" id="reportUsePhotoButton" onclick="useReportPhoto()"
+                        hidden>
+                        ✅ Sử dụng ảnh
+                    </button>
+
+                    <button type="button" class="btn btn-warning" id="reportRetakeButton" onclick="retakeReportPhoto()"
+                        hidden>
+                        🔄 Chụp lại
+                    </button>
+
+
+                </div>
+
+            </div>
+        </div>
     </div>
     <!-- Footer -->
     <footer class="footer">
