@@ -56,7 +56,7 @@
             <div class="cards">
 
                 <!-- Đại Nội Huế -->
-                <div class="card">
+                <div class="card" id="daiNoiCard">
 
                     <img class="card-img-top" src="images/dai_noi_hue/1.jpg" alt="Đại Nội Huế">
 
@@ -84,7 +84,7 @@
                 </div>
 
                 <!-- Chùa Thiên Mụ -->
-                <div class="card">
+                <div class="card" id="thienMuCard">
 
                     <img class="card-img-top" src="images/chua_thien_mu/1.jpeg" alt="Chùa Thiên Mụ">
 
@@ -112,7 +112,7 @@
                 </div>
 
                 <!-- Lăng Tự Đức -->
-                <div class="card">
+                <div class="card" id="tuDucCard">
 
                     <img class="card-img-top" src="images/lang_tu_duc/1.jpeg" alt="Lăng Tự Đức">
 
@@ -688,7 +688,520 @@
     <section id="contact" class="section">
     </section>
 
+    <!-- CHATBOT TRỢ LÝ HUẾ Heritage -->
 
+    <div id="aiChat">
+
+        <!-- NÚT MỞ CHATBOT -->
+        <button id="aiChatButton" type="button" onclick="toggleAIChat()">
+            💬
+        </button>
+
+
+        <!-- HỘP CHATBOT -->
+        <div id="aiChatBox" hidden>
+
+
+            <!-- =========================
+             HEADER
+        ========================== -->
+
+            <div class="ai-chat-header">
+
+                <div>
+
+                    <strong>🏛️ Huế Heritage</strong>
+
+                    <small>
+                        Hỗ trợ khám phá Huế
+                    </small>
+
+                </div>
+
+
+                <button type="button" onclick="toggleAIChat()" aria-label="Đóng">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+             NỘI DUNG CHAT
+        ========================== -->
+
+            <div id="aiChatMessages">
+
+
+                <!-- =========================
+                 MÀN HÌNH CHÀO
+            ========================== -->
+
+                <div id="chatWelcome">
+
+                    <div class="ai-message ai-message-bot">
+
+                        👋 Xin chào!
+
+                        <br><br>
+
+                        Tôi là
+                        <strong>TRỢ LÝ HUẾ Heritage</strong>.
+
+                        <br><br>
+
+                        Bạn cần tôi hỗ trợ điều gì hôm nay?
+
+                        <br><br>
+
+                        Bạn có muốn mình đề xuất
+                        một số lựa chọn không?
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                 MÀN HÌNH ĐỀ XUẤT
+            ========================== -->
+
+                <div id="chatSuggestion" hidden>
+
+                    <div class="ai-message ai-message-bot">
+
+                        😊 Tuyệt vời!
+
+                        <br><br>
+
+                        Bạn muốn khám phá nội dung nào?
+
+                    </div>
+
+
+                    <div class="ai-options">
+
+                        <button type="button" onclick="showChatOption('visit')">
+
+                            🏛️ Tham quan
+
+                        </button>
+
+
+                        <button type="button" onclick="showChatOption('food')">
+
+                            🍜 Ẩm thực
+
+                        </button>
+
+
+                        <button type="button" onclick="showChatOption('gift')">
+
+                            🎁 Mua quà
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                 THAM QUAN
+            ========================== -->
+
+                <div id="chatVisit" hidden>
+
+                    <div class="ai-message ai-message-bot">
+
+                        🏛️
+                        <strong>Địa điểm tham quan</strong>
+
+                        <br><br>
+
+                        Bạn muốn khám phá di tích nào?
+
+                    </div>
+
+
+                    <div class="ai-options">
+
+                        <button type="button" onclick="showHeritageRecommendation('dai-noi')">
+
+                            🏯 Đại Nội Huế
+
+                        </button>
+
+
+                        <button type="button" onclick="showHeritageRecommendation('thien-mu')">
+
+                            🛕 Chùa Thiên Mụ
+
+                        </button>
+
+
+                        <button type="button" onclick="showHeritageRecommendation('tu-duc')">
+
+                            👑 Lăng Tự Đức
+
+                        </button>
+
+                    </div>
+
+
+                    <button type="button" class="ai-back-button" onclick="backToChatWelcome()">
+
+                        ← Quay lại
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                 ẨM THỰC
+            ========================== -->
+
+                <div id="chatFood" hidden>
+
+                    <div class="ai-message ai-message-bot">
+
+                        🍜
+                        <strong>Ẩm thực Huế</strong>
+
+                        <br><br>
+
+                        Huế có rất nhiều món ăn đặc trưng.
+                        Bạn muốn tìm quán món nào?
+
+                    </div>
+
+
+                    <!-- CHỌN MÓN -->
+
+                    <div class="ai-options">
+
+                        <button type="button" onclick="showFoodRecommendation('bun-bo')">
+
+                            🍜 Bún bò Huế
+
+                        </button>
+
+
+                        <button type="button" onclick="showFoodRecommendation('banh-ep')">
+
+                            🥞 Bánh ép
+
+                        </button>
+
+
+                        <button type="button" onclick="showFoodRecommendation('banh-beo')">
+
+                            🍘 Bánh bèo
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =========================
+                     KẾT QUẢ BÚN BÒ
+                ========================== -->
+
+                    <div id="resultBunBo" hidden>
+
+                        <div class="ai-message ai-message-bot">
+
+                            🍜
+                            <strong>Bún bò Huế</strong>
+
+                            <br><br>
+
+                            Một số địa điểm bạn có thể tham khảo:
+
+                        </div>
+
+
+                        <div class="ai-food-list">
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🍜 Bún Bò Huế Nhà An
+                                </strong>
+
+                                <a href="https://share.google/38eKdL6iNgZ1BCneU" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🍜 Bún Bò Huế Bà Gái
+                                </strong>
+
+                                <a href="https://share.google/JOepLzZMRuSpHhp2W" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                     KẾT QUẢ BÁNH ÉP
+                ========================== -->
+
+                    <div id="resultBanhEp" hidden>
+
+                        <div class="ai-message ai-message-bot">
+
+                            🥞
+                            <strong>Bánh ép Huế</strong>
+
+                            <br><br>
+
+                            Một số địa điểm bạn có thể tham khảo:
+
+                        </div>
+
+
+                        <div class="ai-food-list">
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🥞 BÁNH ÉP TRANG
+                                </strong>
+
+                                <a href="https://share.google/WAbIE3miXMxVQ4peQ" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🥞 BÁNH ÉP GIA DI HUẾ
+                                </strong>
+
+                                <a href="https://share.google/pOqH1N5CYkuVZn3xF" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🥞 Tiệm bánh ép 1992
+                                </strong>
+
+                                <a href="https://share.google/2bm5ZVF3Lo8EL2VY4" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                     KẾT QUẢ BÁNH BÈO
+                ========================== -->
+
+                    <div id="resultBanhBeo" hidden>
+
+                        <div class="ai-message ai-message-bot">
+
+                            🍘
+                            <strong>Bánh bèo Huế</strong>
+
+                            <br><br>
+
+                            Một số địa điểm bạn có thể tham khảo:
+
+                        </div>
+
+
+                        <div class="ai-food-list">
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🍘 Quán Bánh Bèo Nậm Lọc Huế Xưa
+                                </strong>
+
+                                <a href="https://share.google/EbUnxMtiv0hUGVMYO" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🍘 Quán bánh O Lé
+                                </strong>
+
+                                <a href="https://share.google/vGLf5WvAHnqiouvg1" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="ai-food-item">
+
+                                <strong>
+                                    🍘 Quán Bánh Chi
+                                </strong>
+
+                                <a href="https://share.google/3l4uP5Zw8LX0yYSyi" target="_blank"
+                                    rel="noopener noreferrer" class="ai-link-button">
+
+                                    📍 Xem trên Google Maps
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUAY LẠI -->
+
+                    <button type="button" class="ai-back-button" onclick="backToChatWelcome()">
+
+                        ← Quay lại
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                 MUA QUÀ
+            ========================== -->
+
+                <div id="chatGift" hidden>
+
+                    <div class="ai-message ai-message-bot">
+
+                        🎁
+                        <strong>Quà lưu niệm Huế</strong>
+
+                        <br><br>
+
+                        Bạn có thể tham khảo những
+                        vật phẩm truyền thống đang
+                        được giới thiệu trên website:
+
+                    </div>
+
+
+                    <div class="ai-options">
+
+                        <button type="button" class="ai-link-button" onclick="goToGiftSection()">
+
+                            🎁 Xem quà lưu niệm Huế
+
+                        </button>
+
+                    </div>
+
+
+                    <button type="button" class="ai-back-button" onclick="backToChatWelcome()">
+
+                        ← Quay lại
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                 KẾT QUẢ
+            ========================== -->
+
+                <div id="chatResult" hidden>
+
+                    <div id="chatResultContent" class="ai-message ai-message-bot">
+                    </div>
+
+
+                    <button type="button" class="ai-back-button" onclick="backToChatWelcome()">
+
+                        ← Quay lại danh mục
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+             Ô NHẬP
+        ========================== -->
+
+            <div class="ai-chat-input">
+
+                <input type="text" id="aiChatInput" placeholder="Bạn muốn hỏi gì về Huế?"
+                    onkeydown="handleAIChatKey(event)" autocomplete="off">
+
+
+                <button type="button" id="aiChatSendButton" onclick="sendAIMessage()">
+
+                    ➤
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- Modal -->
     <!-- Modal chi tiết địa điểm -->
@@ -1880,6 +2393,7 @@
         });
     </script>
     <script src="script.js"></script>
+    <script src="chatbox.js"></script>
 </body>
 
 </html>

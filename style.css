@@ -3310,3 +3310,621 @@ a {
     line-height: 1.6;
     margin: 0;
 }
+
+
+/* =========================================================
+   CHATBOT - TRỢ LÝ HUẾ
+========================================================= */
+
+#aiChat {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   NÚT MỞ CHAT
+========================================================= */
+
+#aiChatButton {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,
+            #198754,
+            #0f766e);
+
+    color: #ffffff;
+    font-size: 26px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#aiChatButton:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   HỘP CHAT
+========================================================= */
+
+#aiChatBox {
+    position: absolute;
+
+    right: 0;
+    bottom: 75px;
+
+    width: 370px;
+    height: 560px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.2);
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    animation: aiChatOpen 0.25s ease;
+}
+
+
+/* =========================================================
+   ANIMATION MỞ CHAT
+========================================================= */
+
+@keyframes aiChatOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ai-chat-header {
+    min-height: 70px;
+
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(135deg,
+            #198754,
+            #0f766e);
+
+    color: #ffffff;
+}
+
+
+/* Tiêu đề */
+
+.ai-chat-header strong {
+    display: block;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* Dòng mô tả */
+
+.ai-chat-header small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    opacity: 0.85;
+}
+
+
+/* Nút đóng */
+
+.ai-chat-header button {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.ai-chat-header button:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================================================
+   KHU VỰC TIN NHẮN
+========================================================= */
+
+#aiChatMessages {
+    flex: 1;
+
+    padding: 18px;
+
+    overflow-y: auto;
+
+    background: #f5f7f8;
+
+    scroll-behavior: smooth;
+}
+
+
+/* Thanh cuộn */
+
+#aiChatMessages::-webkit-scrollbar {
+    width: 5px;
+}
+
+#aiChatMessages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#aiChatMessages::-webkit-scrollbar-thumb {
+    background: #c8d1d0;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   TIN NHẮN
+========================================================= */
+
+.ai-message {
+    max-width: 88%;
+
+    margin-bottom: 14px;
+
+    padding: 12px 14px;
+
+    border-radius: 16px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* Tin nhắn của chatbot */
+
+.ai-message-bot {
+    background: #ffffff;
+
+    color: #333333;
+
+    border-top-left-radius: 5px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Tin nhắn người dùng */
+
+.ai-message-user {
+    margin-left: auto;
+
+    background: #198754;
+
+    color: #ffffff;
+
+    border-top-right-radius: 5px;
+}
+
+
+/* =========================================================
+   CÁC OPTION
+========================================================= */
+
+.ai-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-top: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Button option */
+
+.ai-options button {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #e1e7e5;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover option */
+
+.ai-options button:hover {
+    background: #f0f9f6;
+
+    border-color: #198754;
+
+    color: #198754;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        0 4px 12px rgba(25, 135, 84, 0.08);
+}
+
+
+/* =========================================================
+   NÚT QUAY LẠI
+========================================================= */
+
+.ai-back-button {
+    width: 100%;
+
+    min-height: 42px;
+
+    margin-top: 5px;
+
+    padding: 9px 14px;
+
+    border: 1px solid #dfe5e3;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: #6c757d;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.ai-back-button:hover {
+    background: #f5f7f7;
+
+    border-color: #198754;
+
+    color: #198754;
+}
+
+
+/* =========================================================
+   LINK ĐI ĐẾN SECTION
+========================================================= */
+
+.ai-link-button {
+    width: 100%;
+
+    min-height: 45px;
+
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    padding: 11px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #198754;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 15px rgba(25, 135, 84, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ai-link-button:hover {
+    background: #157347;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(25, 135, 84, 0.25);
+}
+
+
+/* =========================================================
+   INPUT CHAT
+========================================================= */
+
+.ai-chat-input {
+    min-height: 65px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* Ô nhập */
+
+.ai-chat-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 43px;
+
+    padding: 9px 15px;
+
+    border: 1px solid #dfe5e3;
+
+    border-radius: 22px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Khi focus */
+
+.ai-chat-input input:focus {
+    border-color: #198754;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 135, 84, 0.1);
+}
+
+
+/* Placeholder */
+
+.ai-chat-input input::placeholder {
+    color: #9aa3a1;
+}
+
+
+/* =========================================================
+   NÚT GỬI
+========================================================= */
+
+.ai-chat-input button {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    margin-left: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #198754;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ai-chat-input button:hover {
+    background: #157347;
+
+    transform: scale(1.05);
+}
+
+.ai-chat-input button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   KẾT QUẢ
+========================================================= */
+
+#chatResultContent {
+    max-width: 100%;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    #aiChat {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    #aiChatBox {
+        width: 350px;
+        height: 540px;
+
+        bottom: 72px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    #aiChat {
+        right: 15px;
+        bottom: 15px;
+    }
+
+
+    #aiChatButton {
+        width: 55px;
+        height: 55px;
+
+        font-size: 23px;
+    }
+
+
+    #aiChatBox {
+        right: 0;
+        bottom: 68px;
+
+        width: calc(100vw - 30px);
+
+        height: 70vh;
+
+        max-height: 600px;
+
+        border-radius: 18px;
+    }
+
+
+    .ai-chat-header {
+        min-height: 65px;
+    }
+
+
+    #aiChatMessages {
+        padding: 14px;
+    }
+
+
+    .ai-message {
+        font-size: 13px;
+    }
+
+
+    .ai-options button {
+        min-height: 43px;
+
+        font-size: 13px;
+    }
+
+}
