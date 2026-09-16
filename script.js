@@ -4425,3 +4425,73 @@ document
         // Xóa dữ liệu cũ
         resetReportForm();
     });
+
+
+
+function getDirections(destinationLat, destinationLng, placeName) {
+
+    // Kiểm tra trình duyệt có hỗ trợ GPS không
+    if (!navigator.geolocation) {
+        alert("Trình duyệt của bạn không hỗ trợ xác định vị trí.");
+        return;
+    }
+
+    // Thông báo đang lấy vị trí
+    console.log("Đang lấy vị trí hiện tại...");
+
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+
+            const userLat = position.coords.latitude;
+            const userLng = position.coords.longitude;
+
+            console.log("Vị trí hiện tại:", userLat, userLng);
+
+            // Tạo link Google Maps chỉ đường
+            const googleMapsUrl =
+                `https://www.google.com/maps/dir/?api=1` +
+                `&origin=${userLat},${userLng}` +
+                `&destination=${destinationLat},${destinationLng}` +
+                `&travelmode=driving`;
+
+            // Mở Google Maps
+            window.open(googleMapsUrl, "_blank");
+        },
+
+        function (error) {
+
+            switch (error.code) {
+
+                case error.PERMISSION_DENIED:
+                    alert(
+                        "Bạn chưa cho phép Huế Heritage 360 truy cập vị trí. " +
+                        "Vui lòng cho phép quyền vị trí rồi thử lại."
+                    );
+                    break;
+
+                case error.POSITION_UNAVAILABLE:
+                    alert(
+                        "Không thể xác định vị trí hiện tại của bạn."
+                    );
+                    break;
+
+                case error.TIMEOUT:
+                    alert(
+                        "Lấy vị trí quá lâu. Vui lòng thử lại."
+                    );
+                    break;
+
+                default:
+                    alert(
+                        "Không thể lấy vị trí hiện tại."
+                    );
+            }
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+    );
+}

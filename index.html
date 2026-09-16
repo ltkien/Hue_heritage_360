@@ -47,102 +47,161 @@
     </section>
 
 
+
     <!-- About -->
     <section id="about" class="section">
         <div class="container">
 
-            <h2>Di sản nổi bật</h2>
+            <div class="about-heading">
+                <span class="about-eyebrow">HUẾ HERITAGE 360</span>
+
+                <h2>Di sản nổi bật</h2>
+
+                <p class="about-intro">
+                    Khám phá những công trình tiêu biểu lưu giữ dấu ấn
+                    lịch sử và văn hóa của Cố đô Huế.
+                </p>
+            </div>
+
 
             <div class="cards">
 
-                <!-- Đại Nội Huế -->
+                <!-- =========================
+                 ĐẠI NỘI HUẾ
+            ========================== -->
                 <div class="card" id="daiNoiCard">
 
-                    <img class="card-img-top" src="images/dai_noi_hue/1.jpg" alt="Đại Nội Huế">
+                    <div class="card-image">
+                        <img class="card-img-top" src="images/dai_noi_hue/1.jpg" alt="Đại Nội Huế">
+
+                        <span class="heritage-number">01</span>
+                    </div>
 
                     <div class="card-body">
+
+                        <div class="heritage-location">
+                            <span>📍</span>
+                            Phường Thuận Hòa, Huế
+                        </div>
 
                         <h4 class="card-title">
                             Đại Nội Huế
                         </h4>
 
                         <p class="card-text">
-                            Phường Thuận Hòa, Huế
+                            Trung tâm của Quần thể di tích Cố đô Huế,
+                            nơi lưu giữ dấu ấn của triều Nguyễn.
                         </p>
 
-                        <p class="card-text">
-                            Trung tâm của Quần thể di tích Cố đô Huế.
-                        </p>
+                        <div class="card-buttons">
 
-                        <!-- ID = 1 -->
-                        <button class="btn btn-primary" onclick="showPlace(1)">
-                            Xem chi tiết
-                        </button>
+                            <button class="btn btn-primary" onclick="showPlace(1)">
+                                Xem chi tiết
+                            </button>
+
+                            <button type="button" class="btn btn-warning"
+                                onclick="getDirections(16.469527, 107.577432, 'Đại Nội Huế')">
+                                🧭 Chỉ đường
+                            </button>
+
+                        </div>
 
                     </div>
-
                 </div>
 
-                <!-- Chùa Thiên Mụ -->
+
+                <!-- =========================
+                 CHÙA THIÊN MỤ
+            ========================== -->
                 <div class="card" id="thienMuCard">
 
-                    <img class="card-img-top" src="images/chua_thien_mu/1.jpeg" alt="Chùa Thiên Mụ">
+                    <div class="card-image">
+                        <img class="card-img-top" src="images/chua_thien_mu/1.jpeg" alt="Chùa Thiên Mụ">
+
+                        <span class="heritage-number">02</span>
+                    </div>
 
                     <div class="card-body">
+
+                        <div class="heritage-location">
+                            <span>📍</span>
+                            Hương Long, Huế
+                        </div>
 
                         <h4 class="card-title">
                             Chùa Thiên Mụ
                         </h4>
 
                         <p class="card-text">
-                            Hương Long, Huế
+                            Một trong những biểu tượng nổi tiếng,
+                            gắn liền với cảnh quan và văn hóa Cố đô Huế.
                         </p>
 
-                        <p class="card-text">
-                            Một trong những biểu tượng nổi tiếng của cố đô Huế.
-                        </p>
+                        <div class="card-buttons">
 
-                        <!-- ID = 2 -->
-                        <button class="btn btn-primary" onclick="showPlace(2)">
-                            Xem chi tiết
-                        </button>
+                            <button class="btn btn-primary" onclick="showPlace(2)">
+                                Xem chi tiết
+                            </button>
+
+                            <button type="button" class="btn btn-warning"
+                                onclick="getDirections(16.4531778, 107.5448331, 'Chùa Thiên Mụ')">
+                                🧭 Chỉ đường
+                            </button>
+
+                        </div>
 
                     </div>
-
                 </div>
 
-                <!-- Lăng Tự Đức -->
+
+                <!-- =========================
+                 LĂNG TỰ ĐỨC
+            ========================== -->
                 <div class="card" id="tuDucCard">
 
-                    <img class="card-img-top" src="images/lang_tu_duc/1.jpeg" alt="Lăng Tự Đức">
+                    <div class="card-image">
+                        <img class="card-img-top" src="images/lang_tu_duc/1.jpeg" alt="Lăng Tự Đức">
+
+                        <span class="heritage-number">03</span>
+                    </div>
 
                     <div class="card-body">
+
+                        <div class="heritage-location">
+                            <span>📍</span>
+                            Thủy Xuân, Huế
+                        </div>
 
                         <h4 class="card-title">
                             Lăng Tự Đức
                         </h4>
 
                         <p class="card-text">
-                            Thủy Xuân, Huế
+                            Một trong những công trình kiến trúc
+                            tiêu biểu của triều Nguyễn.
                         </p>
 
-                        <p class="card-text">
-                            Một trong những công trình kiến trúc tiêu biểu của triều Nguyễn.
-                        </p>
+                        <div class="card-buttons">
 
-                        <!-- ID = 3 -->
-                        <button class="btn btn-primary" onclick="showPlace(3)">
-                            Xem chi tiết
-                        </button>
+                            <button class="btn btn-primary" onclick="showPlace(3)">
+                                Xem chi tiết
+                            </button>
+
+                            <button type="button" class="btn btn-warning"
+                                onclick="getDirections(16.4330922, 107.5645182, 'Lăng Tự Đức')">
+                                🧭 Chỉ đường
+                            </button>
+
+                        </div>
 
                     </div>
-
                 </div>
 
             </div>
 
         </div>
     </section>
+
 
     <!-- AR -->
     <section id="ar" class="section ar">
