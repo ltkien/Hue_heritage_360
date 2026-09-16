@@ -51,6 +51,10 @@ let tourBookingData = {
 let reportCameraStream = null;
 let reportCapturedImageData = null;
 let reportCurrentCamera = "environment";
+// =========================
+// Vị trí user
+// =========================
+let selectedDestination = null;
 
 /* =========================================================
    DOM ELEMENTS
@@ -4428,64 +4432,88 @@ document
 
 
 
+
 function getDirections(destinationLat, destinationLng, placeName) {
 
-    // Kiểm tra trình duyệt có hỗ trợ GPS không
-    if (!navigator.geolocation) {
-        alert("Trình duyệt của bạn không hỗ trợ xác định vị trí.");
+    selectedDestination = {
+        lat: destinationLat,
+        lng: destinationLng,
+        name: placeName
+    };
+
+    const modalElement = document.getElementById(
+        "locationPermissionModal"
+    );
+
+    const modal = new bootstrap.Modal(modalElement);
+
+    modal.show();
+}
+function allowLocation() {
+
+    if (!selectedDestination) {
         return;
     }
 
-    // Thông báo đang lấy vị trí
-    console.log("Đang lấy vị trí hiện tại...");
+    const modalElement = document.getElementById(
+        "locationPermissionModal"
+    );
+
+    const modal = bootstrap.Modal.getInstance(modalElement);
+
+    if (modal) {
+        modal.hide();
+    }
+
+    if (!navigator.geolocation) {
+
+        alert(
+            "Trình duyệt của bạn không hỗ trợ xác định vị trí."
+        );
+
+        openDirectionsWithoutLocation();
+        return;
+    }
 
     navigator.geolocation.getCurrentPosition(
+
         function (position) {
 
             const userLat = position.coords.latitude;
             const userLng = position.coords.longitude;
 
-            console.log("Vị trí hiện tại:", userLat, userLng);
-
-            // Tạo link Google Maps chỉ đường
             const googleMapsUrl =
-                `https://www.google.com/maps/dir/?api=1` +
-                `&origin=${userLat},${userLng}` +
-                `&destination=${destinationLat},${destinationLng}` +
-                `&travelmode=driving`;
+                "https://www.google.com/maps/dir/?api=1" +
+                "&origin=" + userLat + "," + userLng +
+                "&destination=" +
+                selectedDestination.lat + "," +
+                selectedDestination.lng +
+                "&travelmode=driving";
 
-            // Mở Google Maps
-            window.open(googleMapsUrl, "_blank");
+            window.open(
+                googleMapsUrl,
+                "_blank"
+            );
         },
 
         function (error) {
 
-            switch (error.code) {
+            if (error.code === error.PERMISSION_DENIED) {
 
-                case error.PERMISSION_DENIED:
-                    alert(
-                        "Bạn chưa cho phép Huế Heritage 360 truy cập vị trí. " +
-                        "Vui lòng cho phép quyền vị trí rồi thử lại."
-                    );
-                    break;
+                alert(
+                    "Bạn đã từ chối quyền vị trí. " +
+                    "Google Maps sẽ được mở để bạn tự chọn điểm xuất phát."
+                );
 
-                case error.POSITION_UNAVAILABLE:
-                    alert(
-                        "Không thể xác định vị trí hiện tại của bạn."
-                    );
-                    break;
+            } else {
 
-                case error.TIMEOUT:
-                    alert(
-                        "Lấy vị trí quá lâu. Vui lòng thử lại."
-                    );
-                    break;
-
-                default:
-                    alert(
-                        "Không thể lấy vị trí hiện tại."
-                    );
+                alert(
+                    "Không thể xác định vị trí hiện tại. " +
+                    "Google Maps sẽ được mở để bạn tự chọn điểm xuất phát."
+                );
             }
+
+            openDirectionsWithoutLocation();
         },
 
         {
@@ -4493,5 +4521,37 @@ function getDirections(destinationLat, destinationLng, placeName) {
             timeout: 10000,
             maximumAge: 0
         }
+    );
+}
+function continueWithoutLocation() {
+
+    const modalElement = document.getElementById(
+        "locationPermissionModal"
+    );
+
+    const modal = bootstrap.Modal.getInstance(modalElement);
+
+    if (modal) {
+        modal.hide();
+    }
+
+    openDirectionsWithoutLocation();
+}
+function openDirectionsWithoutLocation() {
+
+    if (!selectedDestination) {
+        return;
+    }
+
+    const googleMapsUrl =
+        "https://www.google.com/maps/search/?api=1" +
+        "&query=" +
+        selectedDestination.lat +
+        "," +
+        selectedDestination.lng;
+
+    window.open(
+        googleMapsUrl,
+        "_blank"
     );
 }

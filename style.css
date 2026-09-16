@@ -4717,3 +4717,153 @@ a {
         font-size: 13px;
     }
 }
+
+/* =========================
+   LOCATION PERMISSION MODAL
+========================= */
+
+.location-modal {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fffaf2;
+    box-shadow: 0 20px 60px rgba(74, 42, 25, 0.25);
+}
+
+.location-modal .modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(143, 56, 39, 0.12);
+    background: #fff8ed;
+}
+
+.location-modal .modal-title {
+    color: #7b3022;
+    font-weight: 700;
+}
+
+.location-modal .modal-body {
+    padding: 30px 28px 20px;
+    text-align: center;
+}
+
+.location-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(197, 139, 58, 0.12);
+
+    font-size: 30px;
+}
+
+.location-modal .modal-body h4 {
+    margin-bottom: 12px;
+
+    color: #5a3023;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.location-modal .modal-body p {
+    margin-bottom: 14px;
+
+    color: #70594b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.location-note {
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: #f8efe1;
+
+    font-size: 13px !important;
+    color: #87694e !important;
+}
+
+.location-modal-footer {
+    display: flex;
+    gap: 10px;
+
+    padding: 18px 24px 24px;
+
+    border-top: none;
+}
+
+.location-modal-footer button {
+    flex: 1;
+
+    min-height: 48px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-location-deny {
+    color: #7b3022;
+
+    background: #fffaf2;
+
+    border: 1px solid #d8b98a;
+}
+
+.btn-location-deny:hover {
+    color: #7b3022;
+
+    background: #f8ecda;
+
+    transform: translateY(-2px);
+}
+
+.btn-location-allow {
+    color: #fff;
+
+    background: linear-gradient(135deg,
+            #a6422d,
+            #8f3827);
+
+    border: 1px solid #8f3827;
+
+    box-shadow: 0 5px 14px rgba(143, 56, 39, 0.2);
+}
+
+.btn-location-allow:hover {
+    color: #fff;
+
+    background: linear-gradient(135deg,
+            #8f3827,
+            #762d22);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(143, 56, 39, 0.28);
+}
+
+@media (max-width: 480px) {
+
+    .location-modal .modal-body {
+        padding: 25px 20px 15px;
+    }
+
+    .location-modal-footer {
+        flex-direction: column;
+        padding: 15px 20px 20px;
+    }
+
+    .location-modal-footer button {
+        width: 100%;
+    }
+}
