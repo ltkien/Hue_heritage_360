@@ -4484,16 +4484,18 @@ function allowLocation() {
 
             const googleMapsUrl =
                 "https://www.google.com/maps/dir/?api=1" +
-                "&origin=" + userLat + "," + userLng +
+                "&origin=" +
+                userLat +
+                "," +
+                userLng +
                 "&destination=" +
-                selectedDestination.lat + "," +
+                selectedDestination.lat +
+                "," +
                 selectedDestination.lng +
                 "&travelmode=driving";
 
-            window.open(
-                googleMapsUrl,
-                "_blank"
-            );
+            // Mở Google Maps trực tiếp
+            window.location.href = googleMapsUrl;
         },
 
         function (error) {
@@ -4502,14 +4504,14 @@ function allowLocation() {
 
                 alert(
                     "Bạn đã từ chối quyền vị trí. " +
-                    "Google Maps sẽ được mở để bạn tự chọn điểm xuất phát."
+                    "Google Maps sẽ mở đến địa điểm."
                 );
 
             } else {
 
                 alert(
                     "Không thể xác định vị trí hiện tại. " +
-                    "Google Maps sẽ được mở để bạn tự chọn điểm xuất phát."
+                    "Google Maps sẽ mở đến địa điểm."
                 );
             }
 
@@ -4518,7 +4520,7 @@ function allowLocation() {
 
         {
             enableHighAccuracy: true,
-            timeout: 10000,
+            timeout: 15000,
             maximumAge: 0
         }
     );
