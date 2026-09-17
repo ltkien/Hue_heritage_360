@@ -3742,6 +3742,11 @@ function confirmBookingDate() {
         return;
     }
 
+    if (!roomType) {
+        error.textContent = "Vui lòng chọn loại phòng.";
+        error.style.display = "block";
+        return;
+    }
 
     /* =========================
        HÔM NAY

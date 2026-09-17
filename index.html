@@ -1960,7 +1960,30 @@
                             <input type="date" id="checkOutDate" class="form-control">
 
                         </div>
+                        <!-- LOẠI PHÒNG -->
+                        <div class="mb-3">
 
+                            <label class="form-label">
+                                🛏️ Loại phòng
+                            </label>
+
+                            <select id="roomType" class="form-select">
+
+                                <option value="" selected disabled>
+                                    -- Chọn loại phòng --
+                                </option>
+
+                                <option value="single">
+                                    Phòng đơn
+                                </option>
+
+                                <option value="double">
+                                    Phòng đôi
+                                </option>
+
+                            </select>
+
+                        </div>
 
                         <div id="bookingDateError" class="text-danger mb-3" style="display: none;">
                         </div>
@@ -1993,7 +2016,10 @@
                                 <strong>Địa chỉ:</strong>
                                 <span id="confirmHotelAddress"></span>
                             </p>
-
+                            <p>
+                                <strong>Loại phòng:</strong>
+                                <span id="confirmRoomType"></span>
+                            </p>
                             <p>
                                 <strong>Nhận phòng:</strong>
                                 <span id="confirmCheckIn"></span>
