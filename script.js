@@ -4494,8 +4494,11 @@ function allowLocation() {
                 selectedDestination.lng +
                 "&travelmode=driving";
 
-            // Mở Google Maps trực tiếp
-            window.location.href = googleMapsUrl;
+            // MỞ GOOGLE MAPS Ở TAB MỚI
+            window.open(
+                googleMapsUrl,
+                "_blank"
+            );
         },
 
         function (error) {
