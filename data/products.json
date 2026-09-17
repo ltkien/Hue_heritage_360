@@ -10,21 +10,22 @@
             },
             {
                 "name": "Hoa sen giấy",
-                "price": 25000,
+                "price": 30000,
                 "description": "Hoa sen giấy là sản phẩm đặc sắc và có giá trị nhận diện cao của Thanh Tiên."
             },
             {
                 "name": "Hoa trang trí hiện đại",
-                "price": 30000,
+                "price": 20000,
                 "description": "Bên cạnh sản phẩm truyền thống, người làm nghề ngày nay còn phát triển thêm nhiều mẫu hoa và cách phối màu mới nhằm đáp ứng nhu cầu trang trí và quà tặng."
             }
         ],
         "detail": {
             "images": [
                 "images/products/hgtt.jpeg",
-                "images/products/hgtt.jpeg",
-                "images/products/hgtt.jpeg",
-                "images/products/hgtt.jpeg"
+                "images/products/hgtt2.jpg",
+                "images/products/hgtt3.jpg",
+                "images/products/hgtt4.jpg",
+                "images/products/hgtt5.jpg"
             ],
             "address": "Làng Thanh Tiên, phường Dương Nỗ, thành phố Huế, bên bờ nam hạ lưu sông Hương, gần ngã ba Sình, cách trung tâm Huế khoảng 8–10 km.",
             "overview": "Thanh Tiên là làng nghề thủ công truyền thống nổi tiếng với nghề làm hoa giấy. Hoa được tạo thủ công từ tre, giấy màu và bàn tay khéo léo của nghệ nhân qua nhiều công đoạn.",
@@ -104,26 +105,26 @@
             },
             {
                 "name": "Tranh đồ vật",
-                "price": 105000,
+                "price": 50000,
                 "description": "Gồm áo quần, tiền, cung tên và vật dụng, mang ý nghĩa tượng trưng cho các vật phẩm trong đời sống và nghi lễ."
             },
             {
                 "name": "Tranh súc vật",
-                "price": 110000,
+                "price": 70000,
                 "description": "Hình ảnh voi, hổ và 12 con giáp, mang ý nghĩa biểu tượng về sức mạnh, sự uy nghi, thời gian và vận mệnh."
             },
             {
                 "name": "Tranh Bát Âm",
-                "price": 115000,
+                "price": 75000,
                 "description": "Khắc họa những người biểu diễn nhạc cụ truyền thống, gắn với âm nhạc, nghi lễ và đời sống cộng đồng."
             }
         ],
         "detail": {
             "images": [
-                "images/products/tls-1.jpg",
-                "images/products/tls-2.jpg",
-                "images/products/tls-3.jpg",
-                "images/products/tls-4.jpg"
+                "images/products/tls1.PNG",
+                "images/products/tls2.PNG",
+                "images/products/tls3.PNG",
+                "images/products/tls4.PNG"
             ],
             "address": "Làng Sình (Lại Ân), nay thuộc phường Dương Nỗ, thành phố Huế, nằm ở vùng hạ lưu sông Hương, cách trung tâm Huế khoảng 8–10 km.",
             "overview": "Tranh Làng Sình là dòng tranh dân gian mộc bản đặc sắc của Huế, gắn chặt với tín ngưỡng và đời sống tinh thần của người dân địa phương. Tranh truyền thống được sử dụng trong các nghi lễ như cầu an, giải hạn, cúng bổn mệnh và cúng thế mạng. Vì vậy, giá trị của tranh không chỉ nằm ở kỹ thuật in, màu sắc mà còn ở những giá trị văn hóa, tâm linh được cộng đồng gửi gắm.",
@@ -197,26 +198,26 @@
         "types": [
             {
                 "name": "Nón lá truyền thống",
-                "price": 80000,
+                "price": 100000,
                 "description": "Sản phẩm lâu đời, làm từ lá nón và tre, có đặc điểm mỏng, nhẹ, thanh tao, bền và dùng để che nắng, che mưa."
             },
             {
                 "name": "Nón bài thơ",
-                "price": 85000,
+                "price": 150000,
                 "description": "Đặc trưng của nón Huế, có hình ảnh hoặc câu thơ ẩn giữa các lớp lá, hiện lên khi soi dưới ánh sáng, mang giá trị nghệ thuật."
             },
             {
                 "name": "Nón trang trí và sáng tạo",
-                "price": 90000,
+                "price": 120000,
                 "description": "Gồm nón lá sen, lá bàng, trúc chỉ, cỏ bàng và các mẫu trang trí, kết hợp truyền thống với sản phẩm lưu niệm và nghệ thuật."
             }
         ],
         "detail": {
             "images": [
-                "images/products/nlml-1.jpeg",
-                "images/products/nlml-2.jpeg",
-                "images/products/nlml-3.jpeg",
-                "images/products/nlml-4.jpeg"
+                "images/products/nlml.jpeg",
+                "images/products/nlml2.jpg",
+                "images/products/nlml3.jpg",
+                "images/products/nlml4.jpg"
             ],
             "address": "Làng nghề nón lá Mỹ Lam nằm ven sông Như Ý, thuộc TDP Mỹ Lam, phường Mỹ Thượng, thành phố Huế, cách trung tâm thành phố khoảng 8 km về phía Đông.",
             "overview": "Mỹ Lam là làng nghề truyền thống nổi tiếng với nghề làm nón lá, đặc biệt là nón bài thơ mang vẻ đẹp thanh mảnh, nhẹ nhàng và tinh tế. Nón được làm thủ công với những đường chằm đều đặn, thể hiện sự khéo léo của người thợ. Điểm đặc biệt của nón bài thơ là hình ảnh, hoa văn hoặc câu thơ được đặt giữa các lớp lá và chỉ hiện lên khi đưa nón trước ánh sáng. Nón Mỹ Lam không chỉ dùng để che nắng, che mưa mà còn là sản phẩm văn hóa gắn với hình ảnh người phụ nữ, tà áo dài và vẻ đẹp của xứ Huế.",

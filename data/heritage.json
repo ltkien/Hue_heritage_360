@@ -10,7 +10,11 @@
         "images": [
             "images/dai_noi_hue/1.jpg",
             "images/dai_noi_hue/2.jpg",
-            "images/dai_noi_hue/3.jpg"
+            "images/dai_noi_hue/3.jpg",
+            "images/dai_noi_hue/4.jpg",
+            "images/dai_noi_hue/5.jpg",
+            "images/dai_noi_hue/6.jpg",
+            "images/dai_noi_hue/7.jpg"
         ],
         "info": [
             "Triều đại: Nguyễn",
@@ -27,9 +31,11 @@
         "address": "Hương Long, Huế",
         "description": "Chùa Thiên Mụ là một trong những biểu tượng nổi tiếng của cố đô Huế, nằm bên dòng sông Hương.",
         "images": [
-            "images/chua_thien_mu/1.jpeg",
-            "images/chua_thien_mu/2.jpeg",
-            "images/chua_thien_mu/3.jpeg"
+            "images/chua_thien_mu/1.jpg",
+            "images/chua_thien_mu/2.jpg",
+            "images/chua_thien_mu/3.jpg",
+            "images/chua_thien_mu/4.jpg",
+            "images/chua_thien_mu/1.jpeg"
         ],
         "info": [
             "Địa điểm: Đồi Hà Khê",
@@ -47,8 +53,9 @@
         "description": "Lăng Tự Đức là một trong những công trình kiến trúc tiêu biểu của triều Nguyễn.",
         "images": [
             "images/lang_tu_duc/1.jpeg",
-            "images/lang_tu_duc/2.jpeg",
-            "images/lang_tu_duc/3.jpeg"
+            "images/lang_tu_duc/1.PNG",
+            "images/lang_tu_duc/2.PNG",
+            "images/lang_tu_duc/3.PNG"
         ],
         "info": [
             "Triều đại: Nguyễn",
