@@ -2,17 +2,51 @@
     {
         "id": 1,
         "name": "Đại Nội Huế",
+        "alias": "Hoàng thành Huế",
+        "type": "Di tích lịch sử",
+        "address": "Đường 23 Tháng 8, phường Thuận Hòa, thành phố Huế",
         "latitude": 16.4698,
         "longitude": 107.5795,
-        "type": "Di tích lịch sử",
-        "address": "Phường Thuận Hòa, Huế",
-        "description": "Đại Nội Huế là trung tâm của Quần thể di tích Cố đô Huế, từng là nơi sinh hoạt và làm việc của các vua triều Nguyễn.",
+        "description": "Đại Nội Huế, còn gọi là Hoàng thành Huế, nằm ở khu vực trung tâm thành phố Huế và là bộ phận quan trọng của Kinh thành Huế. Đại Nội thuộc Quần thể Di tích Cố đô Huế, được UNESCO công nhận là Di sản Văn hóa Thế giới vào năm 1993. Đây từng là trung tâm chính trị, nghi lễ, tín ngưỡng và sinh hoạt của hoàng gia triều Nguyễn trong hơn một thế kỷ. Với hệ thống thành quách, cung điện, miếu thờ, sân chầu và vườn ngự, Đại Nội lưu giữ những giá trị đặc sắc về lịch sử, kiến trúc, mỹ thuật và văn hóa cung đình Việt Nam.",
+        "description_short": "Đại Nội Huế là trung tâm của Quần thể di tích Cố đô Huế, từng là nơi sinh hoạt và làm việc của các vua triều Nguyễn.",
+        "history": "Sau khi Nguyễn Ánh lên ngôi với niên hiệu Gia Long vào năm 1802, Huế được chọn làm kinh đô của triều Nguyễn. Công cuộc quy hoạch Đại Nội bắt đầu từ năm 1803, Hoàng thành và Cung thành được xây dựng vào năm 1804. Đến năm 1822, dưới thời vua Minh Mạng, Cung thành được đổi tên thành Tử Cấm Thành. Trong những năm tiếp theo, đặc biệt vào năm 1833, nhiều công trình quan trọng tiếp tục được xây dựng và hoàn thiện, tạo nên diện mạo tiêu biểu của Đại Nội. Trong thời Nguyễn, Đại Nội là nơi diễn ra nhiều hoạt động quan trọng của triều đình như lễ đăng quang, đại triều, lễ mừng năm mới, các nghi lễ hoàng gia và hoạt động thờ tự tổ tiên. Năm 1945, vua Bảo Đại thoái vị, chấm dứt vai trò của Đại Nội với tư cách là trung tâm quyền lực của triều đình. Trong thế kỷ XX, nhiều công trình bị ảnh hưởng bởi chiến tranh và thời gian. Công tác bảo tồn, trùng tu được tiến hành từng bước, đặc biệt sau khi Quần thể Di tích Cố đô Huế được UNESCO ghi danh vào năm 1993. Ngày nay, Đại Nội là một trong những di sản quan trọng của Việt Nam và là nơi nghiên cứu, bảo tồn các giá trị lịch sử, kiến trúc và văn hóa cung đình.",
+        "architecture": "Kiến trúc Đại Nội Huế là sự kết hợp hài hòa giữa quy hoạch cung đình, kiến trúc phòng thủ, kiến trúc gỗ truyền thống và nghệ thuật cảnh quan phương Đông. Hoàng thành có mặt bằng gần hình chữ nhật, rộng khoảng 640 × 568 m, diện tích khoảng 36,3 ha, được bao quanh bởi hệ thống tường thành và hào nước. Bốn cửa chính gồm Ngọ Môn ở phía Nam, cửa Hòa Bình ở phía Bắc, cửa Hiển Nhơn ở phía Đông và cửa Chương Đức ở phía Tây. Trong đó, Ngọ Môn là cổng chính và là một trong những biểu tượng tiêu biểu nhất của kiến trúc cung đình Huế. Bên trong Đại Nội, các công trình được bố trí theo trục không gian và thứ bậc nghi lễ rõ ràng, từ Ngọ Môn đến sân Đại Triều Nghi, Điện Thái Hòa, các cung điện và Tử Cấm Thành. Kiến trúc nổi bật với mái ngói lưu ly, kết cấu gỗ, chạm khắc, sơn son thếp vàng và nghệ thuật pháp lam. Các công trình được kết hợp với sân, hồ nước, cây xanh và vườn ngự, tạo nên sự hài hòa giữa kiến trúc và thiên nhiên, đồng thời thể hiện tư tưởng quy hoạch và thẩm mỹ phương Đông.",
+        "highlights": [
+            {
+                "name": "Ngọ Môn",
+                "description": "Là cổng chính của Hoàng thành, nằm trên trục thần đạo của Đại Nội. Công trình nổi bật với hệ thống cổng thành ở tầng dưới và lầu Ngũ Phụng ở phía trên, trở thành một trong những hình ảnh đặc trưng của kiến trúc cung đình Huế."
+            },
+            {
+                "name": "Điện Thái Hòa",
+                "description": "Là một trong những công trình quan trọng nhất của Hoàng thành, từng là nơi tổ chức các buổi đại triều và nghi lễ lớn của triều Nguyễn. Điện nổi bật với kiến trúc gỗ, hệ thống cột và các hoa văn trang trí mang tính cung đình."
+            },
+            {
+                "name": "Tử Cấm Thành",
+                "description": "Là khu vực dành riêng cho hoàng đế và hoàng gia, từng là nơi sinh hoạt và làm việc có tính chất riêng tư nhất trong hệ thống cung đình."
+            },
+            {
+                "name": "Thế Miếu và Hiển Lâm Các",
+                "description": "Thế Miếu là nơi thờ các vị vua triều Nguyễn, thể hiện truyền thống thờ phụng tổ tiên của hoàng gia. Hiển Lâm Các là công trình kiến trúc gỗ có giá trị cao, nằm trong tổng thể cùng Thế Miếu và Cửu Đỉnh."
+            },
+            {
+                "name": "Cửu Đỉnh",
+                "description": "Gồm chín chiếc đỉnh đồng lớn được đúc dưới thời vua Minh Mạng. Trên thân đỉnh có các hình ảnh về sông núi, sản vật và biểu tượng của đất nước, thể hiện quan niệm về lãnh thổ và quyền lực của triều Nguyễn."
+            },
+            {
+                "name": "Duyệt Thị Đường",
+                "description": "Là công trình biểu diễn nghệ thuật cung đình nổi tiếng, gắn với hoạt động thưởng thức nghệ thuật của hoàng gia và phản ánh đời sống văn hóa cung đình triều Nguyễn."
+            }
+        ],
+        "visit_info": {
+            "ticket": "200.000 đồng/người lớn",
+            "opening_hours": "7:00 – 18:00",
+            "note": "Giá vé và thời gian mở cửa có thể được điều chỉnh theo từng thời kỳ hoặc chương trình hoạt động của Trung tâm Bảo tồn Di tích Cố đô Huế. Người tham quan nên kiểm tra thông tin cập nhật trước khi đến."
+        },
         "images": [
             "images/dai_noi_hue/1.jpg",
             "images/dai_noi_hue/2.jpg",
             "images/dai_noi_hue/3.jpg",
             "images/dai_noi_hue/4.jpg",
-            "images/dai_noi_hue/5.jpg",
             "images/dai_noi_hue/6.jpg",
             "images/dai_noi_hue/7.jpg"
         ],
@@ -25,11 +59,41 @@
     {
         "id": 2,
         "name": "Chùa Thiên Mụ",
+        "type": "Di tích lịch sử",
+        "address": "Số 140 – 142 đường Nguyễn Phúc Nguyên, phường Kim Long, thành phố Huế",
         "latitude": 16.4538,
         "longitude": 107.5450,
-        "type": "Di tích lịch sử",
-        "address": "Hương Long, Huế",
-        "description": "Chùa Thiên Mụ là một trong những biểu tượng nổi tiếng của cố đô Huế, nằm bên dòng sông Hương.",
+        "description": "Chùa Thiên Mụ là một trong những danh lam thắng cảnh nổi tiếng nhất của cố đô Huế, nằm trên đồi Hà Khê bên bờ sông Hương. Với vị trí hài hòa giữa cảnh quan thiên nhiên và kiến trúc cổ kính, chùa đã trở thành một biểu tượng văn hóa, lịch sử và tâm linh của Huế. Trải qua nhiều giai đoạn lịch sử, chùa được trùng tu và mở rộng dưới các triều đại, đặc biệt dưới thời vua Thiệu Trị. Quần thể chùa ngày nay nổi bật với Tháp Phước Duyên, Điện Đại Hùng, đình Hương Nguyện cùng nhiều bia đá và hiện vật có giá trị.",
+        "description_short": "Chùa Thiên Mụ là một trong những biểu tượng nổi tiếng của cố đô Huế, nằm bên dòng sông Hương.",
+        "history": "Theo truyền thuyết, trước khi chùa được xây dựng, trên đồi Hà Khê từng có một ngôi chùa mang tên Thiên Mỗ hoặc Thiên Mẫu. Khi chúa Nguyễn Hoàng vào trấn thủ Thuận Hóa, ông đã khảo sát vùng đất và nhận thấy đồi Hà Khê có vị trí đặc biệt bên dòng sông Hương. Truyền thuyết kể rằng một bà lão mặc áo đỏ quần lục từng xuất hiện trên đồi và báo trước rằng sẽ có một vị chân chúa đến lập chùa để tụ linh khí, làm bền long mạch và giúp đất nước hùng mạnh. Từ đó, nơi đây được gọi là Thiên Mụ Sơn. Năm 1601, chúa Nguyễn Hoàng cho dựng chùa trên đồi Hà Khê, hướng mặt ra sông Hương và đặt tên là Thiên Mụ. Trong quá trình tồn tại, chùa nhiều lần được sửa chữa và mở rộng. Đặc biệt, năm 1844, vua Thiệu Trị cho xây dựng quy mô hơn, trong đó có Tháp Từ Nhân, sau đổi tên thành Tháp Phước Duyên, cùng đình Hương Nguyện và các bia ghi lại quá trình xây dựng. Qua nhiều thế kỷ, Chùa Thiên Mụ trở thành một trong những công trình tiêu biểu gắn liền với lịch sử và văn hóa Huế.",
+        "architecture": "Kiến trúc Chùa Thiên Mụ là sự kết hợp hài hòa giữa nghệ thuật kiến trúc cung đình Huế và không gian thanh tịnh của Phật giáo. Quần thể chùa được bố trí theo trục không gian từ thấp lên cao, tận dụng địa thế của đồi Hà Khê và hướng ra sông Hương. Từ khu vực bến thuyền đi lên là hệ thống bậc cấp dẫn vào khuôn viên chùa, nổi bật với các cổng và công trình mang phong cách kiến trúc truyền thống Huế. Đi sâu vào bên trong là Điện Đại Hùng, công trình quan trọng của chùa với kết cấu gỗ, mái ngói và các họa tiết trang trí đặc trưng. Phía sau là những không gian yên tĩnh như Điện Địa Tạng, Điện Quan Âm cùng khu vườn cây xanh. Đặc biệt, Tháp Phước Duyên với kiến trúc bát giác, bảy tầng là điểm nhấn nổi bật nhất của toàn bộ quần thể. Sự kết hợp giữa các công trình kiến trúc, cây xanh, đồi núi và dòng sông Hương tạo nên không gian vừa trang nghiêm vừa thanh thoát, trở thành một trong những hình ảnh đặc trưng của cảnh quan Huế.",
+        "highlights": [
+            {
+                "name": "Tháp Phước Duyên",
+                "description": "Là biểu tượng nổi tiếng nhất của Chùa Thiên Mụ, được vua Thiệu Trị xây dựng năm 1844. Tháp có hình bát giác, cao khoảng 21 m với 7 tầng, mỗi tầng thờ một vị Phật trong hệ thống Thất Phật."
+            },
+            {
+                "name": "Đại Hồng Chung",
+                "description": "Là quả chuông đồng lớn được đúc dưới thời chúa Nguyễn Phúc Chu vào năm 1710, nặng gần 2 tấn. Chuông là một hiện vật có giá trị về lịch sử, nghệ thuật và kỹ thuật đúc đồng thời Nguyễn."
+            },
+            {
+                "name": "Bia Ngự kiến Thiên Mụ tự",
+                "description": "Là tấm bia đá lớn được dựng dưới thời chúa Nguyễn Phúc Chu, ghi lại quá trình trùng tu chùa và các bài thơ văn. Đây là hiện vật có giá trị về lịch sử, mỹ thuật và nghệ thuật chạm khắc đá."
+            },
+            {
+                "name": "Xe Austin",
+                "description": "Là một hiện vật lịch sử gắn với sự kiện năm 1963, chiếc xe từng chở Bồ tát Thích Quảng Đức từ chùa Ấn Quang ở Sài Gòn trước khi ông tự thiêu để phản đối chính sách đàn áp tôn giáo."
+            },
+            {
+                "name": "Giai thoại “Oán tình nhân”",
+                "description": "Là câu chuyện dân gian cho rằng các cặp đôi yêu nhau đến chùa sẽ gặp trắc trở trong tình duyên. Giai thoại này thường được nhìn nhận như một lời nhắc nhở về việc giữ gìn sự trang nghiêm và thanh tịnh của không gian Phật giáo."
+            }
+        ],
+        "visit_info": {
+            "ticket": "Miễn phí",
+            "opening_hours": "5:30 – 18:00 hằng ngày",
+            "note": "Thời gian tham quan và các quy định tại chùa có thể được điều chỉnh theo hoạt động của khu di tích và các dịp lễ đặc biệt."
+        },
         "images": [
             "images/chua_thien_mu/1.jpg",
             "images/chua_thien_mu/2.jpg",
@@ -46,11 +110,49 @@
     {
         "id": 3,
         "name": "Lăng Tự Đức",
+        "alias": "Khiêm Lăng",
+        "type": "Di tích lịch sử",
+        "address": "Phường Thủy Xuân, thành phố Huế",
         "latitude": 16.4210,
         "longitude": 107.5560,
-        "type": "Di tích lịch sử",
-        "address": "Thủy Xuân, Huế",
-        "description": "Lăng Tự Đức là một trong những công trình kiến trúc tiêu biểu của triều Nguyễn.",
+        "description": "Lăng Tự Đức là một trong những công trình lăng tẩm tiêu biểu của triều Nguyễn, được xây dựng cho vua Tự Đức và nằm trong một không gian cảnh quan rộng lớn với núi đồi, hồ nước, cây xanh và các công trình kiến trúc. Khác với nhiều lăng tẩm mang vẻ uy nghiêm và nặng tính nghi lễ, Lăng Tự Đức nổi bật bởi không gian thanh tĩnh, thơ mộng và sự hòa hợp giữa kiến trúc với thiên nhiên. Đây không chỉ là nơi an nghỉ của vua Tự Đức mà còn từng được sử dụng như một không gian nghỉ ngơi, thưởng ngoạn và sáng tác của nhà vua khi còn sống. Trong phạm vi quần thể còn có Bồi Lăng, nơi an táng vua Kiến Phúc, và Khiêm Thọ Lăng, nơi an táng Lệ Thiên Anh Hoàng hậu Võ Thị Duyên, chính thất của vua Tự Đức. Vì vậy, Lăng Tự Đức ngày nay có thể được nhìn nhận như một quần thể lăng tẩm với nhiều lớp lịch sử gắn liền với hoàng tộc nhà Nguyễn.",
+        "description_short": "Lăng Tự Đức là một trong những công trình kiến trúc tiêu biểu của triều Nguyễn.",
+        "history": "Lăng Tự Đức được xây dựng trong thời gian vua Tự Đức trị vì và ban đầu mang tên Vạn Niên Cơ. Quá trình xây dựng với quy mô lớn và điều kiện lao động nặng nề đã góp phần dẫn đến cuộc nổi dậy năm 1866 do Đoàn Trưng lãnh đạo. Sau biến cố này, công trình được đổi tên thành Khiêm Cung và về sau được gọi là Khiêm Lăng. Tự Đức là vị vua có đời sống tinh thần phong phú, yêu thơ ca, văn chương và cảnh vật thiên nhiên. Vì vậy, ông cho xây dựng nơi đây không chỉ với mục đích làm lăng mà còn như một không gian nghỉ ngơi và thưởng ngoạn khi còn sống. Sau khi vua Tự Đức qua đời, quần thể tiếp tục được sử dụng và bổ sung các công trình phục vụ việc thờ phụng hoàng gia. Ngày nay, Lăng Tự Đức là một trong những công trình tiêu biểu nhất của kiến trúc lăng tẩm triều Nguyễn, đồng thời phản ánh rõ đời sống văn hóa, tư tưởng và nghệ thuật của vua Tự Đức cũng như xã hội Việt Nam thế kỷ XIX.",
+        "architecture": "Kiến trúc Lăng Tự Đức nổi bật bởi sự hòa hợp giữa công trình xây dựng và cảnh quan thiên nhiên. Quần thể nằm trong một thung lũng được bao quanh bởi núi đồi, với núi Giáng Khiêm phía trước, núi Dương Xuân phía sau và hồ Lưu Khiêm đóng vai trò quan trọng trong việc tạo cảnh quan. Khác với kiểu bố cục nghiêm ngặt và đăng đối ở một số công trình cung đình, Lăng Tự Đức sử dụng những đường đi uốn lượn, hồ nước, cây xanh, đồi thông và các công trình nằm xen kẽ trong thiên nhiên, tạo nên cảm giác mềm mại và thơ mộng. Hồ Lưu Khiêm là điểm nhấn của quần thể, trên hồ có đảo Tịnh Khiêm cùng các nhà tạ như Xung Khiêm Tạ và Dũ Khiêm Tạ, từng là nơi vua thưởng cảnh, làm thơ và nghỉ ngơi. Khu tẩm điện gồm Khiêm Cung Môn, Hòa Khiêm Điện, Lương Khiêm Điện và Minh Khiêm Đường, trong đó Hòa Khiêm Điện là công trình quan trọng gắn với việc thờ vua Tự Đức và Hoàng hậu Lệ Thiên Anh. Bái Đình có tượng quan văn, quan võ, voi và ngựa đứng chầu, phía sau là Bi Đình với tấm bia Khiêm Cung Ký do chính vua Tự Đức soạn. Khu lăng mộ nằm tiếp nối trong tổng thể cảnh quan, tạo nên sự chuyển tiếp hài hòa giữa không gian tẩm điện, vườn cảnh và nơi an nghỉ. Toàn bộ quần thể thể hiện rõ quan niệm kiến trúc lăng tẩm triều Nguyễn, trong đó thiên nhiên, kiến trúc, nghi lễ và tư tưởng của chủ nhân được kết hợp thành một tổng thể thống nhất.",
+        "highlights": [
+            {
+                "name": "Hồ Lưu Khiêm",
+                "description": "Là một trong những điểm nhấn quan trọng nhất của Lăng Tự Đức, tạo nên không gian mặt nước thơ mộng và kết nối các công trình trong quần thể. Trên hồ có đảo Tịnh Khiêm cùng Xung Khiêm Tạ và Dũ Khiêm Tạ."
+            },
+            {
+                "name": "Hòa Khiêm Điện",
+                "description": "Là trung tâm của khu tẩm điện, từng là nơi vua Tự Đức làm việc và nghỉ ngơi, đồng thời là nơi thờ vua và Hoàng hậu Lệ Thiên Anh."
+            },
+            {
+                "name": "Minh Khiêm Đường",
+                "description": "Là công trình gắn với đời sống nghệ thuật của vua Tự Đức, từng được sử dụng làm nơi biểu diễn và thưởng thức âm nhạc."
+            },
+            {
+                "name": "Bái Đình và Bi Đình",
+                "description": "Bái Đình có các tượng quan văn, quan võ, voi và ngựa đứng chầu. Phía sau là Bi Đình với tấm bia Khiêm Cung Ký, do chính vua Tự Đức soạn, ghi lại quá trình xây dựng và những suy ngẫm của nhà vua về bản thân."
+            },
+            {
+                "name": "Khiêm Cung Ký",
+                "description": "Là một trong những giá trị đặc biệt của Lăng Tự Đức. Tấm bia không chỉ có giá trị về lịch sử và văn học mà còn thể hiện cách vua Tự Đức tự nhìn nhận về cuộc đời, công việc và những hạn chế của bản thân."
+            },
+            {
+                "name": "Không gian cảnh quan",
+                "description": "Lăng Tự Đức nổi bật với hồ nước, đồi thông, cây xanh, nhà tạ và các công trình gỗ được bố trí hài hòa. Vì vậy, quần thể mang dáng vẻ của một khu vườn cung đình hơn là một khu lăng mộ thông thường."
+            }
+        ],
+        "visit_info": {
+            "ticket": {
+                "adult": "150.000 đồng/người",
+                "child_7_to_12": "30.000 đồng/người"
+            },
+            "opening_hours": "7:00 – 17:00",
+            "note": "Giá vé và thời gian tham quan có thể được điều chỉnh theo chính sách của đơn vị quản lý di tích."
+        },
         "images": [
             "images/lang_tu_duc/1.jpeg",
             "images/lang_tu_duc/1.PNG",

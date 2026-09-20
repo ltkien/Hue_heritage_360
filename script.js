@@ -1157,68 +1157,79 @@ function showHeritageInfo(id) {
 }
 
 /* =========================================================
-   SHOW PLACE MODAL
+   SHOW PLACE MODAL - HIỂN THỊ CHI TIẾT DI SẢN
 ========================================================= */
-
 function showPlace(id) {
 
-    const place =
-        heritageData.find(
-            item =>
-                String(item.id) ===
-                String(id)
-        );
-
+    const place = heritageData.find(
+        item => String(item.id) === String(id)
+    );
 
     if (!place) {
-
-        console.error(
-            "Không tìm thấy di tích:",
-            id
-        );
-
+        console.error("Không tìm thấy di tích:", id);
         return;
     }
 
 
-    document.getElementById(
-        "placeModalTitle"
-    ).textContent =
-        place.name;
+    /* =====================================================
+       TÊN
+    ===================================================== */
+
+    document.getElementById("placeModalTitle").textContent =
+        place.name || "Di sản Huế";
+
+    document.getElementById("placeName").textContent =
+        place.name || "Di sản Huế";
 
 
-    document.getElementById(
-        "placeName"
-    ).textContent =
-        place.name;
+    /* =====================================================
+       ĐỊA CHỈ
+    ===================================================== */
+
+    document.getElementById("placeLocation").textContent =
+        place.address || "Chưa có địa chỉ";
 
 
-    document.getElementById(
-        "placeLocation"
-    ).textContent =
-        place.address ||
-        "Chưa có địa chỉ";
+    /* =====================================================
+       MÔ TẢ
+    ===================================================== */
 
-
-    document.getElementById(
-        "placeDescription"
-    ).textContent =
+    document.getElementById("placeDescription").textContent =
         place.description ||
+        place.description_short ||
         "Chưa có mô tả";
 
 
-    const info =
-        document.getElementById(
-            "placeInfo"
-        );
+    /* =====================================================
+       THÔNG TIN
+    ===================================================== */
+
+    const info = document.getElementById("placeInfo");
 
     info.innerHTML = "";
 
 
+    /* =====================================================
+       1. THÔNG TIN CƠ BẢN
+    ===================================================== */
+
+    const basicTitle = document.createElement("li");
+
+    basicTitle.innerHTML =
+        "<strong>📌 Thông tin cơ bản</strong>";
+
+    basicTitle.style.listStyle = "none";
+    basicTitle.style.marginTop = "10px";
+    basicTitle.style.marginBottom = "8px";
+
+    info.appendChild(basicTitle);
+
+
+    /* Loại hình */
+
     if (place.type) {
 
-        const li =
-            document.createElement("li");
+        const li = document.createElement("li");
 
         li.textContent =
             `Loại hình: ${place.type}`;
@@ -1227,26 +1238,307 @@ function showPlace(id) {
     }
 
 
+    /* Các thông tin trong info */
+
+    if (
+        Array.isArray(place.info) &&
+        place.info.length > 0
+    ) {
+
+        place.info.forEach(item => {
+
+            const li = document.createElement("li");
+
+            li.textContent = item;
+
+            info.appendChild(li);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       2. LỊCH SỬ
+    ===================================================== */
+
+    if (place.history) {
+
+        const title = document.createElement("li");
+
+        title.innerHTML =
+            "<strong>📜 Lịch sử</strong>";
+
+        title.style.listStyle = "none";
+        title.style.marginTop = "20px";
+        title.style.marginBottom = "8px";
+
+        info.appendChild(title);
+
+
+        const history = document.createElement("li");
+
+        history.textContent = place.history;
+
+        history.style.listStyle = "none";
+        history.style.lineHeight = "1.8";
+
+        info.appendChild(history);
+
+    }
+
+
+    /* =====================================================
+       3. KIẾN TRÚC
+    ===================================================== */
+
+    if (place.architecture) {
+
+        const title = document.createElement("li");
+
+        title.innerHTML =
+            "<strong>🏛️ Kiến trúc</strong>";
+
+        title.style.listStyle = "none";
+        title.style.marginTop = "20px";
+        title.style.marginBottom = "8px";
+
+        info.appendChild(title);
+
+
+        const architecture =
+            document.createElement("li");
+
+        architecture.textContent =
+            place.architecture;
+
+        architecture.style.listStyle = "none";
+        architecture.style.lineHeight = "1.8";
+
+        info.appendChild(architecture);
+
+    }
+
+
+    /* =====================================================
+       4. ĐIỂM NỔI BẬT
+    ===================================================== */
+
+    if (
+        Array.isArray(place.highlights) &&
+        place.highlights.length > 0
+    ) {
+
+        const title = document.createElement("li");
+
+        title.innerHTML =
+            "<strong>✨ Điểm nổi bật</strong>";
+
+        title.style.listStyle = "none";
+        title.style.marginTop = "20px";
+        title.style.marginBottom = "8px";
+
+        info.appendChild(title);
+
+
+        place.highlights.forEach(item => {
+
+            const li =
+                document.createElement("li");
+
+
+            if (
+                typeof item === "object" &&
+                item !== null
+            ) {
+
+                const name =
+                    item.name || "";
+
+                const description =
+                    item.description || "";
+
+
+                li.innerHTML =
+                    `<strong>${name}</strong>` +
+                    `${description ? `: ${description}` : ""}`;
+
+            }
+
+            else {
+
+                li.textContent = item;
+
+            }
+
+
+            info.appendChild(li);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       5. THÔNG TIN THAM QUAN
+    ===================================================== */
+
+    if (
+        place.visit_info &&
+        typeof place.visit_info === "object"
+    ) {
+
+        const title = document.createElement("li");
+
+        title.innerHTML =
+            "<strong>🎫 Thông tin tham quan</strong>";
+
+        title.style.listStyle = "none";
+        title.style.marginTop = "20px";
+        title.style.marginBottom = "8px";
+
+        info.appendChild(title);
+
+
+        /* ================================================
+           VÉ THAM QUAN
+        ================================================= */
+
+        if (place.visit_info.ticket) {
+
+            /*
+             * Trường hợp Đại Nội / Thiên Mụ:
+             *
+             * "ticket": "200.000 đồng/người lớn"
+             *
+             * Trường hợp Lăng Tự Đức:
+             *
+             * "ticket": {
+             *     "adult": "...",
+             *     "child_7_to_12": "..."
+             * }
+             */
+
+            if (
+                typeof place.visit_info.ticket === "string"
+            ) {
+
+                const li =
+                    document.createElement("li");
+
+                li.textContent =
+                    `Vé tham quan: ${place.visit_info.ticket}`;
+
+                info.appendChild(li);
+
+            }
+
+
+            /* ============================================
+               TỰ ĐỨC - ticket là object
+            ============================================ */
+
+            else if (
+                typeof place.visit_info.ticket === "object"
+            ) {
+
+                if (
+                    place.visit_info.ticket.adult
+                ) {
+
+                    const li =
+                        document.createElement("li");
+
+                    li.textContent =
+                        `Người lớn: ${place.visit_info.ticket.adult}`;
+
+                    info.appendChild(li);
+
+                }
+
+
+                if (
+                    place.visit_info.ticket.child_7_to_12
+                ) {
+
+                    const li =
+                        document.createElement("li");
+
+                    li.textContent =
+                        `Trẻ em 7–12 tuổi: ${place.visit_info.ticket.child_7_to_12}`;
+
+                    info.appendChild(li);
+
+                }
+
+            }
+
+        }
+
+
+        /* ================================================
+           GIỜ MỞ CỬA
+        ================================================= */
+
+        if (
+            place.visit_info.opening_hours
+        ) {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent =
+                `Giờ mở cửa: ${place.visit_info.opening_hours}`;
+
+            info.appendChild(li);
+
+        }
+
+
+        /* ================================================
+           GHI CHÚ
+        ================================================= */
+
+        if (
+            place.visit_info.note
+        ) {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent =
+                `Lưu ý: ${place.visit_info.note}`;
+
+            li.style.marginTop = "8px";
+
+            info.appendChild(li);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       6. HÌNH ẢNH
+       GIỮ NGUYÊN CÁCH CŨ
+    ===================================================== */
+
     const carousel =
-        document.getElementById(
-            "carouselImages"
-        );
+        document.getElementById("carouselImages");
 
     carousel.innerHTML = "";
 
 
     if (
         Array.isArray(place.images) &&
-        place.images.length
+        place.images.length > 0
     ) {
 
         place.images.forEach(
             (image, index) => {
 
                 const item =
-                    document.createElement(
-                        "div"
-                    );
+                    document.createElement("div");
 
 
                 item.className =
@@ -1257,14 +1549,13 @@ function showPlace(id) {
 
 
                 const img =
-                    document.createElement(
-                        "img"
-                    );
+                    document.createElement("img");
 
 
                 img.src = image;
 
-                img.alt = place.name;
+                img.alt =
+                    place.name || "Di sản Huế";
 
                 img.className =
                     "d-block w-100";
@@ -1273,6 +1564,7 @@ function showPlace(id) {
                 item.appendChild(img);
 
                 carousel.appendChild(item);
+
             }
         );
 
@@ -1281,36 +1573,36 @@ function showPlace(id) {
     else {
 
         const item =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
 
         item.className =
             "carousel-item active";
 
 
-        item.innerHTML =
-            `
-                <div class="text-center p-5">
-                    Chưa có hình ảnh
-                </div>
-            `;
+        item.innerHTML = `
+            <div class="text-center p-5">
+                Chưa có hình ảnh
+            </div>
+        `;
 
 
         carousel.appendChild(item);
+
     }
 
 
+    /* =====================================================
+       7. MỞ MODAL
+    ===================================================== */
+
     const modal =
         bootstrap.Modal.getOrCreateInstance(
-            document.getElementById(
-                "placeModal"
-            )
+            document.getElementById("placeModal")
         );
 
-
     modal.show();
+
 }
 
 
@@ -4565,3 +4857,4 @@ function openDirectionsWithoutLocation() {
         "_blank"
     );
 }
+

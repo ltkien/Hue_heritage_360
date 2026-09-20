@@ -23,10 +23,9 @@
             <nav class="nav">
                 <a href="#">Trang chủ</a>
                 <a href="#ar">AR</a>
-                <a href="#services">Đặt</a>
-                <a href="#gift">Quà</a>
-                <a href="#report">Report</a>
-                <a href="#video">Video</a>
+                <a href="#services">Lưu trú</a>
+                <a href="#gift">Shop</a>
+                <a href="#report">Báo cáo</a>
             </nav>
         </div>
     </header>
@@ -38,8 +37,8 @@
             <img src="/images/logonew.png" alt="Logo" class="intro-logo">
 
             <p class="intro-subtitle">
-                Khám phá di tích lịch sử Huế<br>
-                Cố đô huyền thoại
+                Hành trình đánh thức di sản<br>
+                Viết tiếp chuyện nghề trăm năm
             </p>
 
             <a href="#about" class="button">
@@ -1270,18 +1269,25 @@
     <!-- Modal chi tiết địa điểm -->
     <div class="modal fade" id="placeModal" tabindex="-1" aria-hidden="true">
 
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
 
-            <div class="modal-content">
+            <div class="modal-content place-modal-content">
 
                 <!-- HEADER -->
                 <div class="modal-header">
 
-                    <h5 class="modal-title" id="placeModalTitle">
-                        Tên địa điểm
-                    </h5>
+                    <div>
+                        <span class="place-modal-label">
+                            HUẾ HERITAGE 360
+                        </span>
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        <h5 class="modal-title" id="placeModalTitle">
+                            Tên địa điểm
+                        </h5>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng">
+                    </button>
 
                 </div>
 
@@ -1289,10 +1295,13 @@
                 <!-- BODY -->
                 <div class="modal-body">
 
-                    <!-- GALLERY -->
-                    <div id="placeCarousel" class="carousel slide" data-bs-ride="false">
+                    <!-- =========================
+                         GALLERY
+                    ========================== -->
+                    <div id="placeCarousel" class="carousel slide place-gallery" data-bs-ride="false">
 
-                        <div class="carousel-inner" id="carouselImages"></div>
+                        <div class="carousel-inner" id="carouselImages">
+                        </div>
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#placeCarousel"
                             data-bs-slide="prev">
@@ -1311,22 +1320,88 @@
                     </div>
 
 
-                    <!-- THÔNG TIN -->
+                    <!-- =========================
+                         THÔNG TIN CƠ BẢN
+                    ========================== -->
                     <div class="place-information mt-4">
 
-                        <h4 id="placeName"></h4>
+                        <h3 id="placeName"></h3>
 
-                        <p id="placeLocation"></p>
+                        <p class="place-address">
+                            <span>📍</span>
+                            <span id="placeLocation"></span>
+                        </p>
 
-                        <p id="placeDescription"></p>
-
-                        <h5>
-                            Thông tin
-                        </h5>
-
-                        <ul id="placeInfo"></ul>
+                        <p id="placeDescription" class="place-description">
+                        </p>
 
                     </div>
+
+
+                    <!-- =========================
+                         THÔNG TIN CƠ BẢN
+                    ========================== -->
+                    <div class="place-detail-section">
+
+                        <h4>📌 Thông tin cơ bản</h4>
+
+                        <ul id="placeInfo" class="place-info-list">
+                        </ul>
+
+                    </div>
+
+
+                    <!-- =========================
+                         LỊCH SỬ
+                    ========================== -->
+                    <div id="placeHistorySection" class="place-detail-section" hidden>
+
+                        <h4>📜 Lịch sử</h4>
+
+                        <div id="placeHistory" class="place-history">
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         KIẾN TRÚC
+                    ========================== -->
+                    <div id="placeArchitectureSection" class="place-detail-section" hidden>
+
+                        <h4>🏛️ Kiến trúc</h4>
+
+                        <div id="placeArchitecture">
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         ĐIỂM NỔI BẬT
+                    ========================== -->
+                    <div id="placeHighlightsSection" class="place-detail-section" hidden>
+
+                        <h4>✨ Điểm nổi bật</h4>
+
+                        <div id="placeHighlights">
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         THÔNG TIN THAM QUAN
+                    ========================== -->
+                    <div id="placeVisitSection" class="place-detail-section" hidden>
+
+                        <h4>🎫 Thông tin tham quan</h4>
+
+                        <div id="placeVisitInfo">
+                        </div>
+
+                    </div>
+
 
                 </div>
 
@@ -1335,7 +1410,9 @@
                 <div class="modal-footer">
 
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
                         Đóng
+
                     </button>
 
                 </div>
