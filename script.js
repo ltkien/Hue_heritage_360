@@ -34,7 +34,8 @@ let currentBookingHotel = null;
 
 let bookingData = {
     checkIn: "",
-    checkOut: ""
+    checkOut: "",
+    roomType: ""
 };
 // =========================
 // ĐẶT TOUR
@@ -3887,8 +3888,6 @@ loadServices();
    ĐẶT PHÒNG
 ========================= */
 
-
-
 function viewRooms(serviceId) {
 
     const hotels = [
@@ -3953,6 +3952,49 @@ function viewRooms(serviceId) {
 
     checkOut.min = today;
 
+    /* =========================
+       RESET TOÀN BỘ ĐẶT PHÒNG
+    ========================= */
+
+    // Reset email
+    const emailInput = document.getElementById("bookingEmail");
+
+    if (emailInput) {
+        emailInput.value = "";
+    }
+
+    // Xóa lỗi email
+    const emailError = document.getElementById("bookingEmailError");
+
+    if (emailError) {
+        emailError.textContent = "";
+        emailError.style.display = "none";
+    }
+
+    // Reset loại phòng
+    const roomTypeSelect =
+        document.getElementById("roomType");
+
+    if (roomTypeSelect) {
+        roomTypeSelect.value = "";
+    }
+
+    // Reset dữ liệu đặt phòng
+    bookingData = {
+        checkIn: "",
+        checkOut: "",
+        roomType: ""
+    };
+
+    // Reset nút xác nhận
+    const confirmButton =
+        document.getElementById("confirmBookingButton");
+
+    if (confirmButton) {
+        confirmButton.disabled = false;
+        confirmButton.textContent = "Xác nhận đặt phòng";
+    }
+
 
     /* =========================
        RESET
@@ -3983,6 +4025,7 @@ function viewRooms(serviceId) {
     ).style.display = "none";
 
 
+
     /* =========================
        MỞ MODAL
     ========================= */
@@ -4007,12 +4050,10 @@ function confirmBookingDate() {
             "checkInDate"
         ).value;
 
-
     const checkOut =
         document.getElementById(
             "checkOutDate"
         ).value;
-
 
     const error =
         document.getElementById(
@@ -4034,11 +4075,28 @@ function confirmBookingDate() {
         return;
     }
 
-    if (!roomType) {
-        error.textContent = "Vui lòng chọn loại phòng.";
-        error.style.display = "block";
+
+    /* =========================
+       KIỂM TRA LOẠI PHÒNG
+    ========================= */
+
+    const roomTypeSelect =
+        document.getElementById("roomType");
+
+    const selectedRoomType =
+        roomTypeSelect.value;
+
+    if (!selectedRoomType) {
+
+        error.textContent =
+            "⚠️ Vui lòng chọn loại phòng.";
+
+        error.style.display =
+            "block";
+
         return;
     }
+
 
     /* =========================
        HÔM NAY
@@ -4053,14 +4111,15 @@ function confirmBookingDate() {
         error.textContent =
             "⚠️ Ngày nhận phòng phải từ hôm nay trở đi.";
 
-        error.style.display = "block";
+        error.style.display =
+            "block";
 
         return;
     }
 
 
     /* =========================
-       TRẢ PHÒNG PHẢI SAU NHẬN PHÒNG
+       TRẢ PHÒNG
     ========================= */
 
     if (checkOut <= checkIn) {
@@ -4068,7 +4127,8 @@ function confirmBookingDate() {
         error.textContent =
             "⚠️ Ngày trả phòng phải sau ngày nhận phòng.";
 
-        error.style.display = "block";
+        error.style.display =
+            "block";
 
         return;
     }
@@ -4078,9 +4138,20 @@ function confirmBookingDate() {
        LƯU DỮ LIỆU
     ========================= */
 
-    bookingData.checkIn = checkIn;
+    bookingData.checkIn =
+        checkIn;
 
-    bookingData.checkOut = checkOut;
+    bookingData.checkOut =
+        checkOut;
+
+    bookingData.roomType =
+        selectedRoomType;
+
+
+    console.log(
+        "✅ Booking data:",
+        bookingData
+    );
 
 
     /* =========================
@@ -4102,11 +4173,28 @@ function confirmBookingDate() {
     ).textContent =
         formatDate(checkIn);
 
-
     document.getElementById(
         "confirmCheckOut"
     ).textContent =
         formatDate(checkOut);
+
+
+    /* =========================
+       HIỂN THỊ LOẠI PHÒNG
+    ========================= */
+
+    const confirmRoomType =
+        document.getElementById(
+            "confirmRoomType"
+        );
+
+    if (confirmRoomType) {
+
+        confirmRoomType.textContent =
+            roomTypeSelect.options[
+                roomTypeSelect.selectedIndex
+            ].text;
+    }
 
 
     /* =========================
@@ -4117,11 +4205,9 @@ function confirmBookingDate() {
         "bookingStep1"
     ).style.display = "none";
 
-
     document.getElementById(
         "bookingStep2"
     ).style.display = "block";
-
 
     error.style.display = "none";
 }
@@ -4244,6 +4330,9 @@ async function completeBooking() {
 
         address:
             currentBookingHotel.address,
+
+        roomType:
+            bookingData.roomType,
 
         checkIn:
             bookingData.checkIn,
