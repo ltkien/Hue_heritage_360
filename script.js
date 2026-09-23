@@ -784,78 +784,55 @@ async function loadHeritageData() {
    FIND NEAREST HERITAGE
 ========================================================= */
 
-function findNearestHeritage(
-    latitude,
-    longitude
-) {
+function findNearestHeritage(latitude, longitude) {
 
     latitude = Number(latitude);
     longitude = Number(longitude);
-
 
     if (
         !Number.isFinite(latitude) ||
         !Number.isFinite(longitude)
     ) {
-
-        showLocationError(
-            "Tọa độ GPS không hợp lệ."
-        );
-
+        showLocationError("Tọa độ GPS không hợp lệ.");
         return null;
     }
-
 
     if (
         !heritageDataLoaded ||
         !heritageData.length
     ) {
-
-        showLocationError(
-            "Dữ liệu di tích chưa sẵn sàng."
-        );
-
+        showLocationError("Dữ liệu di tích chưa sẵn sàng.");
         return null;
     }
 
+    const places = heritageData
 
-    const places =
-        heritageData
+        .map(place => {
 
-            .map(place => {
-
-                const distance =
-                    calculateDistance(
-                        latitude,
-                        longitude,
-                        place.latitude,
-                        place.longitude
-                    );
-
-
-                return {
-                    ...place,
-                    distance
-                };
-
-            })
-
-            .filter(
-                place =>
-                    Number.isFinite(
-                        place.distance
-                    )
-            )
-
-            .sort(
-                (a, b) =>
-                    a.distance -
-                    b.distance
+            const distance = calculateDistance(
+                latitude,
+                longitude,
+                place.latitude,
+                place.longitude
             );
 
+            return {
+                ...place,
+                distance
+            };
 
-    const nearestPlace =
-        places[0];
+        })
+
+        .filter(
+            place => Number.isFinite(place.distance)
+        )
+
+        .sort(
+            (a, b) => a.distance - b.distance
+        );
+
+
+    const nearestPlace = places[0];
 
 
     if (!nearestPlace) {
@@ -875,68 +852,60 @@ function findNearestHeritage(
 
     console.log(
         "Khoảng cách:",
-        Math.round(
-            nearestPlace.distance
-        ),
+        Math.round(nearestPlace.distance),
         "m"
     );
 
 
+    /* =========================
+       GIỚI HẠN KHOẢNG CÁCH
+       ========================= */
+
+    const MAX_DISTANCE = 200;
+
+
     /*
-        Giới hạn hiện tại của bạn là 2.000.000 m.
-        Nếu mục tiêu là xác định người dùng có thật sự
-        đang ở gần di tích Huế hay không, nên giảm con số này.
+       Nếu di tích gần nhất cách người dùng
+       hơn 200m thì coi như không có di tích gần.
     */
 
-    const MAX_DISTANCE = 2000000;
+    if (nearestPlace.distance > MAX_DISTANCE) {
 
+        // Xóa thông tin cũ nếu trước đó đã từng tìm thấy
+        nearestHeritageName.textContent = "";
+        nearestHeritageDistance.textContent = "";
 
-    if (
-        nearestPlace.distance >
-        MAX_DISTANCE
-    ) {
+        // Xóa chức năng nút thông tin
+        heritageInfoButton.onclick = null;
 
-        nearestUnsupportedName.textContent =
-            nearestPlace.name;
-
-        nearestUnsupportedDistance.textContent =
-            `${Math.round(
-                nearestPlace.distance
-            )} m`;
-
-
-        showLocationState(
-            "not-found"
-        );
+        // Không hiển thị thông tin di tích
+        showLocationState("not-found");
 
         return null;
     }
 
 
-    /* Hiển thị kết quả */
+    /* =========================
+       CÓ DI TÍCH GẦN
+       ========================= */
 
     nearestHeritageName.textContent =
         nearestPlace.name;
 
     nearestHeritageDistance.textContent =
-        `${Math.round(
-            nearestPlace.distance
-        )} m`;
+        `${Math.round(nearestPlace.distance)} m`;
 
 
-    heritageInfoButton.onclick =
-        () => {
+    heritageInfoButton.onclick = () => {
 
-            getPlaceInfoById(
-                nearestPlace.id
-            );
+        getPlaceInfoById(
+            nearestPlace.id
+        );
 
-        };
+    };
 
 
-    showLocationState(
-        "found"
-    );
+    showLocationState("found");
 
 
     return nearestPlace;
