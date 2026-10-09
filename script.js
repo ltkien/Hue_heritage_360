@@ -4916,3 +4916,106 @@ function openDirectionsWithoutLocation() {
     );
 }
 
+
+
+function showUnavailableMessage() {
+    alert("Hiện tại chưa thể mua mặt hàng này. Mong quý khách thông cảm!");
+}
+
+
+
+let giftCurrentIndex = 0;
+
+function getGiftCardsPerPage() {
+    if (window.innerWidth <= 575) {
+        return 1;
+    }
+
+    if (window.innerWidth <= 991) {
+        return 2;
+    }
+
+    return 3;
+}
+
+function moveGiftCards(direction) {
+    const track = document.getElementById("giftCards");
+    const prevButton = document.getElementById("giftPrev");
+    const nextButton = document.getElementById("giftNext");
+
+    if (!track || !prevButton || !nextButton) {
+        return;
+    }
+
+    const cards = Array.from(track.querySelectorAll(".card"));
+    const cardsPerPage = getGiftCardsPerPage();
+
+    const maxIndex = Math.max(
+        0,
+        cards.length - cardsPerPage
+    );
+
+    // Di chuyển theo số card đang hiển thị
+    giftCurrentIndex += direction * cardsPerPage;
+
+    giftCurrentIndex = Math.max(
+        0,
+        Math.min(giftCurrentIndex, maxIndex)
+    );
+
+    const cardStyle = getComputedStyle(track);
+    const gap = parseFloat(cardStyle.columnGap) || 0;
+    const cardWidth = cards[0]
+        ? cards[0].getBoundingClientRect().width
+        : 0;
+
+    const offset = giftCurrentIndex * (cardWidth + gap);
+
+    track.style.transform = `translateX(-${offset}px)`;
+
+    // Cập nhật trạng thái hai mũi tên
+    prevButton.disabled = giftCurrentIndex === 0;
+    nextButton.disabled = giftCurrentIndex >= maxIndex;
+}
+
+// Tính lại vị trí khi đổi kích thước màn hình
+window.addEventListener("resize", () => {
+    const track = document.getElementById("giftCards");
+
+    if (!track) {
+        return;
+    }
+
+    giftCurrentIndex = 0;
+    track.style.transform = "translateX(0px)";
+
+    const prevButton = document.getElementById("giftPrev");
+    const nextButton = document.getElementById("giftNext");
+
+    if (prevButton) {
+        prevButton.disabled = true;
+    }
+
+    if (nextButton) {
+        nextButton.disabled =
+            track.querySelectorAll(".card").length
+            <= getGiftCardsPerPage();
+    }
+});
+
+// Khởi tạo trạng thái nút khi trang tải xong
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("giftCards");
+
+    if (!track) {
+        return;
+    }
+
+    const nextButton = document.getElementById("giftNext");
+
+    if (nextButton) {
+        nextButton.disabled =
+            track.querySelectorAll(".card").length
+            <= getGiftCardsPerPage();
+    }
+});

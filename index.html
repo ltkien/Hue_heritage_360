@@ -574,76 +574,320 @@
                 </button>
             </div>
 
-            <div class="cards">
+            <div class="gift-carousel">
 
-                <!-- Hoa giấy Thanh Tiên -->
-                <div class="card">
-                    <img src="images/products/hgtt.jpeg" alt="Hoa giấy Thanh Tiên">
+                <!-- Nút mũi tên trái -->
+                <button class="carousel-arrow carousel-prev" id="giftPrev" onclick="moveGiftCards(-1)"
+                    aria-label="Xem các sản phẩm trước" disabled>
+                    &#10094;
+                </button>
 
-                    <h3>Hoa giấy Thanh Tiên</h3>
+                <!-- Khung hiển thị card -->
+                <div class="cards-viewport">
+                    <div class="cards" id="giftCards">
+                        <!-- Hoa giấy Thanh Tiên -->
+                        <div class="card">
+                            <img src="images/products/hgtt/hgtt.jpeg" alt="Hoa giấy Thanh Tiên">
 
-                    <p>
-                        Sản phẩm thủ công truyền thống với những bông hoa
-                        được làm từ giấy, mang đậm nét đẹp văn hóa Huế.
-                    </p>
+                            <h3>Hoa giấy Thanh Tiên</h3>
 
-                    <div class="card-buttons">
-                        <button class="btn-buy" onclick="openProductModal('hoa-giay-thanh-tien')">
-                            Mua ngay
-                        </button>
+                            <p>
+                                Sản phẩm thủ công truyền thống với những bông hoa
+                                được làm từ giấy, mang đậm nét đẹp văn hóa Huế.
+                            </p>
 
-                        <button class="btn-detail" onclick="openDetailModal('hoa-giay-thanh-tien')">
-                            Xem chi tiết
-                        </button>
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="openProductModal('hoa-giay-thanh-tien')">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('hoa-giay-thanh-tien')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- Tranh Làng Sình -->
+                        <div class="card">
+                            <img src="images/products/tls/tls.jpg" alt="Tranh Làng Sình">
+
+                            <h3>Tranh Làng Sình</h3>
+
+                            <p>
+                                Dòng tranh dân gian mộc bản đặc sắc của Huế,
+                                gắn với tín ngưỡng và đời sống tinh thần
+                                của người dân địa phương.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="openProductModal('tranh-lang-sinh')">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('tranh-lang-sinh')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- Nón lá Mỹ Lam -->
+                        <div class="card">
+                            <img src="images/products/nlml/nlml.jpeg" alt="Nón lá Mỹ Lam">
+
+                            <h3>Nón lá Mỹ Lam</h3>
+
+                            <p>
+                                Chiếc nón lá thủ công tinh tế,
+                                thể hiện vẻ đẹp duyên dáng và truyền thống của Huế.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="openProductModal('non-la-my-lam')">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('non-la-my-lam')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Làng nghề đúc đồng Phường Đúc -->
+                        <div class="card">
+                            <img src="images/products/ddh/ddh3.JPG" alt="Làng nghề đúc đồng Phường Đúc">
+
+                            <h3>Làng nghề đúc đồng Phường Đúc</h3>
+
+                            <p>
+                                Khám phá nghề đúc đồng truyền thống hơn 400 năm,
+                                nổi bật với những tác phẩm thủ công tinh xảo
+                                và giá trị văn hóa cung đình Huế.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="openProductModal('lang-duc-dong-phuong-duc')">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-duc-dong-phuong-duc')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Làng nghề đệm bàng Phò Trạch -->
+                        <div class="card">
+                            <img src="images/products/dbpt/dbpt1.JPG" alt="Làng nghề đệm bàng Phò Trạch">
+
+                            <h3>Làng nghề đệm bàng Phò Trạch</h3>
+
+                            <p>
+                                Khám phá nghề đan đệm bàng hơn 500 năm,
+                                nổi bật với nguyên liệu cỏ bàng tự nhiên,
+                                kỹ thuật thủ công truyền thống và những sản phẩm
+                                thân thiện với môi trường.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="openProductModal('lang-dem-bang-pho-trach')">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-dem-bang-pho-trach')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Làng nghề bánh bèo, nậm, lọc Đức Bưu -->
+
+                        <div class="card">
+                            <img src="images/products/bbdb/bbdb1.JPG" alt="Làng nghề bánh bèo, nậm, lọc Đức Bưu">
+
+
+                            <h3>Làng nghề bánh bèo, nậm, lọc Đức Bưu</h3>
+
+                            <p>
+                                Khám phá nghề làm bánh truyền thống của Huế với bánh bèo,
+                                bánh nậm và bánh lọc, nổi bật bởi kỹ thuật chế biến thủ công,
+                                hương vị đậm đà và nét tinh tế của ẩm thực Cố đô.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="openProductModal('lang-banh-beo-nam-loc-duc-buu')">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-banh-beo-nam-loc-duc-buu')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- Làng nghề bánh tráng, bánh ướt Lựu Bảo -->
+                        <div class="card">
+                            <img src="images/products/btlb/btlb1.JPG" alt="Làng nghề bánh tráng, bánh ướt Lựu Bảo">
+
+                            <h3>Làng nghề bánh tráng, bánh ướt Lựu Bảo</h3>
+
+                            <p>
+                                Khám phá làng nghề truyền thống gần 300 năm tuổi,
+                                nổi bật với bánh tráng mỏng, dẻo, thơm bùi và bánh ướt
+                                mang đậm nét văn hóa ẩm thực Huế. Tìm hiểu kỹ thuật
+                                tráng bánh thủ công được truyền qua nhiều thế hệ.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="showUnavailableMessage()">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail"
+                                    onclick="openDetailModal('lang-banh-trang-banh-uot-luu-bao')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Làng nghề gốm Phước Tích -->
+                        <div class="card">
+                            <img src="images/products/gpt/gpt1.JPG" alt="Làng nghề gốm Phước Tích">
+
+                            <h3>Làng nghề gốm Phước Tích</h3>
+
+                            <p>
+                                Khám phá làng nghề gốm truyền thống gần 500 năm tuổi,
+                                nổi bật với các sản phẩm đất nung mộc mạc và câu chuyện
+                                gốm tiến vua dưới triều Nguyễn. Tìm hiểu kỹ thuật làm gốm
+                                thủ công và trải nghiệm không gian văn hóa làng cổ Phước Tích.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="showUnavailableMessage()">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-gom-phuoc-tich')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Làng nghề điêu khắc gỗ Mỹ Xuyên -->
+                        <div class="card">
+                            <img src="images/products/dkgmx/dkgmx1.JPG" alt="Làng nghề điêu khắc gỗ Mỹ Xuyên">
+
+                            <h3>Làng nghề điêu khắc gỗ Mỹ Xuyên</h3>
+
+                            <p>
+                                Khám phá làng nghề điêu khắc gỗ truyền thống nổi tiếng
+                                của Huế, nơi những nghệ nhân biến gỗ tự nhiên thành các
+                                tác phẩm chạm khắc tinh xảo. Tìm hiểu kỹ thuật chế tác
+                                đồ thờ, tượng gỗ, phù điêu và nghệ thuật chạm khắc gắn
+                                liền với kiến trúc, văn hóa truyền thống Cố đô.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="showUnavailableMessage()">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-dieu-khac-go-my-xuyen')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- Làng nghề dệt Dèng A Đớt -->
+                        <div class="card">
+                            <img src="images/products/deng/deng1.JPG" alt="Làng nghề dệt Dèng A Đớt">
+
+                            <h3>Làng nghề dệt Dèng A Đớt</h3>
+
+                            <p>
+                                Khám phá làng nghề dệt thổ cẩm truyền thống của đồng bào
+                                Tà Ôi ở A Lưới, nổi bật với kỹ thuật dệt Dèng thủ công
+                                và những hoa văn mang đậm bản sắc văn hóa. Tìm hiểu
+                                quy trình dệt truyền thống, ý nghĩa của các họa tiết
+                                và giá trị di sản được gìn giữ qua nhiều thế hệ.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="showUnavailableMessage()">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-det-deng-a-dot')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Làng nghề bún tươi Vân Cù -->
+                        <div class="card">
+                            <img src="images/products/bvc/bvc1.jpeg" alt="Làng nghề bún tươi Vân Cù">
+
+                            <h3>Làng nghề bún tươi Vân Cù</h3>
+
+                            <p>
+                                Khám phá làng nghề làm bún truyền thống lâu đời của Huế,
+                                nổi tiếng với những sợi bún tươi làm từ gạo, mềm dai và
+                                thơm tự nhiên. Tìm hiểu quy trình làm bún thủ công,
+                                câu chuyện về Bà Bún và nghề truyền thống được công nhận
+                                là di sản văn hóa phi vật thể quốc gia năm 2024.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="showUnavailableMessage()">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-bun-tuoi-van-cu')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- Làng nghề mây tre đan Bao La -->
+                        <div class="card">
+                            <img src="images/products/mtbl/mtbl1.JPG" alt="Làng nghề mây tre đan Bao La">
+
+                            <h3>Làng nghề mây tre đan Bao La</h3>
+
+                            <p>
+                                Khám phá làng nghề mây tre đan truyền thống hơn 600 năm
+                                tuổi của Huế, nổi bật với những sản phẩm thủ công tinh xảo
+                                từ tre và mây. Tìm hiểu kỹ thuật chẻ tre, vót nan, đan lát
+                                và trải nghiệm không gian làng nghề gắn với văn hóa
+                                truyền thống cùng xu hướng thủ công mỹ nghệ hiện đại.
+                            </p>
+
+                            <div class="card-buttons">
+                                <button class="btn-buy" onclick="showUnavailableMessage()">
+                                    Mua ngay
+                                </button>
+
+                                <button class="btn-detail" onclick="openDetailModal('lang-may-tre-dan-bao-la')">
+                                    Xem chi tiết
+                                </button>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
-
-                <!-- Tranh Làng Sình -->
-                <div class="card">
-                    <img src="images/products/tls.jpg" alt="Tranh Làng Sình">
-
-                    <h3>Tranh Làng Sình</h3>
-
-                    <p>
-                        Dòng tranh dân gian mộc bản đặc sắc của Huế,
-                        gắn với tín ngưỡng và đời sống tinh thần
-                        của người dân địa phương.
-                    </p>
-
-                    <div class="card-buttons">
-                        <button class="btn-buy" onclick="openProductModal('tranh-lang-sinh')">
-                            Mua ngay
-                        </button>
-
-                        <button class="btn-detail" onclick="openDetailModal('tranh-lang-sinh')">
-                            Xem chi tiết
-                        </button>
-                    </div>
-                </div>
-
-
-                <!-- Nón lá Mỹ Lam -->
-                <div class="card">
-                    <img src="images/products/nlml.jpeg" alt="Nón lá Mỹ Lam">
-
-                    <h3>Nón lá Mỹ Lam</h3>
-
-                    <p>
-                        Chiếc nón lá thủ công tinh tế,
-                        thể hiện vẻ đẹp duyên dáng và truyền thống của Huế.
-                    </p>
-
-                    <div class="card-buttons">
-                        <button class="btn-buy" onclick="openProductModal('non-la-my-lam')">
-                            Mua ngay
-                        </button>
-
-                        <button class="btn-detail" onclick="openDetailModal('non-la-my-lam')">
-                            Xem chi tiết
-                        </button>
-                    </div>
-                </div>
+                <!-- Nút mũi tên phải -->
+                <button class="carousel-arrow carousel-next" id="giftNext" onclick="moveGiftCards(1)"
+                    aria-label="Xem các sản phẩm tiếp theo">
+                    &#10095;
+                </button>
 
             </div>
         </div>

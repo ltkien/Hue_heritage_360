@@ -5024,3 +5024,241 @@ a {
     box-shadow:
         0 4px 18px rgba(45, 25, 18, 0.18);
 }
+
+
+/* =====================================
+   GIFT - CARD CŨ
+===================================== */
+
+#gift .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#gift .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Ảnh card thông thường trong mục Gift */
+#gift .card>img {
+    display: block;
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+    background: var(--surface-alt);
+    transition: transform .5s ease;
+}
+
+#gift .card:hover>img {
+    transform: scale(1.035);
+}
+
+#gift .card>h3 {
+    margin: 21px 24px 9px;
+    color: #3a211b;
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+#gift .card>p {
+    flex: 1;
+    margin: 0 24px;
+    color: var(--text-soft);
+    font-size: 14.5px;
+}
+
+/* Chỉ áp dụng nút trong mục Gift */
+#gift .card-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 22px 24px 24px;
+}
+
+#gift .card-buttons button {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =====================================
+   GIFT CAROUSEL
+===================================== */
+
+#gift .gift-carousel {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    position: relative;
+}
+
+#gift .gift-carousel .cards-viewport {
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Danh sách card chạy ngang */
+#gift .gift-carousel #giftCards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    width: 100%;
+    transition: transform 0.45s ease;
+    will-change: transform;
+}
+
+/* Mỗi card chiếm đúng 1/3 vùng nhìn thấy */
+#gift .gift-carousel #giftCards>.card {
+    flex: 0 0 calc((100% - 48px) / 3);
+    width: auto;
+    min-width: 0;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Ghi đè chiều cao ảnh 255px của CSS cũ */
+#gift .gift-carousel #giftCards>.card>img {
+    width: 100%;
+    height: 220px;
+    flex: 0 0 220px;
+    object-fit: cover;
+}
+
+/* Nội dung và nút trong card carousel */
+#gift .gift-carousel #giftCards>.card>h3 {
+    min-height: 2.7em;
+}
+
+#gift .gift-carousel #giftCards>.card>p {
+    flex: 1 0 auto;
+    line-height: 1.5;
+}
+
+/* =====================================
+   TABLET: 2 CARD
+===================================== */
+
+@media (max-width: 991px) {
+    #gift .gift-carousel #giftCards>.card {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+/* =====================================
+   MOBILE: 1 CARD
+===================================== */
+
+@media (max-width: 575px) {
+    #gift .gift-carousel {
+        gap: 8px;
+    }
+
+    #gift .gift-carousel #giftCards {
+        gap: 12px;
+    }
+
+    #gift .gift-carousel #giftCards>.card {
+        flex-basis: 100%;
+    }
+
+    #gift .gift-carousel #giftCards>.card>img {
+        height: 200px;
+        flex-basis: 200px;
+    }
+
+    #gift .gift-carousel #giftCards>.card>h3 {
+        margin: 16px 16px 8px;
+    }
+
+    #gift .gift-carousel #giftCards>.card>p {
+        margin: 0 16px;
+    }
+
+    #gift .gift-carousel #giftCards>.card .card-buttons {
+        margin: 18px 16px 16px;
+    }
+}
+
+
+/* =====================================
+   GIFT CAROUSEL - NÚT MŨI TÊN
+===================================== */
+
+#gift .gift-carousel .carousel-arrow {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(143, 63, 47, 0.2);
+    border-radius: 50%;
+
+    background: #FFF7ED;
+    color: #8F3F2F;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+
+    box-shadow: 0 4px 12px rgba(74, 44, 32, 0.10);
+
+    cursor: pointer;
+    z-index: 2;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Hover: chuyển sang màu vàng đồng */
+#gift .gift-carousel .carousel-arrow:hover:not(:disabled) {
+    background: #C28B36;
+    color: #FFFFFF;
+    border-color: #C28B36;
+
+    box-shadow: 0 6px 16px rgba(143, 63, 47, 0.2);
+    transform: scale(1.08);
+}
+
+/* Hiệu ứng khi nhấn */
+#gift .gift-carousel .carousel-arrow:active:not(:disabled) {
+    transform: scale(0.94);
+}
+
+/* Nút bị vô hiệu hóa */
+#gift .gift-carousel .carousel-arrow:disabled {
+    background: #F2E7DC;
+    color: #B9A69A;
+    border-color: #E5CFC0;
+
+    box-shadow: none;
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Hiển thị rõ khi dùng bàn phím */
+#gift .gift-carousel .carousel-arrow:focus-visible {
+    outline: 3px solid rgba(194, 139, 54, 0.45);
+    outline-offset: 3px;
+}
+
+/* Điện thoại */
+@media (max-width: 575px) {
+    #gift .gift-carousel .carousel-arrow {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 19px;
+    }
+}

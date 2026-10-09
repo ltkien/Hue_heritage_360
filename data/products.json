@@ -1,7 +1,7 @@
 {
     "hoa-giay-thanh-tien": {
         "name": "Hoa giấy Thanh Tiên",
-        "image": "images/htt.jpg",
+        "image": "images/hgtt/hgtt.jpg",
         "types": [
             {
                 "name": "Hoa giấy truyền thống",
@@ -21,11 +21,11 @@
         ],
         "detail": {
             "images": [
-                "images/products/hgtt.jpeg",
-                "images/products/hgtt2.jpg",
-                "images/products/hgtt3.jpg",
-                "images/products/hgtt4.jpg",
-                "images/products/hgtt5.jpg"
+                "images/products/hgtt/hgtt.jpeg",
+                "images/products/hgtt/hgtt2.jpg",
+                "images/products/hgtt/hgtt3.jpg",
+                "images/products/hgtt/hgtt4.jpg",
+                "images/products/hgtt/hgtt5.jpg"
             ],
             "address": "Làng Thanh Tiên, phường Dương Nỗ, thành phố Huế, bên bờ nam hạ lưu sông Hương, gần ngã ba Sình, cách trung tâm Huế khoảng 8–10 km.",
             "overview": "Thanh Tiên là làng nghề thủ công truyền thống nổi tiếng với nghề làm hoa giấy. Hoa được tạo thủ công từ tre, giấy màu và bàn tay khéo léo của nghệ nhân qua nhiều công đoạn.",
@@ -121,10 +121,10 @@
         ],
         "detail": {
             "images": [
-                "images/products/tls1.PNG",
-                "images/products/tls2.PNG",
-                "images/products/tls3.PNG",
-                "images/products/tls4.PNG"
+                "images/products/tls/tls1.PNG",
+                "images/products/tls/tls2.PNG",
+                "images/products/tls/tls3.PNG",
+                "images/products/tls/tls4.PNG"
             ],
             "address": "Làng Sình (Lại Ân), nay thuộc phường Dương Nỗ, thành phố Huế, nằm ở vùng hạ lưu sông Hương, cách trung tâm Huế khoảng 8–10 km.",
             "overview": "Tranh Làng Sình là dòng tranh dân gian mộc bản đặc sắc của Huế, gắn chặt với tín ngưỡng và đời sống tinh thần của người dân địa phương. Tranh truyền thống được sử dụng trong các nghi lễ như cầu an, giải hạn, cúng bổn mệnh và cúng thế mạng. Vì vậy, giá trị của tranh không chỉ nằm ở kỹ thuật in, màu sắc mà còn ở những giá trị văn hóa, tâm linh được cộng đồng gửi gắm.",
@@ -214,9 +214,9 @@
         ],
         "detail": {
             "images": [
-                "images/products/nlml.jpeg",
-                "images/products/nlml2.jpg",
-                "images/products/nlml3.jpg"
+                "images/products/nlml/nlml.jpeg",
+                "images/products/nlml/nlml2.jpg",
+                "images/products/nlml/nlml3.jpg"
             ],
             "address": "Làng nghề nón lá Mỹ Lam nằm ven sông Như Ý, thuộc TDP Mỹ Lam, phường Mỹ Thượng, thành phố Huế, cách trung tâm thành phố khoảng 8 km về phía Đông.",
             "overview": "Mỹ Lam là làng nghề truyền thống nổi tiếng với nghề làm nón lá, đặc biệt là nón bài thơ mang vẻ đẹp thanh mảnh, nhẹ nhàng và tinh tế. Nón được làm thủ công với những đường chằm đều đặn, thể hiện sự khéo léo của người thợ. Điểm đặc biệt của nón bài thơ là hình ảnh, hoa văn hoặc câu thơ được đặt giữa các lớp lá và chỉ hiện lên khi đưa nón trước ánh sáng. Nón Mỹ Lam không chỉ dùng để che nắng, che mưa mà còn là sản phẩm văn hóa gắn với hình ảnh người phụ nữ, tà áo dài và vẻ đẹp của xứ Huế.",
@@ -280,6 +280,927 @@
                 {
                     "title": "Giá trị thương hiệu",
                     "description": "Nón lá Mỹ Lam được phát triển theo hướng gắn với du lịch, quà tặng và chương trình OCOP."
+                }
+            ]
+        }
+    },
+    "lang-duc-dong-phuong-duc": {
+        "name": "Làng nghề đúc đồng Phường Đúc",
+        "image": "images/products/ddh/ddh3.JPG",
+        "types": [
+            {
+                "name": "Tượng đồng",
+                "price": 2000000,
+                "description": "Tượng đồng là một trong những sản phẩm tiêu biểu của nghề đúc đồng Huế, thường được chế tác theo hình tượng nhân vật lịch sử, danh nhân, tượng Phật hoặc các mẫu trang trí. Giá tham khảo: 2.000.000–20.000.000 VNĐ."
+            },
+            {
+                "name": "Chuông đồng",
+                "price": 1000000,
+                "description": "Chuông đồng được đúc thủ công, có nhiều kích thước khác nhau, phục vụ nhu cầu tín ngưỡng, thờ cúng và trang trí. Giá tham khảo: 1.000.000–10.000.000 VNĐ."
+            },
+            {
+                "name": "Lư đồng",
+                "price": 2000000,
+                "description": "Lư đồng thường được sử dụng trong không gian thờ cúng, có nhiều kiểu dáng và kích thước, được chạm khắc và hoàn thiện thủ công. Giá tham khảo: 2.000.000–15.000.000 VNĐ."
+            },
+            {
+                "name": "Đồ thờ bằng đồng",
+                "price": 500000,
+                "description": "Gồm các sản phẩm như đỉnh đồng, chân đèn, hạc đồng và nhiều vật phẩm dùng trong không gian thờ cúng. Giá tham khảo: 500.000–20.000.000 VNĐ."
+            },
+            {
+                "name": "Đồ đồng mỹ nghệ",
+                "price": 500000,
+                "description": "Các sản phẩm trang trí và quà tặng được chế tác với nhiều kiểu dáng, hoa văn và kích thước khác nhau. Giá tham khảo: 500.000–10.000.000 VNĐ."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/ddh/ddh1.JPG",
+                "images/products/ddh/ddh2.JPG",
+                "images/products/ddh/ddh3.JPG",
+                "images/products/ddh/ddh4.JPG",
+                "images/products/ddh/ddh5.JPG",
+                "images/products/ddh/ddh6.JPG"
+            ],
+            "address": "Khu vực làng nghề đúc đồng Phường Đúc hiện nay thuộc phường Thuận Hóa, thành phố Huế, nằm ở bờ Nam sông Hương, cách trung tâm thành phố khoảng 3 km về phía Tây Nam.",
+            "overview": "Đúc đồng Huế là nghề thủ công truyền thống có lịch sử hơn bốn thế kỷ, nổi bật bởi kỹ thuật tạo khuôn, nấu rót kim loại và hoàn thiện thủ công. Nghề từng phục vụ nhu cầu của các chúa Nguyễn và triều Nguyễn, đồng thời tạo ra nhiều đồ thờ, vật dụng sinh hoạt, tượng, chuông và các tác phẩm có giá trị lịch sử, nghệ thuật cao. Tên gọi “Phường Đúc” gắn với lịch sử hình thành các công tượng đúc đồng ở khu vực này. Hai khu vực nghề nổi tiếng là Kinh Nhơn và Bổn Bộ; nghề được truyền qua nhiều thế hệ và vẫn được duy trì trong đời sống đương đại.",
+            "history": [
+                "Nghề đúc đồng ở Huế hình thành từ đầu thế kỷ XVII, trong thời kỳ các chúa Nguyễn xây dựng và phát triển trung tâm chính trị ở Thuận Hóa – Phú Xuân. Theo gia phả dòng họ Nguyễn – Kinh Nhơn, ông Nguyễn Văn Lương, quê Đồng Xá, Siêu Loại, Bắc Ninh, được tôn là thủy tổ của nghề đúc đồng tại Huế.",
+                "Trong thời các chúa Nguyễn, những người thợ đúc giỏi từ nhiều nơi được tập trung vào các công tượng để sản xuất binh khí, tiền, đồ dùng và các vật phẩm phục vụ cung đình. Nghề tiếp tục phát triển dưới triều Nguyễn, tạo nên nhiều tác phẩm đồng quy mô lớn và tinh xảo.",
+                "Một số sản phẩm lịch sử tiêu biểu do thợ đúc đồng Huế tạo tác gồm vạc đồng tại Đại Nội, Đại Hồng Chung chùa Thiên Mụ, Cửu Đỉnh, Cửu Vị Thần Công và nhiều đồ thờ tự bằng đồng.",
+                "Năm 2013, nghề đúc đồng tại Phường Đúc được tỉnh Thừa Thiên Huế công nhận là làng nghề truyền thống. Đến nay, nghề vẫn tồn tại trong các cơ sở sản xuất, vừa duy trì kỹ thuật truyền thống vừa phát triển sản phẩm phục vụ nhu cầu thờ tự, trang trí, lưu niệm và thị trường du lịch."
+            ],
+            "process": [
+                {
+                    "name": "Tạo mẫu",
+                    "description": "Người thợ tạo mẫu theo kích thước, hình dáng và hoa văn của sản phẩm; với sản phẩm phức tạp, mẫu phải được tính toán kỹ để bảo đảm tỷ lệ."
+                },
+                {
+                    "name": "Làm khuôn",
+                    "description": "Khuôn được tạo bằng đất và các vật liệu phụ trợ phù hợp. Công đoạn này quyết định hình dáng, độ chính xác và khả năng tạo hoa văn của sản phẩm."
+                },
+                {
+                    "name": "Chuẩn bị và nấu kim loại",
+                    "description": "Đồng cùng các thành phần hợp kim cần thiết được chuẩn bị, sau đó đưa vào lò nung đến trạng thái nóng chảy."
+                },
+                {
+                    "name": "Rót đồng",
+                    "description": "Kim loại nóng chảy được rót vào khuôn. Đây là công đoạn đòi hỏi kinh nghiệm cao để kiểm soát dòng kim loại và hạn chế khuyết tật."
+                },
+                {
+                    "name": "Tháo khuôn và làm sạch",
+                    "description": "Sau khi nguội, sản phẩm được lấy ra khỏi khuôn, loại bỏ phần thừa và làm sạch bề mặt."
+                },
+                {
+                    "name": "Chỉnh sửa, chạm khắc",
+                    "description": "Người thợ gọt, giũa, sửa chi tiết; với sản phẩm có hoa văn, tiếp tục chạm khắc hoặc hoàn thiện bề mặt."
+                },
+                {
+                    "name": "Làm màu và hoàn thiện",
+                    "description": "Sản phẩm được xử lý màu, kiểm tra và hoàn thiện bề mặt để đạt yêu cầu về thẩm mỹ và chất lượng."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Hơn 400 năm gìn giữ lửa nghề",
+                    "description": "Đúc đồng Huế là một trong những nghề thủ công lâu đời của vùng đất Cố đô, hình thành từ đầu thế kỷ XVII và được truyền qua nhiều thế hệ."
+                },
+                {
+                    "title": "Dấu ấn cung đình và di sản",
+                    "description": "Nghề gắn với quá trình xây dựng Phú Xuân – Huế và để lại nhiều tác phẩm đồng có giá trị lịch sử, nghệ thuật, trong đó có các bảo vật và hiện vật tiêu biểu của triều Nguyễn."
+                },
+                {
+                    "title": "Kỹ thuật thủ công đòi hỏi tay nghề cao",
+                    "description": "Từ tạo mẫu, làm khuôn, nấu kim loại, rót đồng đến sửa nguội và hoàn thiện đều đòi hỏi kinh nghiệm thực tế và sự chính xác."
+                },
+                {
+                    "title": "Khả năng thích ứng với thị trường",
+                    "description": "Bên cạnh đồ thờ và sản phẩm truyền thống, các cơ sở còn phát triển đồ đồng mỹ nghệ, sản phẩm trang trí, quà lưu niệm và mặt hàng phục vụ du lịch."
+                }
+            ]
+        }
+    },
+    "lang-dem-bang-pho-trach": {
+        "name": "Làng nghề đệm bàng Phò Trạch",
+        "image": "images/products/dbpt/dbpt1.JPG",
+        "types": [
+            {
+                "name": "Chiếu bàng",
+                "price": 100000,
+                "description": "Chiếu bàng được đan thủ công từ cỏ bàng đã qua xử lý, có đặc điểm mộc mạc, nhẹ và phù hợp với không gian sinh hoạt truyền thống. Giá tham khảo: 100.000–300.000 VNĐ."
+            },
+            {
+                "name": "Đệm bàng",
+                "price": 80000,
+                "description": "Đệm bàng được làm từ cỏ bàng đã qua các công đoạn phơi, phân loại, đập dẹp và đan thủ công. Sản phẩm gần gũi với thiên nhiên, mang đậm dấu ấn nghề truyền thống Phò Trạch. Giá tham khảo: 80.000–300.000 VNĐ."
+            },
+            {
+                "name": "Giỏ bàng",
+                "price": 50000,
+                "description": "Giỏ bàng được đan thủ công với nhiều kiểu dáng và kích thước khác nhau, có thể dùng để đựng đồ hoặc trang trí không gian sống. Giá tham khảo: 50.000–150.000 VNĐ."
+            },
+            {
+                "name": "Túi bàng",
+                "price": 60000,
+                "description": "Túi bàng là sản phẩm phát triển từ kỹ thuật đan truyền thống, kết hợp chất liệu tự nhiên với kiểu dáng hiện đại, phù hợp để sử dụng hằng ngày hoặc làm quà tặng. Giá tham khảo: 60.000–200.000 VNĐ."
+            },
+            {
+                "name": "Sản phẩm thủ công từ cỏ bàng",
+                "price": 50000,
+                "description": "Bên cạnh chiếu và đệm, người làm nghề còn phát triển các sản phẩm thủ công khác như hộp, khay, vật dụng trang trí và đồ dùng sinh hoạt. Giá tham khảo: 50.000–300.000 VNĐ."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/dbpt/dbpt1.JPG",
+                "images/products/dbpt/dbpt2.JPG",
+                "images/products/dbpt/dbpt3.JPG",
+                "images/products/dbpt/dbpt4.JPG"
+            ],
+            "address": "Làng Phò Trạch hiện nay thuộc phường Phong Dinh, thành phố Huế, nằm ở khu vực phía Bắc thành phố, cách trung tâm Huế khoảng 50 km. Làng nghề gắn với không gian sông Ô Lâu và vùng đất trũng, ngập nước thuận lợi cho cỏ bàng phát triển.",
+            "overview": "Đệm bàng Phò Trạch là nghề thủ công truyền thống sử dụng cỏ bàng để đan thành đệm, chiếu và nhiều sản phẩm gia dụng, thủ công mỹ nghệ. Nghề tận dụng nguồn nguyên liệu bản địa để tạo ra những sản phẩm nhẹ, bền, thoáng và gần gũi với môi trường. Không gian làng nghề gắn liền với đời sống nông nghiệp của cư dân địa phương. Người dân thường tranh thủ thời gian nông nhàn để xử lý nguyên liệu và đan sản phẩm, qua đó tạo thêm thu nhập cho hộ gia đình. Từ kỹ thuật đan truyền thống, nghề còn có khả năng phát triển các sản phẩm mới phục vụ nhu cầu sử dụng, trang trí và du lịch.",
+            "history": [
+                "Phò Trạch là làng cổ có lịch sử hình thành từ khoảng giữa thế kỷ XV. Nghề làm đệm bàng đã được duy trì qua nhiều thế hệ, trở thành nghề mưu sinh gắn với điều kiện tự nhiên của vùng đất ven sông Ô Lâu.",
+                "Cỏ bàng phát triển ở những vùng đất trũng, ngập nước. Người dân địa phương khai thác cỏ bàng, phơi khô, xử lý nguyên liệu và đan thành các vật dụng phục vụ đời sống hằng ngày. Theo thông tin nghiên cứu được cung cấp từ Trường Đại học Nông Lâm, nghề đệm bàng Phò Trạch có lịch sử hơn 500 năm và được duy trì chủ yếu ở quy mô hộ gia đình.",
+                "Ngày 14/4/2014, UBND tỉnh Thừa Thiên Huế ban hành Quyết định số 717/QĐ-UBND công nhận Làng nghề Đệm bàng Phò Trạch, xã Phong Bình, huyện Phong Điền là làng nghề truyền thống.",
+                "Theo địa giới hành chính hiện hành, khu vực Phò Trạch thuộc phường Phong Dinh, thành phố Huế. Nghề đệm bàng tiếp tục được gìn giữ thông qua hoạt động sản xuất tại các hộ gia đình và việc truyền dạy kỹ thuật đan cho các thế hệ sau.",
+                "Trong năm 2026, phường Phong Dinh tiếp tục tổ chức các hoạt động quảng bá, trưng bày sản phẩm và thi đan đệm, góp phần duy trì nghề truyền thống, nâng cao nhận thức cộng đồng và gắn làng nghề với các hoạt động văn hóa – du lịch địa phương."
+            ],
+            "process": [
+                {
+                    "name": "Thu hoạch cỏ bàng",
+                    "description": "Cỏ bàng được thu hoạch tại các vùng đất phù hợp khi nguyên liệu đạt yêu cầu về độ dài và độ chắc. Việc lựa chọn nguyên liệu tốt giúp nâng cao chất lượng và độ bền của sản phẩm."
+                },
+                {
+                    "name": "Phơi nguyên liệu",
+                    "description": "Sau khi thu hoạch, cỏ bàng được phơi dưới nắng để giảm độ ẩm, giúp nguyên liệu khô, nhẹ và thuận lợi cho các công đoạn xử lý tiếp theo."
+                },
+                {
+                    "name": "Phân loại và bảo quản",
+                    "description": "Cỏ bàng được lựa chọn, phân loại theo độ dài, kích thước và chất lượng, sau đó bó lại và bảo quản để sử dụng khi cần."
+                },
+                {
+                    "name": "Đạp hoặc đập bàng",
+                    "description": "Đây là công đoạn đặc trưng của nghề đệm bàng Phò Trạch. Người thợ đạp hoặc đập thân cỏ để làm dẹp và mềm nguyên liệu, giúp cỏ dễ đan hơn và hạn chế tình trạng gãy trong quá trình tạo sản phẩm."
+                },
+                {
+                    "name": "Chuẩn bị sợi đan",
+                    "description": "Người thợ lựa chọn các sợi bàng có kích thước tương đối đồng đều, sắp xếp và căn chỉnh theo hướng phù hợp với loại sản phẩm cần thực hiện."
+                },
+                {
+                    "name": "Đan sản phẩm",
+                    "description": "Các sợi bàng được đan kết hợp theo chiều ngang và chiều dọc để tạo thành mặt đệm, chiếu hoặc hình dáng của sản phẩm. Tùy kỹ thuật và mẫu thiết kế, người thợ có thể tạo thêm hoa văn hoặc chữ trang trí."
+                },
+                {
+                    "name": "Hoàn thiện sản phẩm",
+                    "description": "Sản phẩm sau khi đan được kiểm tra, cắt chỉnh phần thừa, làm phẳng và xử lý các chi tiết chưa đều. Thành phẩm được hoàn thiện trước khi đưa vào sử dụng hoặc bán ra thị trường."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Hơn 500 năm gắn bó với cộng đồng",
+                    "description": "Nghề đệm bàng Phò Trạch được truyền qua nhiều thế hệ, gắn liền với đời sống, sinh kế và bản sắc văn hóa của cư dân địa phương."
+                },
+                {
+                    "title": "Nguồn nguyên liệu bản địa",
+                    "description": "Cỏ bàng phát triển tại những vùng đất trũng, ngập nước quanh khu vực làng, tạo nền tảng tự nhiên cho sự hình thành và phát triển của nghề đan đệm bàng."
+                },
+                {
+                    "title": "Kỹ thuật thủ công đặc trưng",
+                    "description": "Các công đoạn đạp bàng, phân loại nguyên liệu và đan sản phẩm đòi hỏi sự khéo léo, kiên trì cùng kinh nghiệm tích lũy của người thợ."
+                },
+                {
+                    "title": "Được công nhận là làng nghề truyền thống",
+                    "description": "Năm 2014, Làng nghề Đệm bàng Phò Trạch được công nhận là làng nghề truyền thống, góp phần khẳng định giá trị văn hóa và nghề thủ công lâu đời của địa phương."
+                },
+                {
+                    "title": "Tiếp tục được duy trì trong năm 2026",
+                    "description": "Các hoạt động trưng bày, quảng bá sản phẩm và thi đan đệm góp phần giới thiệu nghề truyền thống đến cộng đồng, đồng thời kết nối làng nghề với các hoạt động văn hóa – du lịch."
+                },
+                {
+                    "title": "Phát triển sản phẩm thủ công hiện đại",
+                    "description": "Từ kỹ thuật đan truyền thống, người làm nghề có thể phát triển thêm túi, giỏ, hộp, khay và các sản phẩm trang trí nhằm đáp ứng nhu cầu sử dụng và quà tặng hiện nay."
+                }
+            ]
+        }
+    },
+    "lang-banh-beo-nam-loc-duc-buu": {
+        "name": "Làng nghề bánh bèo, nậm, lọc Đức Bưu",
+        "image": "images/products/banh-beo-nam-loc-duc-buu.jpg",
+        "types": [
+            {
+                "name": "Bánh bèo",
+                "price": 3000,
+                "description": "Bánh bèo Đức Bưu là món bánh truyền thống của Huế, có lớp bánh mềm, thường ăn cùng nhân tôm chấy và nước mắm, mang đặc trưng của ẩm thực địa phương. Giá tham khảo: 3.000–6.000 VNĐ/chén."
+            },
+            {
+                "name": "Bánh nậm",
+                "price": 3000,
+                "description": "Bánh nậm được làm từ bột gạo, nhân tôm thịt và gói trong lá, tạo nên món bánh mềm, thơm, mang đậm nét ẩm thực truyền thống Huế. Giá tham khảo: 3.000–6.000 VNĐ/cái."
+            },
+            {
+                "name": "Bánh lọc",
+                "price": 3000,
+                "description": "Bánh lọc có lớp vỏ bột trong, nhân tôm thịt đậm đà, được gói trong lá hoặc làm dạng bánh lọc trần, là một trong những món bánh đặc trưng của Huế. Giá tham khảo: 3.000–7.000 VNĐ/cái."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/bbdb/bbdb1.JPG",
+                "images/products/bbdb/bbdb2.JPG",
+                "images/products/bbdb/bbdb3.JPG"
+            ],
+            "address": "Làng Đức Bưu hiện nay thuộc phường Hương An, thành phố Huế, cách trung tâm thành phố khoảng 4–6 km về hướng Bắc. Đây là không gian làng nghề gắn với nghề chế biến các loại bánh truyền thống nổi tiếng của ẩm thực Huế.",
+            "overview": "Làng nghề bánh bèo, nậm, lọc Đức Bưu nổi bật với phương thức chế biến thủ công, sử dụng các nguyên liệu quen thuộc như gạo, tinh bột sắn, tôm, thịt và lá gói. Nghề được truyền qua nhiều thế hệ và gắn với sinh kế của người dân địa phương. Bánh bèo, bánh nậm và bánh lọc có cách tạo hình, nguyên liệu và cách thưởng thức khác nhau nhưng cùng thể hiện sự tinh tế của ẩm thực Huế, đặc biệt ở kỹ thuật xử lý bột, làm nhân và pha nước chấm.",
+            "history": [
+                "Nghề làm bánh tại Đức Bưu được các nguồn tư liệu địa phương và du lịch giới thiệu là hình thành từ những năm đầu thế kỷ XIX. Trải qua hơn một thế kỷ, nghề được duy trì trong các hộ gia đình và dần trở thành nét đặc trưng của làng.",
+                "Ngày 11/01/2021, UBND tỉnh Thừa Thiên Huế ban hành Quyết định số 55/QĐ-UBND công nhận Làng nghề bánh Bèo, Nậm, Lọc Đức Bưu – phường Hương Sơ, thành phố Huế là làng nghề truyền thống. Tên gọi phường Hương Sơ phản ánh địa danh tại thời điểm quyết định được ban hành; theo thông tin được cung cấp, khu vực làng Đức Bưu hiện nay thuộc phường Hương An, thành phố Huế.",
+                "Nghề làm bánh phát triển từ nhu cầu ẩm thực và buôn bán trong cộng đồng. Qua nhiều thế hệ, các hộ gia đình tiếp tục gìn giữ phương thức chế biến thủ công, góp phần duy trì hương vị truyền thống của bánh Huế.",
+                "Ngày nay, các sản phẩm bánh bèo, bánh nậm và bánh lọc Đức Bưu không chỉ phục vụ người dân địa phương mà còn gắn với hoạt động quảng bá ẩm thực và phát triển du lịch Huế."
+            ],
+            "process": [
+                {
+                    "name": "Bánh bèo – Chuẩn bị bột",
+                    "description": "Gạo được lựa chọn, xay và xử lý để tạo hỗn hợp bột phù hợp với yêu cầu của bánh, giúp bánh sau khi hấp có độ mềm và kết cấu thích hợp."
+                },
+                {
+                    "name": "Bánh bèo – Cho bột vào chén và hấp bánh",
+                    "description": "Bột được cho vào từng chén với lượng phù hợp rồi hấp chín, tạo thành lớp bánh mỏng, mềm và có bề mặt đặc trưng."
+                },
+                {
+                    "name": "Bánh bèo – Chuẩn bị nhân",
+                    "description": "Tôm được làm sạch, chế biến và làm tơi thành phần nhân tôm chấy, tạo hương vị đặc trưng cho món bánh."
+                },
+                {
+                    "name": "Bánh bèo – Hoàn thiện",
+                    "description": "Bánh sau khi hấp được thêm tôm chấy, hành hoặc gia vị phù hợp và dùng kèm nước mắm pha theo khẩu vị địa phương."
+                },
+                {
+                    "name": "Bánh nậm – Chuẩn bị bột",
+                    "description": "Gạo được xay, lọc và xử lý đến độ sệt phù hợp để tạo lớp bột mỏng, mềm cho bánh nậm."
+                },
+                {
+                    "name": "Bánh nậm – Chuẩn bị nhân",
+                    "description": "Tôm và thịt được làm sạch, băm hoặc giã, sau đó xào hoặc rim cùng gia vị để tạo phần nhân đậm đà."
+                },
+                {
+                    "name": "Bánh nậm – Tráng bột và gói bánh",
+                    "description": "Bột được dàn mỏng trên lá, cho nhân vào giữa rồi gấp lá thành hình bánh. Người làm nghề cần căn chỉnh lượng bột và nhân để bánh có hình dáng đẹp."
+                },
+                {
+                    "name": "Bánh nậm – Hấp bánh",
+                    "description": "Bánh được xếp vào xửng và hấp đến khi bột chín, mềm và định hình."
+                },
+                {
+                    "name": "Bánh nậm – Hoàn thiện",
+                    "description": "Bánh sau khi hấp được kiểm tra, giữ nóng và dùng với nước mắm phù hợp để làm nổi bật hương vị của nhân tôm thịt."
+                },
+                {
+                    "name": "Bánh lọc – Chuẩn bị bột",
+                    "description": "Tinh bột sắn được xử lý và nhào với nước nóng hoặc theo kỹ thuật phù hợp đến khi đạt độ dẻo, dai cần thiết để tạo vỏ bánh."
+                },
+                {
+                    "name": "Bánh lọc – Chuẩn bị nhân",
+                    "description": "Tôm, thịt hoặc hỗn hợp tôm thịt được sơ chế, nêm gia vị và chế biến để tạo phần nhân đậm đà."
+                },
+                {
+                    "name": "Bánh lọc – Tạo hình",
+                    "description": "Bột được chia thành từng phần, cán hoặc ép mỏng, cho nhân vào giữa rồi gấp kín để tạo hình bánh."
+                },
+                {
+                    "name": "Bánh lọc – Gói lá hoặc để trần",
+                    "description": "Bánh có thể được bọc bằng lá chuối hoặc lá phù hợp để tạo bánh lọc gói; với bánh lọc trần, bánh được giữ nguyên hình dạng viên và chế biến trực tiếp."
+                },
+                {
+                    "name": "Bánh lọc – Hấp hoặc luộc",
+                    "description": "Bánh được hấp hoặc luộc đến khi lớp vỏ trở nên trong, dai và phần nhân chín."
+                },
+                {
+                    "name": "Bánh lọc – Hoàn thiện",
+                    "description": "Bánh được để ráo nếu cần, sau đó dùng với nước chấm có sự kết hợp giữa vị mặn, ngọt, cay và hương thơm của tôm thịt."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Làng nghề ẩm thực truyền thống",
+                    "description": "Đức Bưu được công nhận là làng nghề truyền thống năm 2021, khẳng định giá trị của nghề làm bánh trong đời sống văn hóa và kinh tế địa phương."
+                },
+                {
+                    "title": "Gắn với ẩm thực đặc trưng của Huế",
+                    "description": "Bánh bèo, bánh nậm và bánh lọc là những món ăn tiêu biểu của ẩm thực Huế, nổi bật bởi sự tinh tế trong cách chế biến, tạo hình và thưởng thức."
+                },
+                {
+                    "title": "Kỹ thuật thủ công được truyền qua nhiều thế hệ",
+                    "description": "Các công đoạn từ chọn nguyên liệu, xử lý bột, làm nhân, tạo hình, gói đến hấp bánh đều đòi hỏi kinh nghiệm và sự khéo léo của người làm nghề."
+                },
+                {
+                    "title": "Hương vị gắn với sản vật địa phương",
+                    "description": "Gạo, tinh bột sắn, tôm, thịt và lá gói là những nguyên liệu quen thuộc tạo nên hương vị và đặc điểm riêng của nhóm bánh truyền thống Huế."
+                },
+                {
+                    "title": "Tiềm năng phát triển du lịch cộng đồng",
+                    "description": "Làng nghề bánh bèo, nậm, lọc Đức Bưu có tiềm năng phát triển các hoạt động trải nghiệm chế biến bánh, giới thiệu ẩm thực và quảng bá văn hóa địa phương đến du khách."
+                }
+            ]
+        }
+    },
+    "lang-banh-trang-banh-uot-luu-bao": {
+        "name": "Làng nghề bánh tráng, bánh ướt Lựu Bảo",
+        "image": "images/products/btlb/btlb1.JPG",
+        "types": [
+            {
+                "name": "Bánh tráng truyền thống",
+                "price": 0,
+                "description": "Bánh tráng mỏng, dẻo, thơm bùi; có thể dùng để nhúng nước cuốn hoặc nướng giòn."
+            },
+            {
+                "name": "Bánh tráng mè",
+                "price": 0,
+                "description": "Bánh tráng kết hợp với mè, khi nướng có mùi thơm, vị bùi và độ giòn đặc trưng."
+            },
+            {
+                "name": "Bánh tráng dùng làm ram",
+                "price": 0,
+                "description": "Bánh được tráng mỏng để sử dụng làm vỏ ram cuốn, phục vụ các món ăn quen thuộc của người dân địa phương."
+            },
+            {
+                "name": "Bánh ướt",
+                "price": 0,
+                "description": "Sản phẩm truyền thống của Lựu Bảo, được sử dụng trong các món ăn đặc trưng của Huế."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/btlb/btlb1.JPG",
+                "images/products/btlb/btlb2.JPG",
+                "images/products/btlb/btlb3.JPG"
+            ],
+            "address": "Làng Lựu Bảo, khu vực Tổ dân phố Nham Biều – Lựu Bảo, phường Kim Long, thành phố Huế. Làng nằm bên sông Bạch Yến, cách trung tâm thành phố khoảng 8 km.",
+            "overview": "Lựu Bảo là làng nghề truyền thống nổi tiếng với nghề làm bánh tráng và bánh ướt, được duy trì qua nhiều thế hệ. Năm 2014, Nghề Bánh Tráng, Bánh Ướt Lựu Bảo được UBND tỉnh Thừa Thiên Huế công nhận là nghề truyền thống theo Quyết định số 628/QĐ-UBND ngày 01/04/2014. Bánh tráng Lựu Bảo nổi bật với độ mỏng, dẻo, thơm và vị bùi. Khi nướng, bánh giòn và phát ra tiếng lách tách đặc trưng; một số loại có thể nhúng nước để cuốn mà vẫn giữ được độ dẻo, không dễ rách. Nghề lưu giữ kinh nghiệm thủ công từ lựa chọn nguyên liệu, pha bột, tráng bánh đến phơi và bảo quản. Ngày nay, địa phương hướng tới xây dựng nhãn hiệu tập thể, cải thiện thiết bị và phát triển du lịch trải nghiệm tại làng nghề.",
+            "history": [
+                "Nghề làm bánh tráng ở Lựu Bảo đã tồn tại qua nhiều thế hệ. Các nguồn thông tin gần đây của VTV và TTXVN cho biết nghề có lịch sử khoảng gần 300 năm.",
+                "Ban đầu, nghề làm bánh gắn với đời sống sinh hoạt và nhu cầu thực phẩm của người dân địa phương. Từ nguyên liệu chính là gạo, người dân tạo ra những chiếc bánh có thể dùng để nhúng nước cuốn hoặc nướng giòn.",
+                "Trải qua thời gian, nghề được truyền lại trong các gia đình và trở thành một phần trong đời sống kinh tế, văn hóa của cộng đồng Lựu Bảo. Các loại bánh dần đa dạng hơn, gồm bánh tráng dùng để nhúng, bánh nướng, bánh mè và bánh dùng làm ram cuốn.",
+                "Ngày 01/04/2014, UBND tỉnh Thừa Thiên Huế ban hành Quyết định số 628/QĐ-UBND, chính thức công nhận Nghề Bánh Tráng, Bánh Ướt Lựu Bảo là nghề truyền thống của tỉnh.",
+                "Trong những năm gần đây, nghề tiếp tục được duy trì nhưng gặp khó khăn về thu nhập, chi phí sản xuất và sự thay đổi của thị trường. Địa phương đang triển khai các giải pháp xây dựng thương hiệu, hỗ trợ thiết bị và kết hợp làng nghề với du lịch.",
+                "Năm 2026, phường Kim Long triển khai các hoạt động xây dựng nhãn hiệu tập thể, cải thiện thiết bị và chất lượng sản phẩm, đồng thời nghiên cứu phát triển điểm đến và tour tham quan trải nghiệm.",
+                "Tháng 7/2026, phường Kim Long tổ chức mô hình “Tổ phụ nữ kinh doanh số – Bánh tráng Lựu Bảo”, góp phần thúc đẩy quảng bá và kinh doanh sản phẩm làng nghề trên các nền tảng số."
+            ],
+            "process": [
+                {
+                    "name": "Bước 1: Chuẩn bị nguyên liệu",
+                    "description": "Gạo được lựa chọn làm nguyên liệu chính. Một số loại bánh có thể kết hợp thêm mè hoặc các nguyên liệu phù hợp với từng sản phẩm."
+                },
+                {
+                    "name": "Bước 2: Ngâm và xay gạo",
+                    "description": "Gạo được ngâm cho mềm rồi xay thành bột. Người làm nghề điều chỉnh lượng nước để tạo hỗn hợp bột phù hợp cho công đoạn tráng."
+                },
+                {
+                    "name": "Bước 3: Pha bột",
+                    "description": "Bột được pha theo kinh nghiệm của người thợ. Độ loãng hoặc đặc của bột ảnh hưởng trực tiếp đến độ mỏng và độ dẻo của bánh."
+                },
+                {
+                    "name": "Bước 4: Tráng bánh",
+                    "description": "Bột được tráng thành một lớp mỏng trên nồi hơi và làm chín bằng hơi nước. Đây là công đoạn đòi hỏi sự khéo léo để bánh có độ dày đồng đều và không bị rách."
+                },
+                {
+                    "name": "Bước 5: Lấy bánh",
+                    "description": "Khi bánh vừa chín, người thợ nhẹ nhàng lấy bánh khỏi mặt tráng và đặt lên vỉ hoặc phên. Công đoạn này cần thao tác nhịp nhàng để bánh không bị rách."
+                },
+                {
+                    "name": "Bước 6: Phơi bánh",
+                    "description": "Bánh được phơi dưới ánh nắng tự nhiên. Theo tư liệu được cung cấp, một mẻ bánh thường cần khoảng 1–2 giờ nắng để đạt độ khô phù hợp. Vì vậy, thời tiết ảnh hưởng trực tiếp đến quá trình sản xuất."
+                },
+                {
+                    "name": "Bước 7: Hoàn thiện và bảo quản",
+                    "description": "Sau khi khô, bánh được thu gom, bảo quản và phân loại trước khi đưa ra thị trường. Tùy loại, bánh có thể dùng để nướng, nhúng nước, cuốn hoặc chế biến thành nhiều món ăn khác nhau."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Gần 300 năm duy trì nghề truyền thống",
+                    "description": "Nghề bánh tráng Lựu Bảo được duy trì qua nhiều thế hệ và trở thành một nghề gắn bó với đời sống của người dân địa phương."
+                },
+                {
+                    "title": "Được công nhận là nghề truyền thống",
+                    "description": "Năm 2014, UBND tỉnh Thừa Thiên Huế chính thức công nhận Nghề Bánh Tráng, Bánh Ướt Lựu Bảo là nghề truyền thống theo Quyết định số 628/QĐ-UBND ngày 01/04/2014."
+                },
+                {
+                    "title": "Hương vị đặc trưng",
+                    "description": "Bánh tráng Lựu Bảo có độ mỏng, dẻo, thơm bùi. Khi nướng, bánh giòn và phát ra tiếng lách tách đặc trưng."
+                },
+                {
+                    "title": "Kỹ thuật làm bánh thủ công",
+                    "description": "Các công đoạn pha bột, tráng bánh, lấy bánh và phơi bánh đều đòi hỏi kinh nghiệm. Người thợ cần điều chỉnh cách làm theo điều kiện thời tiết."
+                },
+                {
+                    "title": "Gắn với văn hóa ẩm thực Huế",
+                    "description": "Bánh tráng và bánh ướt Lựu Bảo không chỉ là sản phẩm thương mại mà còn gắn với các món ăn và đời sống ẩm thực của người dân Huế."
+                },
+                {
+                    "title": "Phát triển làng nghề trong đời sống hiện đại",
+                    "description": "Năm 2026, phường Kim Long triển khai các hoạt động xây dựng nhãn hiệu tập thể, cải thiện thiết bị và chất lượng sản phẩm, đồng thời nghiên cứu phát triển điểm đến và tour trải nghiệm."
+                },
+                {
+                    "title": "Gắn với chuyển đổi số",
+                    "description": "Mô hình “Tổ phụ nữ kinh doanh số – Bánh tráng Lựu Bảo” được tổ chức vào tháng 7/2026, cho thấy nỗ lực tiếp cận các phương thức quảng bá và kinh doanh hiện đại."
+                }
+            ]
+        }
+    },
+    "lang-gom-phuoc-tich": {
+        "name": "Làng nghề gốm Phước Tích",
+        "image": "images/products/gpt/gpt1.JPG",
+        "types": [
+            {
+                "name": "Gốm gia dụng truyền thống",
+                "price": 0,
+                "description": "Các sản phẩm đất nung phục vụ đời sống như om, niêu, nồi, trách, hũ, chum, lu, ang, thố và cối, mang vẻ đẹp mộc mạc của gốm truyền thống."
+            },
+            {
+                "name": "Om ngự",
+                "price": 0,
+                "description": "Sản phẩm gốm nổi tiếng gắn với lịch sử cung đình nhà Nguyễn, từng được làm để phục vụ việc nấu cơm cho vua."
+            },
+            {
+                "name": "Gốm trang trí và lưu niệm",
+                "price": 0,
+                "description": "Các sản phẩm được phát triển để phù hợp với nhu cầu hiện đại như lọ hoa, chuông gió, đồ trang trí và quà lưu niệm."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/gpt/gpt1.JPG",
+                "images/products/gpt/gpt2.JPG",
+                "images/products/gpt/gpt3.JPG"
+            ],
+            "address": "Làng cổ Phước Tích, bên dòng sông Ô Lâu, thành phố Huế. Làng nổi bật với không gian nhà rường truyền thống, cây xanh, bến nước và cảnh quan làng quê ven sông.",
+            "overview": "Làng gốm Phước Tích là một trong những làng nghề gốm truyền thống nổi tiếng của Huế, có lịch sử hình thành từ khoảng cuối thế kỷ XV. Nghề gốm phát triển với các sản phẩm đất nung phục vụ sinh hoạt như om, niêu, nồi, chum, lu và hũ. Sản phẩm từng được vận chuyển theo đường sông Ô Lâu để trao đổi với các địa phương khác. Đặc biệt, dưới triều Nguyễn, một số sản phẩm được làm để phục vụ cung đình, nổi tiếng nhất là om ngự dùng để nấu cơm cho vua. Sau thời gian suy giảm, nghề gốm đang từng bước được phục hồi và kết hợp với du lịch trải nghiệm, góp phần bảo tồn giá trị văn hóa của làng cổ Phước Tích.",
+            "history": [
+                "Nghề gốm Phước Tích có lịch sử lâu đời, gắn với quá trình hình thành làng khoảng năm 1470 dưới thời vua Lê Thánh Tông. Theo truyền thuyết và tư liệu địa phương, những người khai canh đã mang nghề gốm từ vùng Nghệ An vào và phát triển tại vùng đất mới.",
+                "Trong nhiều thế kỷ, nghề gốm trở thành một nghề quan trọng của người dân Phước Tích. Các lò gốm sản xuất nhiều loại vật dụng phục vụ đời sống và vận chuyển sản phẩm đi trao đổi bằng đường sông Ô Lâu.",
+                "Dưới triều Nguyễn, gốm Phước Tích đạt được dấu mốc đặc biệt khi một số sản phẩm được đưa vào cung đình. Om ngự, loại om dùng để nấu cơm cho vua, trở thành sản phẩm tiêu biểu gắn với danh tiếng gốm tiến vua của làng nghề.",
+                "Bước sang thế kỷ XX, nghề gốm dần suy giảm do chiến tranh, sự thay đổi của thị trường và sự xuất hiện của các sản phẩm gia dụng bằng nhôm, nhựa. Năm 1989, hợp tác xã gốm Phước Tích giải thể, nhiều lò nung ngừng hoạt động và nghề đứng trước nguy cơ mai một.",
+                "Từ Festival Huế năm 2006, nghề gốm bắt đầu được phục hồi thông qua việc khôi phục lò gốm và tổ chức các hoạt động giới thiệu nghề truyền thống.",
+                "Những năm sau đó, nghề gốm tiếp tục được gắn với công tác bảo tồn làng cổ và phát triển du lịch trải nghiệm. Các sản phẩm mới được sáng tạo nhằm đáp ứng nhu cầu của khách tham quan và thị trường hiện đại."
+            ],
+            "process": [
+                {
+                    "name": "Bước 1: Chuẩn bị và xử lý đất",
+                    "description": "Đất sét được lựa chọn, làm sạch và xử lý để loại bỏ tạp chất. Sau đó, đất được nhào kỹ nhằm tạo độ dẻo và độ đồng nhất cần thiết cho việc tạo hình."
+                },
+                {
+                    "name": "Bước 2: Tạo hình",
+                    "description": "Đất được đưa lên bàn xoay để tạo hình. Người thợ sử dụng đôi tay để điều chỉnh khối đất, từng bước tạo nên hình dáng của om, niêu, nồi, chum hoặc các sản phẩm khác."
+                },
+                {
+                    "name": "Bước 3: Chuốt và chỉnh sửa",
+                    "description": "Sau khi tạo hình, sản phẩm được chuốt và sửa lại để bảo đảm độ cân đối. Người thợ điều chỉnh miệng, thân, đáy và độ dày của sản phẩm."
+                },
+                {
+                    "name": "Bước 4: Phơi sản phẩm",
+                    "description": "Sản phẩm được phơi cho khô trước khi nung. Công đoạn này cần được thực hiện cẩn thận để hạn chế tình trạng sản phẩm bị nứt hoặc biến dạng khi gặp nhiệt độ cao."
+                },
+                {
+                    "name": "Bước 5: Xếp sản phẩm vào lò",
+                    "description": "Các sản phẩm sau khi khô được sắp xếp vào lò nung. Cách bố trí sản phẩm đòi hỏi kinh nghiệm để nhiệt được phân bố phù hợp trong quá trình nung."
+                },
+                {
+                    "name": "Bước 6: Nung gốm",
+                    "description": "Người thợ kiểm soát lửa và thời gian nung để sản phẩm đạt độ chín, có độ bền và màu sắc đặc trưng. Đây là công đoạn quan trọng quyết định chất lượng thành phẩm."
+                },
+                {
+                    "name": "Bước 7: Hoàn thiện",
+                    "description": "Sau khi lò nguội, sản phẩm được lấy ra, kiểm tra và phân loại. Những sản phẩm đạt yêu cầu sẽ được sử dụng, trưng bày hoặc đưa đến tay khách hàng."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Gần 500 năm gìn giữ nghề gốm",
+                    "description": "Nghề gốm Phước Tích có lịch sử gần 500 năm, gắn với quá trình hình thành và phát triển của làng. Qua nhiều thế hệ, nghề đã trở thành một phần quan trọng trong đời sống và ký ức của cộng đồng cư dân."
+                },
+                {
+                    "title": "Gốm tiến vua",
+                    "description": "Om ngự là sản phẩm đặc biệt gắn với lịch sử cung đình nhà Nguyễn, từng được sử dụng để nấu cơm cho vua và trở thành dấu ấn nổi bật của làng nghề."
+                },
+                {
+                    "title": "Gắn với dòng sông Ô Lâu",
+                    "description": "Sông Ô Lâu từng đóng vai trò quan trọng trong hoạt động sản xuất và trao đổi gốm. Ghe thuyền theo sông vận chuyển nguyên liệu và đưa sản phẩm đến các địa phương khác."
+                },
+                {
+                    "title": "Kỹ thuật thủ công truyền thống",
+                    "description": "Từ xử lý đất, tạo hình đến nung gốm đều đòi hỏi sự khéo léo và kinh nghiệm của người thợ. Những kỹ thuật này được truyền qua nhiều thế hệ."
+                },
+                {
+                    "title": "Nghề truyền thống đang được phục hồi",
+                    "description": "Sau thời gian suy giảm, nghề gốm Phước Tích đang từng bước được khôi phục thông qua việc phục dựng lò gốm, phát triển sản phẩm mới và tổ chức các hoạt động trải nghiệm."
+                },
+                {
+                    "title": "Gắn nghề gốm với du lịch làng cổ",
+                    "description": "Gốm Phước Tích nằm trong không gian làng cổ với nhà rường, cây xanh, bến nước và cảnh quan ven sông Ô Lâu. Du khách có thể kết hợp tìm hiểu nghề gốm với khám phá các giá trị văn hóa và kiến trúc truyền thống."
+                }
+            ]
+        }
+    },
+    "lang-dieu-khac-go-my-xuyen": {
+        "name": "Làng nghề điêu khắc gỗ Mỹ Xuyên",
+        "image": "images/products/dkgmx/dkgmx1.JPG",
+        "types": [
+            {
+                "name": "Đồ thờ và sản phẩm chạm khắc truyền thống",
+                "price": 0,
+                "description": "Các sản phẩm gồm bàn thờ, tủ thờ, hoành phi, câu đối, án gian và đồ dùng thờ tự, với những họa tiết truyền thống như long, lân, quy, phụng, hoa sen và hoa mai."
+            },
+            {
+                "name": "Tượng và phù điêu gỗ",
+                "price": 0,
+                "description": "Các tác phẩm điêu khắc hình rồng, phượng, ngựa, voi, nhân vật dân gian và cảnh sinh hoạt, được tạo hình bằng nhiều kỹ thuật chạm khắc khác nhau."
+            },
+            {
+                "name": "Đồ gỗ mỹ nghệ và nội thất",
+                "price": 0,
+                "description": "Các sản phẩm bàn, ghế, tủ, giường và đồ trang trí bằng gỗ, kết hợp công năng sử dụng với những chi tiết chạm khắc thủ công tinh xảo."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/dkgmx/dkgmx1.JPG",
+                "images/products/dkgmx/dkgmx2.JPG",
+                "images/products/dkgmx/dkgmx3.JPG"
+            ],
+            "address": "Khu vực Mỹ Xuyên, phường Phong Dinh, thành phố Huế. Đây là làng nghề truyền thống gắn với nghề mộc mỹ nghệ và điêu khắc gỗ, nằm trong không gian văn hóa và kiến trúc truyền thống của Huế.",
+            "overview": "Mỹ Xuyên là một trong những làng nghề thủ công nổi tiếng của Huế, gắn với nghề mộc mỹ nghệ và điêu khắc gỗ từ khoảng giữa thế kỷ XIX. Từ những khối gỗ thô, người thợ sử dụng đục và nhiều kỹ thuật chạm khắc để tạo nên các tác phẩm hình rồng, phượng, hoa lá, con người và muông thú. Sản phẩm không chỉ phục vụ đời sống gia đình mà còn xuất hiện trong nhà rường, đình, chùa và các công trình thờ tự. Nghề được UBND tỉnh Thừa Thiên Huế công nhận là nghề truyền thống năm 2014. Ngày nay, các nghệ nhân tiếp tục gìn giữ kỹ thuật truyền thống, đồng thời phát triển sản phẩm phù hợp với nhu cầu hiện đại.",
+            "history": [
+                "Nghề điêu khắc gỗ Mỹ Xuyên được cho là hình thành từ khoảng giữa thế kỷ XIX. Theo gia phả họ Nguyễn ở làng và lời kể của các nghệ nhân, ông Nguyễn Văn Thọ, một người thợ mộc và điêu khắc quê gốc Thanh Hóa, có công truyền nghề cho người dân Mỹ Xuyên dưới thời vua Tự Đức.",
+                "Ông Nguyễn Văn Thọ từng được triều đình trưng tập vào làm việc tại Kinh đô Huế. Sau khi trở về quê vợ ở Mỹ Xuyên, ông tiếp tục sinh sống và truyền lại kỹ thuật nghề cho người trong làng.",
+                "Qua nhiều thế hệ, nghề chạm khắc gỗ được duy trì và phát triển. Những người thợ Mỹ Xuyên tham gia thực hiện nhiều sản phẩm mộc mỹ nghệ và chi tiết trang trí cho công trình kiến trúc, nhà rường và không gian thờ tự tại Huế.",
+                "Trong quá trình phát triển, nghề hình thành phong cách riêng, kết hợp kỹ thuật mộc truyền thống với các đề tài và hoa văn đặc trưng của mỹ thuật Huế.",
+                "Có thời kỳ nghề gặp khó khăn do sự thay đổi của thị trường và sự phát triển của các sản phẩm công nghiệp. Tuy nhiên, nghề vẫn được duy trì nhờ những gia đình có truyền thống làm mộc và các nghệ nhân tiếp tục truyền nghề cho thế hệ sau.",
+                "Năm 2014, nghề Điêu khắc Gỗ Mỹ Xuyên được UBND tỉnh Thừa Thiên Huế công nhận là nghề truyền thống, tạo cơ sở cho việc bảo tồn và phát huy giá trị của nghề.",
+                "Ngày nay, những người thợ Mỹ Xuyên không chỉ làm việc tại địa phương mà còn đến nhiều tỉnh, thành để thực hiện các công trình và sản phẩm mộc mỹ nghệ. Nghề tiếp tục phát triển theo hướng kết hợp kỹ thuật truyền thống với nhu cầu của thị trường hiện đại."
+            ],
+            "process": [
+                {
+                    "name": "Bước 1: Lựa chọn gỗ",
+                    "description": "Người thợ lựa chọn loại gỗ phù hợp với từng sản phẩm dựa trên kích thước, độ cứng, thớ gỗ và đặc điểm chất liệu. Gỗ cần được xử lý để hạn chế cong vênh và nứt trong quá trình chế tác."
+                },
+                {
+                    "name": "Bước 2: Tạo phôi",
+                    "description": "Khối gỗ được cắt, xẻ và tạo thành hình dáng cơ bản của sản phẩm. Đây là bước chuẩn bị nền để người thợ tiếp tục đưa các chi tiết chạm khắc lên bề mặt."
+                },
+                {
+                    "name": "Bước 3: Phác thảo hoa văn",
+                    "description": "Người thợ xác định bố cục và phác thảo hình ảnh lên gỗ. Tùy sản phẩm, các đề tài có thể là rồng, phượng, hoa lá, cảnh sinh hoạt hoặc những hình tượng truyền thống."
+                },
+                {
+                    "name": "Bước 4: Chạm khắc",
+                    "description": "Người thợ sử dụng nhiều loại đục để tạo đường nét, mảng nổi và chiều sâu cho tác phẩm. Các kỹ thuật có thể bao gồm chạm nổi, chạm chìm, chạm lộng, chạm khảm và chạm sâu."
+                },
+                {
+                    "name": "Bước 5: Chỉnh sửa và làm nét",
+                    "description": "Sau khi hoàn thành phần chạm chính, người thợ tiếp tục chỉnh sửa các chi tiết nhỏ, làm rõ đường nét và tạo sự cân đối cho toàn bộ tác phẩm."
+                },
+                {
+                    "name": "Bước 6: Hoàn thiện bề mặt",
+                    "description": "Sản phẩm được làm sạch và xử lý bề mặt. Tùy yêu cầu, người thợ có thể sơn, phủ hoặc sử dụng các kỹ thuật trang trí truyền thống như sơn son, thếp vàng."
+                },
+                {
+                    "name": "Bước 7: Kiểm tra và hoàn thiện sản phẩm",
+                    "description": "Người thợ kiểm tra tổng thể hình dáng, hoa văn, độ cân đối và chất lượng bề mặt trước khi đưa sản phẩm vào sử dụng, trưng bày hoặc giao cho khách hàng."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Hơn một thế kỷ gìn giữ nghề điêu khắc",
+                    "description": "Nghề điêu khắc gỗ Mỹ Xuyên được hình thành từ khoảng giữa thế kỷ XIX và truyền qua nhiều thế hệ. Làng nghề dần trở thành nơi tập trung những người thợ mộc và chạm khắc có tay nghề."
+                },
+                {
+                    "title": "Nét đặc trưng của mỹ thuật Huế",
+                    "description": "Điêu khắc Mỹ Xuyên có mối liên hệ chặt chẽ với kiến trúc Huế. Những sản phẩm chạm khắc xuất hiện trên nhà rường, vách, đố bảng, kèo, đòn tay và các công trình thờ tự."
+                },
+                {
+                    "title": "Kỹ thuật chạm khắc đa dạng",
+                    "description": "Người thợ sử dụng nhiều kỹ thuật như chạm nổi, chạm chìm, chạm lộng, chạm lồng, chạm khảm, chạm cạn và chạm sâu. Sự kết hợp giữa các kỹ thuật tạo nên chiều sâu và hiệu ứng ánh sáng trên bề mặt gỗ."
+                },
+                {
+                    "title": "Từ gỗ thô thành tác phẩm nghệ thuật",
+                    "description": "Những khối gỗ thô được biến thành hình tượng rồng, phượng, chim thú, hoa lá và con người thông qua các đường đục thủ công, tạo nên dấu ấn riêng của từng nghệ nhân."
+                },
+                {
+                    "title": "Gắn với kiến trúc và không gian thờ tự",
+                    "description": "Sản phẩm Mỹ Xuyên được sử dụng trong nhà rường, nhà thờ họ, đình, chùa và nhiều không gian thờ tự, góp phần tạo nên vẻ trang trọng của kiến trúc truyền thống miền Trung."
+                },
+                {
+                    "title": "Nghề truyền thống được công nhận",
+                    "description": "Năm 2014, nghề Điêu khắc Gỗ Mỹ Xuyên được UBND tỉnh Thừa Thiên Huế công nhận là nghề truyền thống, tạo dấu mốc quan trọng trong việc bảo tồn và phát huy giá trị nghề."
+                },
+                {
+                    "title": "Bảo tồn và phát triển trong đời sống hiện đại",
+                    "description": "Các nghệ nhân tiếp tục duy trì kỹ thuật chạm khắc truyền thống, đồng thời sản xuất đồ gỗ mỹ nghệ và nội thất phù hợp với nhu cầu sử dụng của thị trường hiện đại."
+                }
+            ]
+        }
+    },
+    "lang-det-deng-a-dot": {
+        "name": "Làng nghề dệt Dèng A Đớt",
+        "image": "images/products/deng/deng1.JPG",
+        "types": [
+            {
+                "name": "Vải Dèng truyền thống",
+                "price": 0,
+                "description": "Vải thổ cẩm được dệt thủ công với hoa văn và màu sắc đặc trưng của đồng bào Tà Ôi."
+            },
+            {
+                "name": "Trang phục thổ cẩm",
+                "price": 0,
+                "description": "Các sản phẩm váy, áo, khố được làm từ vải Dèng, gắn với trang phục và phong tục truyền thống của người Tà Ôi."
+            },
+            {
+                "name": "Túi và phụ kiện thổ cẩm",
+                "price": 0,
+                "description": "Các sản phẩm thủ công như túi, khăn và phụ kiện mang hoa văn truyền thống, phù hợp làm quà lưu niệm."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/deng/deng1.JPG",
+                "images/products/deng/deng2.JPG",
+                "images/products/deng/deng3.JPG"
+            ],
+            "address": "Thôn A Đớt, xã A Lưới 4, thành phố Huế",
+            "overview": "Làng nghề dệt Dèng A Đớt là làng nghề truyền thống của đồng bào Tà Ôi, nổi bật với kỹ thuật dệt thổ cẩm Dèng thủ công. Sản phẩm Dèng không chỉ phục vụ đời sống hằng ngày mà còn gắn liền với trang phục, phong tục, lễ hội và các nghi lễ truyền thống của cộng đồng. Những hoa văn và màu sắc trên vải thể hiện bản sắc văn hóa, óc thẩm mỹ và kinh nghiệm được truyền lại qua nhiều thế hệ.",
+            "history": [
+                "Nghề dệt Dèng đã được người Tà Ôi gìn giữ và truyền lại qua nhiều thế hệ, trở thành một phần quan trọng trong đời sống văn hóa cộng đồng ở A Lưới.",
+                "Tại A Đớt, nghề dệt từng gắn bó mật thiết với sinh hoạt thường ngày, đặc biệt trong cưới hỏi, lễ hội và các nghi lễ truyền thống.",
+                "Năm 2016, làng nghề Dệt Zèng xã A Đớt được UBND tỉnh công nhận là làng nghề truyền thống, đồng thời nghề dệt Dèng A Đớt được công nhận là nghề truyền thống của tỉnh.",
+                "Năm 2016, nghề dệt Dèng của người Tà Ôi ở A Lưới được Bộ Văn hóa, Thể thao và Du lịch đưa vào Danh mục di sản văn hóa phi vật thể quốc gia theo Quyết định số 4036/QĐ-BVHTTDL.",
+                "Ngày nay, nghề dệt Dèng tiếp tục được gìn giữ và phát huy thông qua hoạt động truyền nghề, phát triển sản phẩm thổ cẩm và kết hợp với du lịch cộng đồng."
+            ],
+            "process": [
+                {
+                    "name": "Chuẩn bị sợi",
+                    "description": "Sợi được lựa chọn, xử lý và chuẩn bị cẩn thận trước khi đưa lên khung dệt, bảo đảm phù hợp với yêu cầu của sản phẩm."
+                },
+                {
+                    "name": "Tạo màu",
+                    "description": "Các sợi được nhuộm với những màu sắc phù hợp để tạo nền và hình thành bảng màu đặc trưng cho tấm vải Dèng."
+                },
+                {
+                    "name": "Mắc sợi",
+                    "description": "Người thợ sắp xếp các sợi dọc trên khung dệt theo đúng khoảng cách và trật tự, tạo nền tảng cho quá trình dệt."
+                },
+                {
+                    "name": "Dệt vải",
+                    "description": "Người thợ dùng khung dệt thủ công để luồn sợi ngang qua hệ thống sợi dọc, từng bước tạo thành tấm vải."
+                },
+                {
+                    "name": "Tạo hoa văn",
+                    "description": "Người dệt kết hợp các sợi và màu sắc để tạo hoa văn theo mẫu truyền thống. Đây là công đoạn đòi hỏi sự khéo léo, kinh nghiệm và độ chính xác cao."
+                },
+                {
+                    "name": "Hoàn thiện",
+                    "description": "Sau khi dệt xong, tấm vải được kiểm tra, chỉnh sửa những phần chưa đạt và hoàn thiện trước khi sử dụng hoặc may thành sản phẩm."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Di sản văn hóa của người Tà Ôi",
+                    "description": "Dệt Dèng là thành tố quan trọng trong đời sống văn hóa của cộng đồng Tà Ôi ở A Lưới và được công nhận là di sản văn hóa phi vật thể quốc gia vào năm 2016."
+                },
+                {
+                    "title": "Hoa văn và màu sắc đặc sắc",
+                    "description": "Những hoa văn được tạo nên trong quá trình dệt thể hiện sự khéo léo, óc thẩm mỹ và các giá trị văn hóa được truyền qua nhiều thế hệ."
+                },
+                {
+                    "title": "Gắn liền với đời sống và nghi lễ",
+                    "description": "Vải Dèng được sử dụng để làm trang phục và gắn với những dịp quan trọng như cưới hỏi, lễ hội, lễ cải táng cùng các sinh hoạt cộng đồng."
+                },
+                {
+                    "title": "Kỹ thuật dệt thủ công truyền thống",
+                    "description": "Quá trình tạo ra sản phẩm chủ yếu dựa vào kỹ thuật thủ công, trong đó kinh nghiệm, sự kiên trì và đôi tay khéo léo của người thợ giữ vai trò quan trọng."
+                },
+                {
+                    "title": "Đa dạng sản phẩm thổ cẩm",
+                    "description": "Từ vải Dèng truyền thống, người dân sáng tạo nên váy, áo, khố, khăn, túi, phụ kiện và nhiều sản phẩm lưu niệm mang bản sắc Tà Ôi."
+                },
+                {
+                    "title": "Gắn với du lịch cộng đồng",
+                    "description": "Du khách có thể tìm hiểu nghề dệt, gặp gỡ nghệ nhân, quan sát kỹ thuật thủ công và trải nghiệm làm thổ cẩm khi có chương trình phù hợp."
+                }
+            ],
+            "ticketPrice": "Cần liên hệ trước để xác nhận chi phí tham quan hoặc trải nghiệm",
+            "openingHours": "Cần liên hệ trước để xác nhận thời gian đón khách",
+            "experience": "Tìm hiểu văn hóa dệt Dèng của người Tà Ôi, quan sát nghệ nhân thực hiện các công đoạn dệt, khám phá ý nghĩa của hoa văn truyền thống và tìm hiểu các sản phẩm thổ cẩm địa phương. Nên liên hệ trước với cơ sở hoặc người dân để sắp xếp hoạt động trải nghiệm."
+        }
+    },
+    "lang-bun-tuoi-van-cu": {
+        "name": "Làng nghề bún tươi Vân Cù",
+        "image": "images/products/bvc/bvc1.JPG",
+        "types": [
+            {
+                "name": "Bún con Vân Cù",
+                "price": 0,
+                "description": "Bún tươi được tạo thành từng phần nhỏ, làm từ gạo theo phương pháp truyền thống, thích hợp dùng trong các món ăn Huế."
+            },
+            {
+                "name": "Bún lá Vân Cù",
+                "price": 0,
+                "description": "Bún được cuộn hoặc xếp thành từng lá, thuận tiện khi sử dụng cùng các món ăn truyền thống."
+            },
+            {
+                "name": "Bún sợi Vân Cù",
+                "price": 0,
+                "description": "Bún tươi dạng sợi có màu trắng tự nhiên, mềm dai và mang hương thơm đặc trưng của gạo, thường được dùng trong món bún bò Huế."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/bvc/bvc1.jpeg",
+                "images/products/bvc/bvc2.JPG",
+                "images/products/bvc/bvc3.JPG"
+            ],
+            "address": "Tổ dân phố Vân Cù – Nam Thanh, phường Kim Trà, thành phố Huế",
+            "overview": "Làng nghề bún tươi Vân Cù là làng nghề truyền thống lâu đời của Huế, nổi tiếng với nghề làm bún từ gạo. Nghề làm bún gắn bó mật thiết với đời sống và văn hóa ẩm thực của người dân địa phương, đặc biệt là món bún bò Huế. Sản phẩm bún Vân Cù có màu trắng tự nhiên, mềm dai và mang hương thơm đặc trưng của gạo. Năm 2024, nghề làm bún Vân Cù được công nhận là di sản văn hóa phi vật thể quốc gia.",
+            "history": [
+                "Nghề làm bún ở Vân Cù đã hình thành và được truyền lại qua nhiều thế hệ, trở thành nghề truyền thống quan trọng trong đời sống của người dân địa phương.",
+                "Theo truyền thuyết dân gian của làng, nghề làm bún gắn với Bà Bún, người được xem là thủy tổ của nghề và đã truyền lại kỹ thuật làm bún cho cộng đồng.",
+                "Qua thời gian, nghề làm bún chủ yếu được duy trì trong các hộ gia đình. Kinh nghiệm lựa chọn gạo, xử lý bột và tạo sợi bún được truyền từ thế hệ này sang thế hệ khác.",
+                "Cùng với sự phát triển của sản xuất, người dân từng bước cải tiến công cụ và ứng dụng máy móc vào một số công đoạn, đồng thời duy trì những kỹ thuật truyền thống đặc trưng.",
+                "Ngày 10/12/2024, nghề làm bún Vân Cù được Bộ Văn hóa, Thể thao và Du lịch đưa vào Danh mục di sản văn hóa phi vật thể quốc gia theo Quyết định số 3979/QĐ-BVHTTDL."
+            ],
+            "process": [
+                {
+                    "name": "Chọn và vo gạo",
+                    "description": "Gạo được lựa chọn phù hợp với yêu cầu làm bún, sau đó vo sạch để loại bỏ bụi bẩn và tạp chất trước khi chế biến."
+                },
+                {
+                    "name": "Ngâm gạo",
+                    "description": "Gạo được ngâm trong nước với thời gian thích hợp để hạt gạo mềm hơn, thuận lợi cho công đoạn xay thành bột."
+                },
+                {
+                    "name": "Xay bột",
+                    "description": "Gạo sau khi ngâm được xay thành bột. Trước đây, công đoạn này chủ yếu sử dụng cối đá thủ công; ngày nay, nhiều cơ sở đã sử dụng máy xay để nâng cao hiệu quả sản xuất."
+                },
+                {
+                    "name": "Lọc bột",
+                    "description": "Bột gạo được lọc để loại bỏ cặn và những phần chưa đạt, tạo hỗn hợp bột mịn, phù hợp cho việc tạo sợi bún."
+                },
+                {
+                    "name": "Ép và tạo sợi bún",
+                    "description": "Bột được xử lý, nhào và đưa vào khuôn ép. Người thợ ép bột thành những sợi bún nhỏ trực tiếp xuống nồi nước đang sôi."
+                },
+                {
+                    "name": "Luộc và làm nguội",
+                    "description": "Các sợi bún được luộc chín, sau đó vớt ra và làm nguội bằng nước để hoàn thiện độ dai và hạn chế các sợi dính vào nhau."
+                },
+                {
+                    "name": "Hoàn thiện sản phẩm",
+                    "description": "Bún được để ráo, chia thành từng phần phù hợp và chuẩn bị đưa ra tiêu thụ trong ngày nhằm giữ độ tươi ngon."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Di sản văn hóa phi vật thể quốc gia",
+                    "description": "Nghề làm bún Vân Cù được công nhận là di sản văn hóa phi vật thể quốc gia năm 2024, khẳng định giá trị của nghề truyền thống đối với văn hóa Huế."
+                },
+                {
+                    "title": "Gắn với ẩm thực Huế",
+                    "description": "Bún Vân Cù là nguyên liệu quen thuộc trong nhiều món ăn địa phương, đặc biệt là bún bò Huế, góp phần tạo nên nét đặc trưng của ẩm thực Cố đô."
+                },
+                {
+                    "title": "Nghề truyền thống lâu đời",
+                    "description": "Nghề làm bún được duy trì qua nhiều thế hệ, chủ yếu dựa vào kinh nghiệm, kỹ năng và bí quyết sản xuất của các gia đình làm nghề."
+                },
+                {
+                    "title": "Kỹ thuật chế biến đặc trưng",
+                    "description": "Quy trình làm bún kết hợp kinh nghiệm thủ công với sự hỗ trợ của máy móc hiện đại ở một số công đoạn, giúp duy trì nghề và đáp ứng nhu cầu tiêu dùng."
+                },
+                {
+                    "title": "Sản phẩm từ gạo",
+                    "description": "Bún tươi được chế biến từ gạo, có màu trắng tự nhiên, độ mềm dai và hương thơm đặc trưng, với các dạng phổ biến như bún con, bún lá và bún sợi."
+                },
+                {
+                    "title": "Gắn với du lịch trải nghiệm",
+                    "description": "Du khách có thể tìm hiểu lịch sử nghề, quan sát các công đoạn sản xuất, trải nghiệm làm bún khi có điều kiện phù hợp và thưởng thức món ăn địa phương."
+                }
+            ]
+        }
+    },
+    "lang-may-tre-dan-bao-la": {
+        "name": "Làng nghề mây tre đan Bao La",
+        "image": "images/products/mtbl/mtbl1.JPG",
+        "types": [
+            {
+                "name": "Rổ, rá và vật dụng gia đình",
+                "price": 0,
+                "description": "Các vật dụng đan từ tre, mây phục vụ sinh hoạt và sản xuất như rổ, rá, dần, sàng, nong, nia, thúng và mủng."
+            },
+            {
+                "name": "Giỏ, khay và hộp thủ công",
+                "price": 0,
+                "description": "Các sản phẩm mây tre đan có kiểu dáng đa dạng, kết hợp kỹ thuật truyền thống với nhu cầu sử dụng hiện đại."
+            },
+            {
+                "name": "Đèn lồng và đồ trang trí",
+                "price": 0,
+                "description": "Sản phẩm thủ công mỹ nghệ từ mây tre như đèn lồng, chụp đèn và đồ trang trí, phù hợp với không gian sống và làm quà lưu niệm."
+            },
+            {
+                "name": "Sản phẩm mây tre mang hình ảnh Huế",
+                "price": 0,
+                "description": "Các sản phẩm sáng tạo lấy cảm hứng từ những biểu tượng văn hóa Huế như cầu Trường Tiền và chùa Thiên Mụ."
+            }
+        ],
+        "detail": {
+            "images": [
+                "images/products/mtbl/mtbl1.JPG",
+                "images/products/mtbl/mtbl2.JPG",
+                "images/products/mtbl/mtbl3.JPG",
+                "images/products/mtbl/mtbl4.JPG"
+            ],
+            "address": "Thôn Bao La – Đức Nhuận, xã Đan Điền, thành phố Huế",
+            "overview": "Làng nghề mây tre đan Bao La là làng nghề truyền thống có lịch sử hơn 600 năm, nằm bên bờ Bắc sông Bồ, cách trung tâm thành phố Huế khoảng 15 km về phía Bắc. Ban đầu, người dân chủ yếu đan các vật dụng phục vụ sản xuất nông, lâm, ngư nghiệp và sinh hoạt hằng ngày như rổ, rá, dần, sàng, nong, nia và thúng. Qua quá trình phát triển, làng nghề chuyển hướng mạnh sang sản xuất hàng thủ công mỹ nghệ với mẫu mã đa dạng, kết hợp kỹ thuật truyền thống và nhu cầu thẩm mỹ hiện đại. Ngày nay, Bao La vừa là nơi bảo tồn nghề thủ công lâu đời, vừa phát triển sản xuất phục vụ thị trường trong nước, xuất khẩu và du lịch trải nghiệm.",
+            "history": [
+                "Làng nghề mây tre đan Bao La đã hình thành và phát triển hơn 600 năm. Nghề được truyền từ thế hệ này sang thế hệ khác trong cộng đồng dân cư địa phương.",
+                "Trong thời gian đầu, người dân chủ yếu đan các công cụ và vật dụng thiết yếu phục vụ đời sống, sản xuất nông nghiệp, lâm nghiệp và ngư nghiệp.",
+                "Trước sự thay đổi của thị trường và sự phát triển của các sản phẩm công nghiệp, làng nghề từng đứng trước nguy cơ mai một.",
+                "Năm 2007, Hợp tác xã Mây tre Bao La được thành lập, tạo bước chuyển quan trọng trong việc tập hợp lao động, khôi phục nghề truyền thống và phát triển sản phẩm gắn với nhu cầu thị trường.",
+                "Năm 2008, Hợp tác xã được Hội Làng nghề Việt Nam trao tặng danh hiệu Làng nghề tiêu biểu Việt Nam.",
+                "Năm 2010, sản phẩm của Hợp tác xã đạt một giải Nhất và một giải đồng đội tại hội thi sản phẩm hàng thủ công mỹ nghệ do tỉnh tổ chức. Năm 2011, Hợp tác xã tiếp tục đạt giải Nhất sản phẩm tiêu biểu hàng thủ công mỹ nghệ cấp tỉnh.",
+                "Năm 2017, Hợp tác xã được Bộ Nông nghiệp vinh danh; năm 2019, sản phẩm được thông tin là được Bộ Công Thương công nhận sản phẩm tiêu biểu công nghiệp nông thôn cấp quốc gia.",
+                "Trong quá trình phát triển, làng nghề liên tục cải tiến mẫu mã, nâng cao chất lượng, mở rộng thị trường và kết hợp hoạt động sản xuất với du lịch trải nghiệm."
+            ],
+            "process": [
+                {
+                    "name": "Chọn và chuẩn bị nguyên liệu",
+                    "description": "Tre và mây được lựa chọn theo độ tuổi, chất lượng và yêu cầu của từng sản phẩm. Nguyên liệu được làm sạch, loại bỏ những phần không đạt trước khi đưa vào chế biến."
+                },
+                {
+                    "name": "Chẻ tre",
+                    "description": "Tre được cắt thành từng đoạn phù hợp, sau đó chẻ dọc thành các thanh có kích thước tương ứng với kiểu dáng và yêu cầu của sản phẩm."
+                },
+                {
+                    "name": "Vót nan",
+                    "description": "Các thanh tre được vót và chuốt thành những nan mỏng, đều, có độ dẻo phù hợp. Công đoạn này đòi hỏi sự khéo léo và kinh nghiệm của người thợ."
+                },
+                {
+                    "name": "Xử lý và phơi nan",
+                    "description": "Nan tre sau khi vót được xử lý và phơi khô để giảm độ ẩm, tăng độ bền và hạn chế nấm mốc, giúp nguyên liệu phù hợp với công đoạn đan."
+                },
+                {
+                    "name": "Đan và tạo hình",
+                    "description": "Người thợ sử dụng các nan tre, mây đã chuẩn bị để đan theo kiểu dáng và mẫu mã của từng sản phẩm. Tùy sản phẩm, người thợ áp dụng kỹ thuật đan và phương pháp tạo hình khác nhau."
+                },
+                {
+                    "name": "Hoàn thiện sản phẩm",
+                    "description": "Sản phẩm sau khi đan được chỉnh sửa, cắt bỏ phần nan thừa, tạo dáng và gia cố các bộ phận cần thiết nhằm bảo đảm độ chắc chắn và tính thẩm mỹ."
+                },
+                {
+                    "name": "Kiểm tra chất lượng",
+                    "description": "Sản phẩm được kiểm tra về kích thước, hình dáng, độ chắc chắn và chất lượng bề mặt. Những sản phẩm chưa đạt yêu cầu được chỉnh sửa trước khi đưa ra thị trường."
+                },
+                {
+                    "name": "Đóng gói và tiêu thụ",
+                    "description": "Sản phẩm hoàn thiện được phân loại, đóng gói và cung cấp cho thị trường trong nước hoặc xuất khẩu. Một số sản phẩm được trưng bày và bán cho khách du lịch làm quà lưu niệm."
+                }
+            ],
+            "highlights": [
+                {
+                    "title": "Lịch sử hơn 600 năm",
+                    "description": "Bao La là làng nghề mây tre đan lâu đời của Huế, nơi kỹ thuật đan lát được truyền qua nhiều thế hệ và gắn bó với đời sống người dân địa phương."
+                },
+                {
+                    "title": "Kết hợp truyền thống và hiện đại",
+                    "description": "Làng nghề duy trì kỹ thuật thủ công truyền thống đồng thời liên tục đổi mới mẫu mã để đáp ứng nhu cầu sử dụng, trang trí và thị hiếu của khách hàng."
+                },
+                {
+                    "title": "Sản phẩm đa dạng",
+                    "description": "Từ rổ, rá, dần, sàng, nong, nia đến khay, đĩa, giỏ, túi xách, hộp đựng, đèn lồng, chụp đèn và đồ trang trí, sản phẩm Bao La phục vụ nhiều mục đích khác nhau."
+                },
+                {
+                    "title": "Sáng tạo hình ảnh văn hóa Huế",
+                    "description": "Nghệ nhân sáng tạo các sản phẩm mây tre mang hình ảnh đặc trưng của Huế như cầu Trường Tiền và chùa Thiên Mụ, góp phần quảng bá văn hóa địa phương."
+                },
+                {
+                    "title": "Mẫu mã phong phú",
+                    "description": "Theo thông tin được cung cấp, Hợp tác xã có trên 500 mẫu mã sản phẩm và phát triển khoảng 30–40 mẫu mới mỗi năm nhằm đáp ứng nhu cầu thị trường."
+                },
+                {
+                    "title": "Sản phẩm OCOP và thị trường xuất khẩu",
+                    "description": "Một số sản phẩm của Hợp tác xã được công nhận OCOP 4 sao, trong đó có bộ sản phẩm rổ, rá và lồng đèn trang trí. Sản phẩm còn được tiêu thụ thông qua các doanh nghiệp đối tác ở thị trường xuất khẩu."
+                },
+                {
+                    "title": "Nguyên liệu tự nhiên",
+                    "description": "Các sản phẩm sử dụng tre và mây, là những nguyên liệu tự nhiên phù hợp với xu hướng sử dụng đồ thủ công và vật liệu thân thiện với môi trường."
+                },
+                {
+                    "title": "Bảo tồn nghề và tạo việc làm",
+                    "description": "Làng nghề góp phần duy trì kỹ thuật thủ công truyền thống, tạo việc làm cho người dân và phát triển kinh tế địa phương."
+                },
+                {
+                    "title": "Trải nghiệm du lịch làng nghề",
+                    "description": "Du khách có thể tham quan không gian sản xuất, quan sát các công đoạn chẻ tre, vót nan, đan sản phẩm, thử làm một số sản phẩm đơn giản và mua đồ thủ công làm quà lưu niệm."
                 }
             ]
         }
