@@ -5262,3 +5262,90 @@ a {
         font-size: 19px;
     }
 }
+
+
+/* =========================
+   NDSH
+========================= */
+
+.ndsh-section {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+
+    background-image: url("images/bg_intro.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+/* Lớp phủ giúp nền dịu hơn */
+.ndsh-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 247, 237, 0.35);
+
+    z-index: 1;
+}
+
+/* Nội dung nằm giữa section */
+.ndsh-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+/* Ảnh QR */
+.ndsh-qr {
+    display: block;
+
+    width: 500px;
+    height: 500px;
+
+    object-fit: contain;
+
+    padding: 12px;
+    background: #ffffff;
+
+    border: 2px solid #C28B36;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 28px rgba(74, 44, 32, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng khi rê chuột */
+.ndsh-qr:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(74, 44, 32, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .ndsh-section {
+        min-height: 280px;
+        padding: 40px 16px;
+    }
+
+    .ndsh-qr {
+        width: 150px;
+        height: 150px;
+    }
+}
